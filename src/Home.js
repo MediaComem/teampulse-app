@@ -12,12 +12,12 @@ class Home extends Component {
     				<News/>
     			</div>
     			<div className="col-6">
-    				<Instagram/>
+    				<Instagram postsWidth="320"/>
     			</div>
     		</div>
     		<div className="row">
 	    		<div className="col-md-6">
-	  				<Facebook postsWidth="350" primary />
+	  				<Facebook postsWidth="350"/>
 	  			</div>
 	  			<div className="col-md-6">
 	  				Test

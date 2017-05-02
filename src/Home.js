@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import News from './News.js'
 import Instagram from './Instagram.js'
 import Facebook from './Facebook.js'
+import GoogleMap from './GoogleMap.js'
 
 class Home extends Component {
   render() {
@@ -25,6 +26,11 @@ class Home extends Component {
 	  				<Instagram postsWidth="320"/>
 	  			</div>
   			</div>
+  			<div className="row">
+    			<div className="col-md-12">
+    				<GoogleMap />
+    			</div>
+    		</div>
   		</div>
   	)
   }

@@ -10,6 +10,24 @@ class Home extends Component {
     return (
     	<div className="container-fluid">
     		<div className="row">
+    			<div className="col-md-12 justify-content-center">
+    				<News />
+    			</div>
+    		</div>
+    		<div className="row">
+    			<div className="col-md-12 justify-content-center">
+    				<News youtube/>
+    			</div>
+    		</div>
+    		<div className="row">
+	    		<div className="col-md-6">
+	  				<Facebook postsWidth="350"/>
+	  			</div>
+	  			<div className="col-md-6">
+	  				<Instagram postsWidth="320"/>
+	  			</div>
+  			</div>
+    		<div className="row">
     			<div className="col-md-12">
     				<Stats />
     			</div>

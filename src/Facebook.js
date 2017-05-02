@@ -6,9 +6,7 @@ const embedo = new Embedo({
   facebook: {
       version: 'v2.8',
       appId: '269918776508696'
-    },
-    twitter: true,
-    instagram: true
+    }
 });
 
 const Carousel = styled.div`

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import constantes from './constantes.js';
 
 const StatContainer = styled.div`
   textAlign: center;
@@ -61,7 +62,7 @@ class Stats extends Component {
   }
 
 	componentDidMount() {
-		fetch('http://localhost:3999/teampulse-data')
+		fetch(constantes.serverUrl+'/teampulse-data')
       .then(response => response.json())
       .then((body) => {
       	this.setState({speed:parseFloat(body.data.avgSpeed).toFixed(1)});

@@ -1,6 +1,7 @@
 import React, { PropTypes,Component } from 'react';
 import styled from 'styled-components';
 import GoogleMapReact from 'google-map-react';
+import constantes from './constantes.js';
 
 const MapContainer = styled.div`
     height:400px;
@@ -30,7 +31,7 @@ class GoogleMap extends Component {
   }
 
 	componentDidMount() {
-    fetch('http://localhost:3999/teampulse-data')
+    fetch(constantes.serverUrl+'/teampulse-data')
       .then(response => response.json())
       .then((body) => {
         setTimeout(() => this.setState({center:[parseFloat(body.data.latitude),parseFloat(body.data.longitude)]}), 1001);

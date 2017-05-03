@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Embedo from 'embedo';
 import styled from 'styled-components';
+import constantes from './constantes.js';
 
 const embedo = new Embedo({
     instagram: true
@@ -20,7 +21,7 @@ class Instagram extends Component {
   }
 
 	componentDidMount() {
-    fetch('http://localhost:3999/instaposts')
+    fetch(constantes.serverUrl+'/instaposts')
       .then(response => response.json())
       .then((data) => { this.setState({postsId:data.instaPosts});this.embed(data.instaPosts)});
   }

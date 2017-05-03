@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Embedo from 'embedo';
 import styled from 'styled-components';
+import constantes from './constantes.js';
 
 const embedo = new Embedo({
   facebook: {
@@ -23,7 +24,7 @@ class Facebook extends Component {
   }
 
 	componentDidMount() {
-    fetch('http://localhost:3999/fbposts')
+    fetch(constantes.serverUrl+'/fbposts')
       .then(response => response.json())
       .then((data) => { this.setState({postsId:data.postsId});this.embed(data.postsId)});
   }

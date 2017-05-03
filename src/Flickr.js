@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import constantes from './constantes.js';
 
 const Carousel = styled.div`
   width: ${props => props.width}px;
@@ -21,7 +22,7 @@ class Flickr extends Component {
   }
 
 	componentDidMount() {
-    fetch('http://localhost:3999/flickrpics')
+    fetch(constantes.serverUrl+'/flickrpics')
       .then(response => response.json())
       .then((data) => { this.setState({imagesUrl:data.picsId});});
   }

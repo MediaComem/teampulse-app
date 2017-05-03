@@ -16,7 +16,7 @@ const CycloMarker = styled.div`
   top: ${props => (props.radius)}px;
 
   border: 5px solid #f44336;
-  borderRadius: ${props => (props.radius)*2}px;;
+  borderRadius: ${props => (props.radius)*2}px;
   backgroundColor: white;
 `;
 
@@ -33,7 +33,7 @@ class GoogleMap extends Component {
     fetch('http://localhost:3999/teampulse-data')
       .then(response => response.json())
       .then((body) => {
-        setTimeout(() => this.setState({center:[parseFloat(body.data.latitude),parseFloat(body.data.longitude)]}), 1000);
+        setTimeout(() => this.setState({center:[parseFloat(body.data.latitude),parseFloat(body.data.longitude)]}), 1001);
       });
   }
 

@@ -1,6 +1,27 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+const StatContainer = styled.div`
+  textAlign: center;
+  &:after {
+    content:''; 
+    width:1px; 
+    height:60%; 
+    background: ${props => props.isLast ? 'none' : '#ccc'};
+    position:absolute; 
+    right:-4px;
+    top:20%;
+  }
+`;
+
+const StatNum = styled.div`
+  fontSize:2em;
+  color:#55A549;
+`;
+
+const StatDescr = styled.div`
+  color:#A6C222;
+`;
 
 class Stat extends Component {
 
@@ -13,13 +34,19 @@ class Stat extends Component {
 
   render() {
     return (
-    	<div>
-    		<div>{this.props.value}</div>
-    		<div>{this.props.descr}</div>
-    	</div>
+    	<StatContainer isLast={this.props.isLast}>
+    		<StatNum>{this.props.value}</StatNum>
+    		<StatDescr>{this.props.descr}</StatDescr>
+    	</StatContainer>
     )
   }
 }
+
+const StatsContainer = styled.div`
+  backgroundColor: white;
+  paddingTop:20px;
+  paddingBottom:20px;
+`;
 
 class Stats extends Component {
 
@@ -45,7 +72,7 @@ class Stats extends Component {
 
   render() {
     return (
-    	<div>
+    	<StatsContainer>
     		<div className="row">
     			<div className="col-md-2">
     				<Stat value={this.state.speed} descr="Vitesse"/>
@@ -59,8 +86,14 @@ class Stats extends Component {
     			<div className="col-md-2">
     				<Stat value={this.state.power} descr="Puissance"/>
     			</div>
+          <div className="col-md-2">
+            <Stat value={this.state.power} descr="Altitude"/>
+          </div>
+          <div className="col-md-2">
+            <Stat isLast={true} value="10:30" descr="Heure locale"/>
+          </div>
     		</div>
-    	</div>
+    	</StatsContainer>
     )
   }
 }

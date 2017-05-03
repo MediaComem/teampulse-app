@@ -1,0 +1,33 @@
+.news{
+	padding-top: 160px;
+	padding-bottom: 80px;
+}
+.map{
+	width: 100%;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background: #A6C222;
+}
+.socials{
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+.socials .caarousel{
+	margin: auto;
+}
+.insta .carousel-inner{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	height: 440px;
+	width: 360px;
+}
+.insta .carousel-item, .facebook .carousel-item{
+	margin-top: 20px;
+}
+.insta .carousel-control-prev, .facebook .carousel-control-prev{
+	left: 40px;
+}
+.facebook .carousel-inner{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	width: 390px;
+	height: 600px;
+}

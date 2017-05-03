@@ -18,6 +18,21 @@
   font-size: large;
 }
 
+header{
+  position: fixed;
+  top:0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  height: 80px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#55a549+0,a6c222+100 */
+  background: #55a549; /* Old browsers */
+  background: -moz-linear-gradient(top, #55a549 0%, #a6c222 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #55a549 0%,#a6c222 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #55a549 0%,#a6c222 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55a549', endColorstr='#a6c222',GradientType=0 ); /* IE6-9 */
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

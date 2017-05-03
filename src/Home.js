@@ -4,40 +4,45 @@ import Instagram from './Instagram.js'
 import Facebook from './Facebook.js'
 import GoogleMap from './GoogleMap.js'
 import Stats from './Stats.js'
+import './Home.css'
 
 class Home extends Component {
   render() {
     return (
-    	<div className="container-fluid">
-    		<div className="row">
-    			<div className="col-md-12 justify-content-center">
-    				<News />
+      <div>
+      	<div className="container">
+      		<div className="row news">
+            <div className="col-md-2 justify-content-center">
+              <p>Ne râtez aucun moment de la course grâce à notre programmation à la une!</p>
+              <p>Suivez l’avancement de l’événement en live et découvrez les interviews des participants.</p>
+            </div>
+      			<div className="col-md-10 justify-content-center">
+      				<News youtube/>
+      			</div>
+      		</div>
+        </div>
+        <div className="map">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <Stats />
+                <GoogleMap />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="container socials">
+      		<div className="row">
+  	    		<div className="col-md-6 facebook">
+  	  				<Facebook postsWidth="350"/>
+  	  			</div>
+  	  			<div className="col-md-6 insta">
+  	  				<Instagram postsWidth="320"/>
+  	  			</div>
     			</div>
-    		</div>
-    		<div className="row">
-    			<div className="col-md-12 justify-content-center">
-    				<News youtube/>
-    			</div>
-    		</div>
-    		<div className="row">
-	    		<div className="col-md-6">
-	  				<Facebook postsWidth="350"/>
-	  			</div>
-	  			<div className="col-md-6">
-	  				<Instagram postsWidth="320"/>
-	  			</div>
-  			</div>
-    		<div className="row">
-    			<div className="col-md-12">
-    				<Stats />
-    			</div>
-    		</div>
-  			<div className="row">
-    			<div className="col-md-12">
-    				<GoogleMap />
-    			</div>
-    		</div>
-  		</div>
+          <div>Bullshit</div>
+  		  </div>
+      </div>
   	)
   }
 }

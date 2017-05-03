@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Route,
   IndexRoute,
-  browserHistory,
+  HashRouter,
   Link
 } from 'react-router-dom'
 import Home from './Home.js'
@@ -18,7 +18,7 @@ const Admin = () => (
 
 
 const BasicExample = () => (
-  <Router>
+  <HashRouter>
     <div>
       <header className="primary-header">
         <div className="container-fluid">
@@ -33,7 +33,7 @@ const BasicExample = () => (
 
       <Route exact path="/" component={Home}/>
     </div>
-  </Router>
+  </HashRouter>
 )
 
 export default BasicExample

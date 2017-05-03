@@ -20,10 +20,14 @@ const Admin = () => (
 const BasicExample = () => (
   <Router>
     <div>
-      <header className="primary-header row">
+      <header className="primary-header">
+        <div className="container-fluid">
+        <div className="row">
         <div className="col-md-4"></div>
-        <div className="col-md-4">Teampulse</div>
-        <div className="col-md-4">2017 <br/>race across<br/> America</div>
+        <div className="col-md-4 teampulse-logo"><img src="teampulse_160px.png" width="289" height="50" alt="Teampulse"/></div>
+        <div className="col-md-4 race-logo"><img src="race_160px.png" width="111" height="50" alt="Race Across America 17"/></div>
+        </div>
+        </div>
       </header>
       <aside className="primary-aside"></aside>
 

@@ -32,6 +32,14 @@ header{
   background: linear-gradient(to bottom, #55a549 0%,#a6c222 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55a549', endColorstr='#a6c222',GradientType=0 ); /* IE6-9 */
 }
+header .container-fluid,header .container-fluid .row{
+  height: 100%;
+}
+.teampulse-logo, .race-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

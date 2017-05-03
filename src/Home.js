@@ -4,6 +4,7 @@ import Instagram from './Instagram.js'
 import Facebook from './Facebook.js'
 import GoogleMap from './GoogleMap.js'
 import Stats from './Stats.js'
+import SectionTitle from './SectionTitle.js'
 import './Home.css'
 
 class Home extends Component {
@@ -11,6 +12,7 @@ class Home extends Component {
     return (
       <div>
       	<div className="container">
+          <SectionTitle text="Les réseaux sociaux" right={150} bottom={50} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitle>
       		<div className="row news">
             <div className="col-md-2 justify-content-center">
               <p>Ne râtez aucun moment de la course grâce à notre programmation à la une!</p>
@@ -40,7 +42,7 @@ class Home extends Component {
   	  				<Instagram postsWidth="320"/>
   	  			</div>
     			</div>
-          <div>Bullshit</div>
+          <SectionTitle text="Les réseaux sociaux" right={90} bottom={200} padding="10px 20px" bgColor="#A6C222" txtColor="#fff">Les réseaux sociaux</SectionTitle>
   		  </div>
       </div>
   	)

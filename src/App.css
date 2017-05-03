@@ -23,7 +23,7 @@ header{
   top:0;
   right: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1000;
   height: 80px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#55a549+0,a6c222+100 */
   background: #55a549; /* Old browsers */

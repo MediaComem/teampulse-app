@@ -7,9 +7,6 @@ class News extends Component {
     super(props, context);
   }
 
-	componentDidMount() {
-  }
-
   render() {
   	if(this.props.youtube){
   		return (

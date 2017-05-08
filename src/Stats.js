@@ -2,6 +2,29 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import constantes from './constantes.js';
 
+const Wrapper = styled.div`
+  backgroundColor: black;
+  paddingTop:20px;
+  paddingBottom:20px;
+  textAlign:center;
+  @media(min-width: 768px){
+    display: ${props => props.mobile ? 'none' : 'flex'};
+  }
+  @media(max-width: 768px){
+    display: ${props => props.mobile ? 'flex' : 'none'};
+    paddingLeft:35px;
+    paddingRight:35px;
+  }
+`;
+
+const WrapperMobile = styled.div`
+  backgroundColor: white;
+  paddingTop:20px;
+  paddingBottom:20px;
+  textAlign:center;
+
+`;
+
 const StatContainer = styled.div`
   textAlign: center;
   &:after {
@@ -12,97 +35,89 @@ const StatContainer = styled.div`
     position:absolute; 
     right:-4px;
     top:20%;
+    @media(max-width: 768px){
+      background:none;
+    }
+  }
+  @media(max-width: 768px){
+    flex-grow:1;
+    flex-direction: row;
+    display:flex;
   }
 `;
 
 const StatNum = styled.div`
   fontSize:2em;
   color:#55A549;
+  @media(max-width: 768px){
+    width:50%;
+    textAlign:right;
+    marginRight:5px;
+  }
 `;
 
 const StatDescr = styled.div`
   color:#A6C222;
+  @media(max-width: 768px){
+    width:50%;
+    textAlign:left;
+    marginLeft:5px;
+    display:flex;
+    alignItems:center;
+  }
 `;
 
 class Stat extends Component {
-
-	constructor(props, context) {
-    super(props, context);
-  }
-
-	componentDidMount() {
-  }
-
   render() {
     return (
-    	<StatContainer isLast={this.props.isLast}>
-    		<StatNum>{this.props.value}</StatNum>
-    		<StatDescr>{this.props.descr}</StatDescr>
-    	</StatContainer>
+      <StatContainer>
+        <StatNum>{this.props.value}</StatNum>
+        <StatDescr>{this.props.descr}&nbsp;{this.props.unit}</StatDescr>
+      </StatContainer>
     )
   }
 }
 
-const StatContainerMobile = styled.div`
-  flex-grow:1;
-  flex-direction: row;
-  display:flex;
-`;
-
-const StatNumMobile = styled.div`
-  width:50%;
-  fontSize:2em;
-  color:#55A549;
-  textAlign:right;
-  marginRight:5px;
-`;
-
-const StatDescrMobile = styled.div`
-  width:50%;
-  display:flex;
-  alignItems:center;
-  color:#A6C222;
-  textAlign:left;
-  marginLeft:5px;
-`;
-
-class StatMobile extends Component {
+class StatsContainer extends Component {
 
   constructor(props, context) {
     super(props, context);
   }
 
-  componentDidMount() {
-  }
-
   render() {
     return (
-      <StatContainerMobile isLast={this.props.isLast}>
-        <StatNumMobile>{this.props.value}</StatNumMobile>
-        <StatDescrMobile>{this.props.descr}</StatDescrMobile>
-      </StatContainerMobile>
+      <div>
+        <Wrapper className="row">
+          {this.props.stats.map((stat,i) => (
+            <Stat key={i.toString()+"a"} value={stat.value} descr={stat.descr} unit={stat.unit}/>
+          ))}
+        </Wrapper>
+        <Wrapper mobile id="statsSlider" className="carousel slide" data-ride="carousel">
+          <ol className="carousel-indicators">
+            {this.props.stats.map((stat,i) => (
+              <li key={i.toString()+"b"} data-target="#statsSlider" data-slide-to={i} className={(i==0 ? 'active' : '')}></li>
+            ))}
+          </ol>
+          <div className="carousel-inner" role="listbox">
+            {this.props.stats.map((stat,i) => (
+              <div className={"carousel-item " + (i==0 ? 'active' : '')}>
+                <Stat key={i.toString()+"c"} value={stat.value} descr={stat.descr} unit={stat.unit}/>
+              </div>
+            ))}
+          </div>
+          <a className="carousel-control-prev" href="#statsSlider" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon"></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="carousel-control-next" href="#statsSlider" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
+          </a>
+        </Wrapper>
+      </div>
     )
   }
 }
-
-const StatsContainer = styled.div`
-  backgroundColor: white;
-  paddingTop:20px;
-  paddingBottom:20px;
-  @media(max-width: 768px){
-    display:none;
-  }
-`;
-
-const StatsContainerMobile = styled.div`
-  backgroundColor: white;
-  paddingTop:20px;
-  paddingBottom:20px;
-  textAlign:center;
-  @media(min-width: 768px){
-    display:none;
-  }
-`;
 
 class Stats extends Component {
 
@@ -128,53 +143,7 @@ class Stats extends Component {
 
   render() {
     return (
-      <div>
-        <StatsContainerMobile>
-          <div id="statsSlider" className="carousel slide">
-            <div className="carousel-inner" role="listbox">
-              <div className="carousel-item active">
-                <StatMobile value={this.state.temp} descr="Température"/>
-              </div>
-              <div className="carousel-item">
-                <StatMobile value={this.state.temp} descr="Température"/>
-              </div>
-              <div className="carousel-item">
-                <StatMobile value={this.state.temp} descr="Température"/>
-              </div>
-            </div>
-              <a className="carousel-control-prev" href="#statsSlider" role="button" data-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="sr-only">Previous</span>
-              </a>
-              <a className="carousel-control-next" href="#statsSlider" role="button" data-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="sr-only">Next</span>
-              </a>
-          </div>
-        </StatsContainerMobile>
-        <StatsContainer>
-          <div className="row">
-            <div className="col-md-2">
-              <Stat value={this.state.speed} descr="Vitesse"/>
-            </div>
-            <div className="col-md-2">
-              <Stat value={this.state.rate} descr="Cadence"/>
-            </div>
-            <div className="col-md-2">
-              <Stat value={this.state.temp} descr="Température"/>
-            </div>
-            <div className="col-md-2">
-              <Stat value={this.state.power} descr="Puissance"/>
-            </div>
-            <div className="col-md-2">
-              <Stat value={this.state.power} descr="Altitude"/>
-            </div>
-            <div className="col-md-2">
-              <Stat isLast={true} value="10:30" descr="Heure locale"/>
-            </div>
-          </div>
-        </StatsContainer>
-      </div>
+      <StatsContainer stats={[{value:this.state.speed,descr:"Vitesse moyenne", unit:"km/h"},{value:this.state.rate,descr:"Cadence moyenne", unit:"rmp"},{value:this.state.temp,descr:"Température extérieur", unit:"°C"},{value:this.state.power,descr:"Puissance moyenne"},{value:"0",descr:"Altitude", unit:"m"},{value:"10:30",descr:"Heure locale"}]}></StatsContainer>
     )
   }
 }

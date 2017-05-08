@@ -12,10 +12,6 @@
 	padding-top: 80px;
 	padding-bottom: 80px;
 }
-.facebook .carousel{
-	float:right;
-	margin-right: 70px; 
-}
 .instagram .carousel{
 	float:left;
 	margin-left: 70px; 
@@ -30,11 +26,6 @@
 }
 .insta .carousel-control-prev, .facebook .carousel-control-prev{
 	left: 40px;
-}
-.facebook .carousel-inner{
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	width: 390px;
-	height: 600px;
 }
 .news{
 	color: #A6C222;

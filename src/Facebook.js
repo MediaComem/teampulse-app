@@ -11,7 +11,16 @@ const embedo = new Embedo({
 });
 
 const Carousel = styled.div`
-  width: ${props => props.width}px;
+`;
+
+const CarouselInner = styled.div`
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  width: ${props => parseInt(props.postsWidth)+(40)}px;
+  @media(max-width: 768px){
+    max-width: ${props => props.postsWidth}px;
+    box-shadow: none;
+  }
+  height: 600px;
 `;
 
 class Facebook extends Component {
@@ -41,8 +50,8 @@ class Facebook extends Component {
 
   render() {
     return (
-    	<Carousel id="carouselExampleControls" width={this.props.postsWidth} className="carousel slide" data-ride="carousel" data-interval="false">
-				<div className="carousel-inner fbposts" role="listbox">
+    	<Carousel id="carouselExampleControls" postsWidth={this.props.postsWidth} className="carousel slide" data-ride="carousel" data-interval="false">
+				<CarouselInner className="carousel-inner fbposts" postsWidth={this.props.postsWidth} role="listbox">
 					{this.state.postsId.map(function(post,index){
 						if(index === 0){
 							return <div className="carousel-item active" id={post} key={post}></div>
@@ -50,7 +59,7 @@ class Facebook extends Component {
 							return <div className="carousel-item" id={post} key={post}></div>
 						}
     			})}
-				</div>
+				</CarouselInner>
 				<a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
 					<span className="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span className="sr-only">Previous</span>

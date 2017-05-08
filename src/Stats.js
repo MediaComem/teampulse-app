@@ -143,7 +143,7 @@ class Stats extends Component {
 
   render() {
     return (
-      <StatsContainer stats={[{value:this.state.speed,descr:"Vitesse moyenne", unit:"km/h"},{value:this.state.rate,descr:"Cadence moyenne", unit:"rmp"},{value:this.state.temp,descr:"Température extérieur", unit:"°C"},{value:this.state.power,descr:"Puissance moyenne"},{value:"0",descr:"Altitude", unit:"m"},{value:"10:30",descr:"Heure locale"}]}></StatsContainer>
+      <StatsContainer stats={[{value:this.state.speed,descr:"Vitesse moyenne", unit:"km/h"},{value:this.state.rate,descr:"Cadence moyenne", unit:"rmp"},{value:this.state.temp,descr:"Température extérieur", unit:"°C"},{value:this.state.power,descr:"Puissance moyenne"},{value:"0",descr:"Altitude", unit:"m"},{value:"10:30",descr:"Heure locale"}]}/>
     )
   }
 }

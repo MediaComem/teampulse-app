@@ -11,10 +11,10 @@ class Home extends Component {
   render() {
     return (
       <div>
-      	<div className="container">
-          <SectionTitle text="Les réseaux sociaux" right={0} bottom={50} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitle>
+      	<div className="container a-la-une">
+          <SectionTitle className="hidden-sm-down" text="Les réseaux sociaux" right={0} bottom={50} hiddenSm={true} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitle>
       		<div className="row news">
-            <div className="col-md-2 justify-content-center">
+            <div className="col-md-2 justify-content-center hidden-sm-down">
               <p>Ne râtez aucun moment de la course grâce à notre programmation à la une!</p>
               <p>Suivez l’avancement de l’événement en live et découvrez les interviews des participants.</p>
             </div>

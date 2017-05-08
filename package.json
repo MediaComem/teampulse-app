@@ -2,7 +2,6 @@
   "name": "teampulse",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "embedo": "^1.1.1",
     "google-map-react": "^0.24.0",

@@ -43,10 +43,65 @@ class Stat extends Component {
   }
 }
 
+const StatContainerMobile = styled.div`
+  flex-grow:1;
+  flex-direction: row;
+  display:flex;
+`;
+
+const StatNumMobile = styled.div`
+  width:50%;
+  fontSize:2em;
+  color:#55A549;
+  textAlign:right;
+  marginRight:5px;
+`;
+
+const StatDescrMobile = styled.div`
+  width:50%;
+  display:flex;
+  alignItems:center;
+  color:#A6C222;
+  textAlign:left;
+  marginLeft:5px;
+`;
+
+class StatMobile extends Component {
+
+  constructor(props, context) {
+    super(props, context);
+  }
+
+  componentDidMount() {
+  }
+
+  render() {
+    return (
+      <StatContainerMobile isLast={this.props.isLast}>
+        <StatNumMobile>{this.props.value}</StatNumMobile>
+        <StatDescrMobile>{this.props.descr}</StatDescrMobile>
+      </StatContainerMobile>
+    )
+  }
+}
+
 const StatsContainer = styled.div`
   backgroundColor: white;
   paddingTop:20px;
   paddingBottom:20px;
+  @media(max-width: 768px){
+    display:none;
+  }
+`;
+
+const StatsContainerMobile = styled.div`
+  backgroundColor: white;
+  paddingTop:20px;
+  paddingBottom:20px;
+  textAlign:center;
+  @media(min-width: 768px){
+    display:none;
+  }
 `;
 
 class Stats extends Component {
@@ -73,28 +128,53 @@ class Stats extends Component {
 
   render() {
     return (
-    	<StatsContainer>
-    		<div className="row">
-    			<div className="col-md-2">
-    				<Stat value={this.state.speed} descr="Vitesse"/>
-    			</div>
-    			<div className="col-md-2">
-    				<Stat value={this.state.rate} descr="Cadence"/>
-    			</div>
-    			<div className="col-md-2">
-    				<Stat value={this.state.temp} descr="Température"/>
-    			</div>
-    			<div className="col-md-2">
-    				<Stat value={this.state.power} descr="Puissance"/>
-    			</div>
-          <div className="col-md-2">
-            <Stat value={this.state.power} descr="Altitude"/>
+      <div>
+        <StatsContainerMobile>
+          <div id="statsSlider" className="carousel slide">
+            <div className="carousel-inner" role="listbox">
+              <div className="carousel-item active">
+                <StatMobile value={this.state.temp} descr="Température"/>
+              </div>
+              <div className="carousel-item">
+                <StatMobile value={this.state.temp} descr="Température"/>
+              </div>
+              <div className="carousel-item">
+                <StatMobile value={this.state.temp} descr="Température"/>
+              </div>
+            </div>
+              <a className="carousel-control-prev" href="#statsSlider" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span>
+              </a>
+              <a className="carousel-control-next" href="#statsSlider" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
+              </a>
           </div>
-          <div className="col-md-2">
-            <Stat isLast={true} value="10:30" descr="Heure locale"/>
+        </StatsContainerMobile>
+        <StatsContainer>
+          <div className="row">
+            <div className="col-md-2">
+              <Stat value={this.state.speed} descr="Vitesse"/>
+            </div>
+            <div className="col-md-2">
+              <Stat value={this.state.rate} descr="Cadence"/>
+            </div>
+            <div className="col-md-2">
+              <Stat value={this.state.temp} descr="Température"/>
+            </div>
+            <div className="col-md-2">
+              <Stat value={this.state.power} descr="Puissance"/>
+            </div>
+            <div className="col-md-2">
+              <Stat value={this.state.power} descr="Altitude"/>
+            </div>
+            <div className="col-md-2">
+              <Stat isLast={true} value="10:30" descr="Heure locale"/>
+            </div>
           </div>
-    		</div>
-    	</StatsContainer>
+        </StatsContainer>
+      </div>
     )
   }
 }

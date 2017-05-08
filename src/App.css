@@ -40,6 +40,18 @@ header .container-fluid,header .container-fluid .row{
   justify-content: center;
   align-items: center;
 }
+.teampulse-logo img{
+  width: 100%;
+  max-width:289px;
+  /*max-height:50px;*/
+}
+.race-logo{
+  justify-content: flex-end;
+}
+.race-logo img{
+  width: 100%;
+  max-width:111px;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

@@ -12,13 +12,13 @@ class Home extends Component {
     return (
       <div>
       	<div className="container">
-          <SectionTitle text="Les réseaux sociaux" right={150} bottom={50} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitle>
+          <SectionTitle text="Les réseaux sociaux" right={0} bottom={50} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitle>
       		<div className="row news">
             <div className="col-md-2 justify-content-center">
               <p>Ne râtez aucun moment de la course grâce à notre programmation à la une!</p>
               <p>Suivez l’avancement de l’événement en live et découvrez les interviews des participants.</p>
             </div>
-      			<div className="col-md-10 justify-content-center">
+      			<div className="col-md-10 justify-content-center news-media">
       				<News youtube/>
       			</div>
       		</div>

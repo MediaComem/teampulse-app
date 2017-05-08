@@ -13,9 +13,9 @@ class News extends Component {
   render() {
   	if(this.props.youtube){
   		return (
-  			<div>
-    		<iframe width="730" height="410" src="https://www.youtube.com/embed/HROuJ1ZojhM" frameBorder="0" allowFullScreen></iframe>
-    		</div>
+        <div className="embed-responsive embed-responsive-16by9">
+  		    <iframe src="https://www.youtube.com/embed/HROuJ1ZojhM" frameBorder="0" allowFullScreen></iframe>
+        </div>
     	)
   	}else{
   		return (

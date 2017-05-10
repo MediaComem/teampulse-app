@@ -8,8 +8,7 @@ const Carousel = styled.div`
 const CarouselInner = styled.div`
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   width: ${props => parseInt(props.postsWidth)+(40)}px;
-  @media(max-width: 768px){
-    max-width: 500px;
+  @media(max-width: 992px){
     width: 100%;
     box-shadow: none;
   }
@@ -18,7 +17,7 @@ const CarouselInner = styled.div`
 
 const FacebookIframe = styled.iframe`
   max-width:500px;
-  width: 100%;
+  width: 90%;
 `;
 
 class Facebook extends Component {

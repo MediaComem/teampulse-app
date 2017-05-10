@@ -11,7 +11,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-      	<div className="container a-la-une">
+      	<div className="container">
           <SectionTitle className="hidden-sm-down" text="Les réseaux sociaux" right={0} bottom={50} hiddenSm={true} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitle>
       		<div className="row news">
             <div className="col-md-2 justify-content-center hidden-sm-down">
@@ -35,10 +35,10 @@ class Home extends Component {
         </div>
         <div className="container socials">
       		<div className="row">
-  	    		<div className="col-md-6 facebook">
+  	    		<div className="col-lg-6 facebook">
   	  				<Facebook postsWidth="350"/>
   	  			</div>
-  	  			<div className="col-md-6 insta">
+  	  			<div className="col-lg-6 insta">
   	  				<Instagram postsWidth="320"/>
   	  			</div>
     			</div>

@@ -35,12 +35,12 @@ class Home extends Component {
         </div>
         <div className="container socials">
       		<div className="row">
-  	    		<div className="col-lg-6 facebook">
-  	  				<Facebook postsWidth="350"/>
+  	  			<div className="col-lg-6 facebook">
+              <Facebook postsWidth="320"/>
   	  			</div>
-  	  			<div className="col-lg-6 insta">
-  	  				<Instagram postsWidth="320"/>
-  	  			</div>
+            <div className="col-lg-6 insta">
+              <Instagram postsWidth="320"/>
+            </div>
     			</div>
           <SectionTitle text="Les réseaux sociaux" right={90} bottom={200} padding="10px 20px" bgColor="#A6C222" txtColor="#fff">Les réseaux sociaux</SectionTitle>
   		  </div>

@@ -52,7 +52,7 @@ class Instagram extends Component {
 						if(index === 0){
 							return <CarouselItem className="carousel-item active" id={post.id} key={post.id}><InstagramEmbed style={InstagramEmbedStyle} hideCaption={true} maxWidth={320} url={post.link} /></CarouselItem>
 						}else{
-							return <CarouselItem className="carousel-item" id={post.id} key={post.id}><InstagramEmbed hideCaption={true} maxWidth={320} url={post.link} /></CarouselItem>
+							return <CarouselItem className="carousel-item" id={post.id} key={post.id}><InstagramEmbed style={InstagramEmbedStyle} hideCaption={true} maxWidth={320} url={post.link} /></CarouselItem>
 						}
     			})}
 				</CarouselInner>

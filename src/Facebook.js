@@ -31,7 +31,7 @@ const FacebookEmbedStyle = {
   maxWidth:'500px',
   width: '90%',
   display:'flex',
-  justifyContent: 'center'
+  justifyContent: 'flex-start'
 };
 
 class Facebook extends Component {

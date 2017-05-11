@@ -12,7 +12,13 @@ const CarouselInner = styled.div`
     width: 100%;
     box-shadow: none;
   }
-  height: 600px;
+  height: 800px;
+`;
+
+const CarouselItem = styled.div`
+  margin-top: 20px;
+  justify-content: center;
+  width: 100%;
 `;
 
 const FacebookIframe = styled.iframe`
@@ -41,9 +47,9 @@ class Facebook extends Component {
         <CarouselInner className="carousel-inner fbposts" postsWidth={this.props.postsWidth} role="listbox">
 					{this.state.postsId.map(function(post,index){
 						if(index === 0){
-							return <div className="carousel-item active" id={post} key={post}><FacebookIframe src={"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F20531316728%2Fposts%2F"+post+"%2F&show_text=true&appId=269918776508696"} width="100%" height="600" scrolling="no" frameBorder="0" allowTransparency="true"></FacebookIframe></div>
+							return <CarouselItem className="carousel-item active" id={post} key={post}><FacebookIframe src={"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F20531316728%2Fposts%2F"+post+"%2F&show_text=true&appId=269918776508696"} width="100%" height="800" scrolling="no" frameBorder="0" allowTransparency="true"></FacebookIframe></CarouselItem>
 						}else{
-							return <div className="carousel-item" id={post} key={post}><FacebookIframe src={"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F20531316728%2Fposts%2F"+post+"%2F&show_text=true&appId=269918776508696"} width="100%" height="600" scrolling="no" frameBorder="0" allowTransparency="true"></FacebookIframe></div>
+							return <CarouselItem className="carousel-item" id={post} key={post}><FacebookIframe src={"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F20531316728%2Fposts%2F"+post+"%2F&show_text=true&appId=269918776508696"} width="100%" height="800" scrolling="no" frameBorder="0" allowTransparency="true"></FacebookIframe></CarouselItem>
 						}
     			})}
 				</CarouselInner>

@@ -23,6 +23,12 @@ const InstagramEmbedStyle = {
   justifyContent: 'center'
 };
 
+const CarouselItem = styled.div`
+  margin-top: 20px;
+  justify-content: center;
+  width: 100%;
+`;
+
 class Instagram extends Component {
 
 	constructor(props, context) {
@@ -44,9 +50,9 @@ class Instagram extends Component {
         <CarouselInner className="carousel-inner fbposts" postsWidth={this.props.postsWidth} role="listbox">
 					{this.state.postsId.map(function(post,index){
 						if(index === 0){
-							return <div className="carousel-item active" id={post.id} key={post.id}><InstagramEmbed style={InstagramEmbedStyle} hideCaption={true} maxWidth={320} url={post.link} /></div>
+							return <CarouselItem className="carousel-item active" id={post.id} key={post.id}><InstagramEmbed style={InstagramEmbedStyle} hideCaption={true} maxWidth={320} url={post.link} /></CarouselItem>
 						}else{
-							return <div className="carousel-item" id={post.id} key={post.id}><InstagramEmbed hideCaption={true} maxWidth={320} url={post.link} /></div>
+							return <CarouselItem className="carousel-item" id={post.id} key={post.id}><InstagramEmbed hideCaption={true} maxWidth={320} url={post.link} /></CarouselItem>
 						}
     			})}
 				</CarouselInner>

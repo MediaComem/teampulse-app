@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import Embedo from 'embedo';
 import styled from 'styled-components';
 import constantes from './constantes.js';
-
-const embedo = new Embedo({
-    instagram: true
-});
+import InstagramEmbed from 'react-instagram-embed'
 
 const Carousel = styled.div`
 `;
@@ -20,6 +16,13 @@ const CarouselInner = styled.div`
   height: 600px;
 `;
 
+const InstagramEmbedStyle = {
+  maxWidth:'500px',
+  width: '90%',
+  display:'flex',
+  justifyContent: 'center'
+};
+
 class Instagram extends Component {
 
 	constructor(props, context) {
@@ -32,17 +35,7 @@ class Instagram extends Component {
 	componentDidMount() {
     fetch(constantes.serverUrl+'/instaposts')
       .then(response => response.json())
-      .then((data) => { this.setState({postsId:data.instaPosts});this.embed(data.instaPosts)});
-  }
-
-  embed(postsId){
-  	for (var i = 0; i < postsId.length; i++){
-  		embedo.load(
-      document.getElementById(postsId[i].id),
-        postsId[i].link,
-        {maxWidth:this.props.postsWidth}
-    	);
-  	}
+      .then((data) => { this.setState({postsId:data.instaPosts})});
   }
 
   render() {
@@ -51,9 +44,9 @@ class Instagram extends Component {
         <CarouselInner className="carousel-inner fbposts" postsWidth={this.props.postsWidth} role="listbox">
 					{this.state.postsId.map(function(post,index){
 						if(index === 0){
-							return <div className="carousel-item active" id={post.id} key={post.id}></div>
+							return <div className="carousel-item active" id={post.id} key={post.id}><InstagramEmbed style={InstagramEmbedStyle} hideCaption={true} maxWidth={320} url={post.link} /></div>
 						}else{
-							return <div className="carousel-item" id={post.id} key={post.id}></div>
+							return <div className="carousel-item" id={post.id} key={post.id}><InstagramEmbed hideCaption={true} maxWidth={320} url={post.link} /></div>
 						}
     			})}
 				</CarouselInner>

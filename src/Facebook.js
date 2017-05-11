@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import constantes from './constantes.js';
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
-import ResponsiveEmbed from 'react-responsive-embed';
 
 const Carousel = styled.div`
 `;

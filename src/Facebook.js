@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import constantes from './constantes.js';
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
+import ResponsiveEmbed from 'react-responsive-embed';
 
 const Carousel = styled.div`
 `;
@@ -13,13 +14,18 @@ const CarouselInner = styled.div`
     width: 100%;
     box-shadow: none;
   }
-  height: 800px;
+  height:1000px;
 `;
 
 const CarouselItem = styled.div`
   margin-top: 20px;
   justify-content: center;
   width: 100%;
+`;
+
+const FacebookIframe = styled.iframe`
+  max-width:500px;
+  width: 90%;
 `;
 
 class Facebook extends Component {
@@ -44,15 +50,11 @@ class Facebook extends Component {
 					{this.state.postsId.map(function(post,index){
 						if(index === 0){
 							return <CarouselItem className="carousel-item active" id={post} key={post}>
-                        <FacebookProvider appId="269918776508696">
-                          <EmbeddedPost href={"https://www.facebook.com/teampulse.ch/posts/"+post} width="100%" />
-                        </FacebookProvider>
+                        <FacebookIframe src={"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F20531316728%2Fposts%2F"+post+"%2F&show_text=true&appId=269918776508696"} width="100%" height="1000" scrolling="no" frameBorder="0" allowTransparency="true"></FacebookIframe>
                       </CarouselItem>
 						}else{
 							return <CarouselItem className="carousel-item" id={post} key={post}>
-                        <FacebookProvider appId="269918776508696">
-                          <EmbeddedPost href={"https://www.facebook.com/teampulse.ch/posts/"+post} width="100%" />
-                        </FacebookProvider>
+                        <FacebookIframe src={"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F20531316728%2Fposts%2F"+post+"%2F&show_text=true&appId=269918776508696"} width="100%" height="1000" scrolling="no" frameBorder="0" allowTransparency="true"></FacebookIframe>
                       </CarouselItem>
 						}
     			})}

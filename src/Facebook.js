@@ -19,7 +19,7 @@ const CarouselInner = styled.div`
 const CarouselItem = styled.div`
   margin-top: 20px;
   overflow:scroll;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 `;
 

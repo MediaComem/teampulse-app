@@ -7,22 +7,16 @@ const Wrapper = styled.div`
   paddingTop:20px;
   paddingBottom:20px;
   textAlign:center;
-  @media(min-width: 768px){
+  @media(min-width: 992px){
     display: ${props => props.mobile ? 'none' : 'flex'};
+    marginLeft:0;
+    marginRight:0;
   }
-  @media(max-width: 768px){
+  @media(max-width: 992px){
     display: ${props => props.mobile ? 'flex' : 'none'};
     paddingLeft:35px;
     paddingRight:35px;
   }
-`;
-
-const WrapperMobile = styled.div`
-  backgroundColor: white;
-  paddingTop:20px;
-  paddingBottom:20px;
-  textAlign:center;
-
 `;
 
 const StatContainer = styled.div`
@@ -35,11 +29,11 @@ const StatContainer = styled.div`
     position:absolute; 
     right:-4px;
     top:20%;
-    @media(max-width: 768px){
+    @media(max-width: 992px){
       background:none;
     }
   }
-  @media(max-width: 768px){
+  @media(max-width: 992px){
     flex-grow:1;
     flex-direction: row;
     display:flex;
@@ -49,7 +43,7 @@ const StatContainer = styled.div`
 const StatNum = styled.div`
   fontSize:2em;
   color:#55A549;
-  @media(max-width: 768px){
+  @media(max-width: 992px){
     width:50%;
     textAlign:right;
     marginRight:5px;
@@ -58,7 +52,7 @@ const StatNum = styled.div`
 
 const StatDescr = styled.div`
   color:#A6C222;
-  @media(max-width: 768px){
+  @media(max-width: 992px){
     width:50%;
     textAlign:left;
     marginLeft:5px;
@@ -70,7 +64,7 @@ const StatDescr = styled.div`
 class Stat extends Component {
   render() {
     return (
-      <StatContainer>
+      <StatContainer isLast={this.props.isLast} className={this.props.className}>
         <StatNum>{this.props.value}</StatNum>
         <StatDescr>{this.props.descr}&nbsp;{this.props.unit}</StatDescr>
       </StatContainer>
@@ -89,7 +83,7 @@ class StatsContainer extends Component {
       <div>
         <Wrapper className="row">
           {this.props.stats.map((stat,i) => (
-            <Stat key={i.toString()+"a"} value={stat.value} descr={stat.descr} unit={stat.unit}/>
+            <Stat className="col-md-2" isLast={this.props.stats.length == i+1 ? true:false} key={i.toString()+"a"} value={stat.value} descr={stat.descr} unit={stat.unit}/>
           ))}
         </Wrapper>
         <Wrapper mobile id="statsSlider" className="carousel slide" data-ride="carousel">

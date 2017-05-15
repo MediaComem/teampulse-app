@@ -37,12 +37,12 @@ class Home extends Component {
           <SectionTitle txtColor="#fff" bgColor="#A6C222">Les réseaux sociaux</SectionTitle>
           <div className="container">
         		<div className="row">
+              <div className="col-lg-6 facebook">
+                <FacebookNew postsWidth="320"/>
+              </div>
               <div className="col-lg-6 insta">
                 <Instagram postsWidth="320"/>
               </div>
-    	  			<div className="col-lg-6 facebook">
-                <FacebookNew postsWidth="320"/>
-    	  			</div>
       			</div>
             <SectionTitleDesktop right={90} bottom={200} padding="10px 20px" bgColor="#A6C222" txtColor="#fff">Les réseaux sociaux</SectionTitleDesktop>
     		  </div>

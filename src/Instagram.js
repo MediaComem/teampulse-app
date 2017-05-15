@@ -18,7 +18,7 @@ const CarouselInner = styled.div`
 
 const InstagramEmbedStyle = {
   maxWidth:'500px',
-  width: '90%',
+  width: '100%',
   display:'flex',
   justifyContent: 'center'
 };

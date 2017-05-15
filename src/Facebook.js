@@ -2,36 +2,18 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import constantes from './constantes.js';
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
+import './Facebook.css'
 
 const Carousel = styled.div`
 `;
 
 const CarouselInner = styled.div`
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  width: ${props => parseInt(props.postsWidth)+(40)}px;
-  @media(max-width: 992px){
-    width: 100%;
-    box-shadow: none;
-  }
-  height:600px;
 `;
 
 const CarouselItem = styled.div`
-  margin-top: 20px;
-  overflow:scroll;
-  justify-content: flex-start;
-  width: 100%;
-`;
-
-const FacebookIframe = styled.iframe`
-  width: 90%;
 `;
 
 const FacebookEmbedStyle = {
-  maxWidth:'500px',
-  width: '90%',
-  display:'flex',
-  justifyContent: 'flex-start'
 };
 
 class Facebook extends Component {
@@ -51,22 +33,26 @@ class Facebook extends Component {
 
   render() {
     return (
-    	<Carousel id="carouselExampleControls" postsWidth={this.props.postsWidth} className="carousel slide" data-ride="carousel" data-interval="false">
+      <div>
+      <FacebookProvider appId="269918776508696">
+        <EmbeddedPost href={"https://www.facebook.com/teampulse.ch/posts/1769795006666473"} width="auto" />
+      </FacebookProvider>
+    	<Carousel id="carouselFacebookControls" postsWidth={this.props.postsWidth} className="carousel slide" data-ride="carousel" data-interval="false">
         <CarouselInner className="carousel-inner fbposts" postsWidth={this.props.postsWidth} role="listbox">
 					{this.state.postsId.map(function(post,index){
 						if(index === 0){
 							return <CarouselItem className="carousel-item active" id={post} key={post}>
                         <FacebookProvider appId="269918776508696">
-                          <EmbeddedPost style={FacebookEmbedStyle} href={"https://www.facebook.com/teampulse.ch/posts/"+post} width="320" />
+                          <EmbeddedPost href={"https://www.facebook.com/teampulse.ch/posts/"+post} width="auto" />
                         </FacebookProvider>
                       </CarouselItem>
-						}else{
-							return <CarouselItem className="carousel-item" id={post} key={post}>
+            }else{
+              return <CarouselItem className="carousel-item" id={post} key={post}>
                         <FacebookProvider appId="269918776508696">
-                          <EmbeddedPost  style={FacebookEmbedStyle}href={"https://www.facebook.com/teampulse.ch/posts/"+post} width="320" />
+                          <EmbeddedPost href={"https://www.facebook.com/teampulse.ch/posts/"+post} width="auto" />
                         </FacebookProvider>
                       </CarouselItem>
-						}
+            }
     			})}
 				</CarouselInner>
 				<a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -78,6 +64,7 @@ class Facebook extends Component {
 					<span className="sr-only">Next</span>
 				</a>
 			</Carousel>
+      </div>
     	)
   }
 }

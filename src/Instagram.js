@@ -47,7 +47,7 @@ class Instagram extends Component {
   render() {
     return (
     	<Carousel id="carouselInstaControls" width={this.props.postsWidth} className="carousel slide" data-ride="carousel" data-interval="false">
-        <CarouselInner className="carousel-inner fbposts" postsWidth={this.props.postsWidth} role="listbox">
+        <CarouselInner className="carousel-inner" postsWidth={this.props.postsWidth} role="listbox">
 					{this.state.postsId.map(function(post,index){
 						if(index === 0){
 							return <CarouselItem className="carousel-item active" id={post.id} key={post.id}><InstagramEmbed style={InstagramEmbedStyle} hideCaption={true} maxWidth={320} url={post.link} /></CarouselItem>

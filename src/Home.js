@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import News from './News.js'
 import Instagram from './Instagram.js'
+import FacebookNew from './FacebookNew.js'
 import Facebook from './Facebook.js'
 import GoogleMap from './GoogleMap.js'
 import Stats from './Stats.js'
 import SectionTitle from './SectionTitle.js'
+import FacebookProvider, { EmbeddedPost } from 'react-facebook';
 import './Home.css'
 
 class Home extends Component {
@@ -12,6 +14,9 @@ class Home extends Component {
     return (
       <div>
       	<div className="container">
+        <FacebookProvider appId="269918776508696">
+                          <EmbeddedPost href={"https://www.facebook.com/teampulse.ch/posts/1769795006666473"} width="auto" />
+                        </FacebookProvider>
           <SectionTitle className="hidden-sm-down" text="Les réseaux sociaux" right={0} bottom={50} hiddenSm={true} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitle>
       		<div className="row news">
             <div className="col-md-2 justify-content-center hidden-sm-down">
@@ -36,7 +41,7 @@ class Home extends Component {
         <div className="container socials">
       		<div className="row">
   	  			<div className="col-lg-6 facebook">
-              <Facebook postsWidth="320"/>
+              <FacebookNew postsWidth="320"/>
   	  			</div>
             <div className="col-lg-6 insta">
               <Instagram postsWidth="320"/>

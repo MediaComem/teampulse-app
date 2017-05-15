@@ -1,0 +1,38 @@
+/*#carouselFacebookControls iframe {
+  border: 0;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}*/
+#carouselFacebookControls .carousel-item>div{
+	/*max-width: 100%;
+	height: 550px;*/
+}
+/*#carouselFacebookControls{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+@media(min-width: 992px){
+	#carouselFacebookControls .carousel-item>div{
+		margin-top:20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#carouselFacebookControls{
+		max-width: 390px;
+	}
+}
+@media(max-width: 992px){
+	#carouselFacebookControls{
+		box-shadow: none;
+	}
+}*/
+
+.fb-post>span {
+    max-width: 100%;
+}
+.fb-post iframe {
+  border: 0;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}

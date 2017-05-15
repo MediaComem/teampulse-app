@@ -9,8 +9,9 @@ const SectionTitleDesktop = styled.div`
   text-transform: uppercase;
   font-weight: bold;
   backgroundColor: ${props => props.bgColor};
-  right: ${props => props.right}px;
+  right: ${ props => props.right>0 ? props.right+"px" : "auto" }
   bottom: ${props => props.bottom}px;
+  left: ${ props => props.left ? props.left+"px" : "auto" }
   z-index: 100;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   @media(max-width: 992px){

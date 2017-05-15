@@ -15,7 +15,7 @@ class Home extends Component {
     return (
       <div>
       	<div className="container">
-          <SectionTitleDesktop className="hidden-sm-down"right={0} bottom={50} hiddenSm={true} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitleDesktop>
+          <SectionTitleDesktop right={1} bottom={50} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitleDesktop>
       		<div className="row news">
             <div className="col-md-2 justify-content-center hidden-sm-down">
               <p>Ne râtez aucun moment de la course grâce à notre programmation à la une!</p>
@@ -31,6 +31,7 @@ class Home extends Component {
           <div className="container">
             <GoogleMap />
             <Stats />
+            <SectionTitleDesktop left={-20} bottom={-55} padding="10px 20px" bgColor="#A6C222" txtColor="#fff">La carte</SectionTitleDesktop>
           </div>
         </div>
         <div className="socials">

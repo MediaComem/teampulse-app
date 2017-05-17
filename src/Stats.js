@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import constantes from './constantes.js';
 
 const Wrapper = styled.div`
-  backgroundColor: black;
+  backgroundColor: #fff;
   paddingTop:20px;
   paddingBottom:20px;
   textAlign:center;
@@ -41,7 +41,7 @@ const StatContainer = styled.div`
 `;
 
 const StatNum = styled.div`
-  fontSize:2em;
+  fontSize:3em;
   color:#55A549;
   @media(max-width: 992px){
     width:50%;
@@ -53,12 +53,21 @@ const StatNum = styled.div`
 const StatDescr = styled.div`
   color:#A6C222;
   @media(max-width: 992px){
-    width:50%;
+    width:20%;
     textAlign:left;
     marginLeft:5px;
     display:flex;
     alignItems:center;
   }
+`;
+
+const ArrowNext = styled.span`
+  color:#A6C222;
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ccc' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+`;
+const ArrowPrev = styled.span`
+  color:#A6C222;
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ccc' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 `;
 
 class Stat extends Component {
@@ -71,6 +80,10 @@ class Stat extends Component {
     )
   }
 }
+
+const CarouselInnerStyle = {
+  marginBottom:"20px"
+};
 
 class StatsContainer extends Component {
 
@@ -86,13 +99,13 @@ class StatsContainer extends Component {
             <Stat className="col-md-2" isLast={this.props.stats.length == i+1 ? true:false} key={i.toString()+"a"} value={stat.value} descr={stat.descr} unit={stat.unit}/>
           ))}
         </Wrapper>
-        <Wrapper mobile id="statsSlider" className="carousel slide" data-ride="carousel">
-          <ol className="carousel-indicators">
+        <Wrapper mobile id="statsSlider" className="carousel slide">
+          <ol className="carousel-indicators carousel-indicators--round">
             {this.props.stats.map((stat,i) => (
               <li key={i.toString()+"b"} data-target="#statsSlider" data-slide-to={i} className={(i==0 ? 'active' : '')}></li>
             ))}
           </ol>
-          <div className="carousel-inner" role="listbox">
+          <div className="carousel-inner" style={CarouselInnerStyle} role="listbox">
             {this.props.stats.map((stat,i) => (
               <div className={"carousel-item " + (i==0 ? 'active' : '')}>
                 <Stat key={i.toString()+"c"} value={stat.value} descr={stat.descr} unit={stat.unit}/>
@@ -100,11 +113,11 @@ class StatsContainer extends Component {
             ))}
           </div>
           <a className="carousel-control-prev" href="#statsSlider" role="button" data-slide="prev">
-            <span className="carousel-control-prev-icon"></span>
+            <ArrowPrev className="carousel-control-prev-icon" aria-hidden="true"></ArrowPrev>
             <span className="sr-only">Previous</span>
           </a>
           <a className="carousel-control-next" href="#statsSlider" role="button" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <ArrowNext className="carousel-control-next-icon" aria-hidden="true"></ArrowNext>
             <span className="sr-only">Next</span>
           </a>
         </Wrapper>

@@ -48,7 +48,7 @@ const BasicExample = () => (
              <img className="img-fluid" src="sponsors/chuv.png" />
             </div>
             <div className="d-flex col-6 col-lg-1 text-center logo-sponsor">
-              <img className="img-fluid" src="sponsors/unil.jpg" />
+              <img className="img-fluid" src="sponsors/unil.png" />
             </div>
           </div>
         </div>

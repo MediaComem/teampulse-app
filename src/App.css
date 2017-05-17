@@ -18,7 +18,7 @@
   font-size: large;
 }
 body{
-  background: #fff !important;
+  background: #ccc !important;
 }
 header{
   position: fixed;
@@ -60,6 +60,19 @@ header .container-fluid,header .container-fluid .row{
   to { transform: rotate(360deg); }
 }
 
+.footer img{
+  max-height: 110px;
+}
+.footer{
+  box-shadow: 0 -5px 5px -5px rgba(0,0,0,0.23);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #fff;
+}
+.logo-sponsor{
+  align-items: center;
+  justify-content: center;
+}
 @media(max-width: 992px){
   .footer img{
     max-height: 80px;
@@ -68,18 +81,22 @@ header .container-fluid,header .container-fluid .row{
   .footer{
     box-shadow: 0 3px 6px -2px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     border-top: none;
-    margin-bottom: 50px;
   }
 }
-.footer img{
-  max-height: 110px;
+#statsSlider .carousel-indicators--round{
+    margin-bottom: 0;
 }
-.footer{
-  box-shadow: 0 -5px 5px -5px rgba(0,0,0,0.23);
-  padding-top: 10px;
-  padding-bottom: 10px
+#statsSlider .carousel-indicators--round li {
+    border-radius: 10px;
+    margin: 1px 3px;
+    height: 10px;
+    max-width: 10px;
+    border: 1px solid #ccc;
+    background-color: transparent;
 }
-.logo-sponsor{
-  align-items: center;
-  justify-content: center;
+#statsSlider .carousel-indicators .active {
+    background-color: #ccc;
+    max-width: 12px;
+    margin: 0 3px;
+    height: 12px;
 }

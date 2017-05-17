@@ -32,6 +32,27 @@ const BasicExample = () => (
       <aside className="primary-aside"></aside>
 
       <Route exact path="/" component={Home}/>
+      <div className="footer">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="d-flex col-4 col-lg-1 text-center logo-sponsor">
+              <img className="img-fluid" src="sponsors/vaudh.png" />
+            </div>
+            <div className="d-flex col-4 col-lg-1 text-center logo-sponsor">
+              <img className="img-fluid" src="sponsors/hesav.png" />
+            </div>
+            <div className="d-flex col-4 col-lg-1 text-center logo-sponsor">
+              <img className="img-fluid" src="sponsors/heig.png" />
+            </div>
+            <div className="d-flex col-6 col-lg-1 text-center logo-sponsor">
+             <img className="img-fluid" src="sponsors/chuv.png" />
+            </div>
+            <div className="d-flex col-6 col-lg-1 text-center logo-sponsor">
+              <img className="img-fluid" src="sponsors/unil.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </Router>
 )

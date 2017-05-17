@@ -17,7 +17,9 @@
 .App-intro {
   font-size: large;
 }
-
+body{
+  background: #fff !important;
+}
 header{
   position: fixed;
   top:0;
@@ -56,4 +58,28 @@ header .container-fluid,header .container-fluid .row{
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media(max-width: 992px){
+  .footer img{
+    max-height: 80px;
+    margin-bottom: 20px;
+  }
+  .footer{
+    box-shadow: 0 3px 6px -2px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-top: none;
+    margin-bottom: 50px;
+  }
+}
+.footer img{
+  max-height: 110px;
+}
+.footer{
+  box-shadow: 0 -5px 5px -5px rgba(0,0,0,0.23);
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+.logo-sponsor{
+  align-items: center;
+  justify-content: center;
 }

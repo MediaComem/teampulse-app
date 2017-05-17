@@ -8,23 +8,19 @@ const Carousel = styled.div`
 
 const CarouselInner = styled.div`
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  width: ${props => parseInt(props.postsWidth)+(40)}px;
+  width: ${props => parseInt(props.postsWidth)+(10)}px;
   @media(max-width: 992px){
     width: 100%;
     box-shadow: none;
   }
-  height: 600px;
+  height: 500px;
 `;
 
 const InstagramEmbedStyle = {
-  maxWidth:'500px',
-  width: '100%',
-  display:'flex',
-  justifyContent: 'center'
 };
 
 const CarouselItem = styled.div`
-  margin-top: 20px;
+  margin-top: 15px;
   justify-content: center;
   width: 100%;
 `;

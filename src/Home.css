@@ -12,14 +12,6 @@
 	padding-top: 80px;
 	padding-bottom: 80px;
 }
-
-.insta .carousel-inner{
-	height: 440px;
-	width: 100%;
-}
-/*.insta .carousel-control-prev, .facebook .carousel-control-prev{
-	left: 40px;
-}*/
 .news{
 	color: #A6C222;
 }
@@ -59,9 +51,14 @@
 		float:left;
 		margin-left: 50px; 
 	}
-/*	.facebook .carousel{
+	.facebook .carousel{
 		float:right;
 		margin-right: 50px; 
-	}*/
+	}
 }
-
+.carousel-control-next {
+    margin-right: 10px;
+}
+.carousel-control-prev {
+    margin-left: 20px;
+}

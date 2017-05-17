@@ -7,9 +7,20 @@ const Carousel = styled.div`
 `;
 
 const CarouselInner = styled.div`
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  width: 380px;
+  height: 600px;
+  @media(max-width: 992px){
+    width: 100%;
+    box-shadow: none;
+    height: 800px;
+  }
 `;
 
 const CarouselItem = styled.div`
+  justify-content:center;
+  margin-top: 15px;
+  width: 100%;
 `;
 
 class FacebookNew extends Component {

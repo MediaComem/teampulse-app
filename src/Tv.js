@@ -6,7 +6,7 @@ import GoogleMap from './GoogleMap.js'
 import SectionTitleDesktop from './SectionTitleDesktop.js'
 import SectionTitle from './SectionTitle.js'
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
-import { StatSpeed, StatRate } from './Numbers';
+import { StatSpeed, StatRate, StatPower } from './Numbers';
 import './tv.css'
 
 class Tv extends Component {
@@ -38,7 +38,7 @@ class Tv extends Component {
                 </div>
                 <div className="row">
                   <div className="col-6">
-                    <StatSpeed descr="Vitesse moyenne" unit="km/h"/>
+                    <StatPower descr="Puissance moyenne" unit=""/>
                   </div>
                   <div className="col-6">
                     <StatRate descr="Cadence moyenne" unit="rmp"/>
@@ -49,7 +49,7 @@ class Tv extends Component {
                     <StatSpeed descr="Vitesse moyenne" unit="km/h"/>
                   </div>
                   <div className="col-6">
-                    <StatRate descr="Cadence moyenne" unit="rmp"/>
+                    <StatPower descr="Puissance moyenne" unit=""/>
                   </div>
                 </div>
               </div>

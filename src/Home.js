@@ -8,10 +8,44 @@ import SectionTitleDesktop from './SectionTitleDesktop.js'
 import SectionTitle from './SectionTitle.js'
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
 import Scrollspy from 'react-scrollspy'
+import { StatSpeed, StatRate, SuperStat } from './Numbers';
+import Slider from 'react-slick'
 import './Home.css'
+
+function PrevArrow(props) {
+  const {className, style, onClick} = props
+  return (
+    <div
+      className={className}
+      style={{...style, left: '20px', zIndex: '999',backgroundColor:'#ccc'}}
+      onClick={onClick}
+    ></div>
+  );
+}
+
+function NextArrow(props) {
+  const {className, style, onClick} = props
+  return (
+    <div
+      className={className}
+      style={{...style, right: '20px', zIndex: '999',backgroundColor:'#ccc'}}
+      onClick={onClick}
+    ></div>
+  );
+}
 
 class Home extends Component {
   render() {
+    var settings = {
+      arrows: true,
+      infinite: true,
+      dots:true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: <PrevArrow />,
+      nextArrow: <NextArrow />
+    };
     return (
       <div>
       	<div id="section-1" className="container">
@@ -29,9 +63,28 @@ class Home extends Component {
         <div id="section-2" className="map">
           <SectionTitle txtColor="#fff" bgColor="#A6C222">La carte</SectionTitle>
           <div className="container">
+            <div className="stats-desktop-container">
+              <div className="row">
+                <div className="stat col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
+                <div className="stat col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
+                <div className="stat col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
+                <div className="stat col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
+                <div className="stat col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
+                <div className="stat last col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
+              </div>
+            </div>
             <GoogleMap />
-            <Stats />
-            <SectionTitleDesktop left={-20} bottom={-55} padding="10px 20px" bgColor="#A6C222" txtColor="#fff">La carte</SectionTitleDesktop>
+            <div id="statsSlider" className="stats-mobile-container">
+              <Slider {...settings}>
+                <div><SuperStat type="speed" displayFlex={true} descr="Puissance moyenne" unit=""/></div>
+                <div><SuperStat type="power" displayFlex={true} descr="Puissance moyenne" unit=""/></div>
+                <div><SuperStat type="rate" displayFlex={true} descr="Puissance moyenne" unit=""/></div>
+                <div><SuperStat displayFlex={true} descr="Puissance moyenne" unit=""/></div>
+                <div><SuperStat displayFlex={true} descr="Puissance moyenne" unit=""/></div>
+                <div><SuperStat displayFlex={true} descr="Puissance moyenne" unit=""/></div>
+              </Slider>
+            </div>
+            <SectionTitleDesktop left={-20} bottom={-40} padding="10px 20px" bgColor="#A6C222" txtColor="#fff">La carte</SectionTitleDesktop>
           </div>
         </div>
         <div id="section-3" className="socials">

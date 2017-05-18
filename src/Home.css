@@ -46,14 +46,39 @@
 	.facebook{
 		margin-top:10px;
 	}
+	.stats-mobile-container{
+		background-color: #fff;
+		padding-bottom: 20px;
+	}
+	.stats-mobile-container .slick-dots {
+    bottom: -15px;
+  }
+  .stats-desktop-container{
+		display: none;
+	}
 }
 #fp-nav{
 	display: none;
 }
 @media(min-width: 992px){
-	.facebook .carousel{
-		float:right;
-		margin-right: 50px; 
+	.stats-mobile-container{
+		display: none;
+	}
+	.stats-desktop-container{
+		background-color: #fff;
+		padding-bottom: 20px;
+	}
+	.stats-desktop-container .stat:after {
+    content:''; 
+    width:1px; 
+    height:60%; 
+    background: #ccc;
+    position:absolute; 
+    right:-4px;
+    top:20%;
+  }
+  .stats-desktop-container .stat.last:after {
+    background: none;
 	}
 	.socials .insta .insta-container{
 		margin-left: 50px; 

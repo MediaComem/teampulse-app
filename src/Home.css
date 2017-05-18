@@ -41,7 +41,7 @@
 		padding: 0;
 	}
 	.socials .container{
-		margin-top: 5px;
+		margin-top: 25px;
 	}
 	.facebook{
 		margin-top:10px;
@@ -51,13 +51,26 @@
 	display: none;
 }
 @media(min-width: 992px){
-	.insta .carousel{
-		float:left;
-		margin-left: 50px; 
-	}
 	.facebook .carousel{
 		float:right;
 		margin-right: 50px; 
+	}
+	.socials .insta .insta-container{
+		margin-left: 50px; 
+		padding-top: 20px;
+		margin-bottom: 20px;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		width: 100%;
+		max-width: 360px;
+	}
+	.socials .facebook .facebook-container{
+		margin-left: 50px; 
+		padding-top: 20px;
+		margin-bottom: 20px;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		width: 100%;
+		max-width: 550px;
+		height: 700px;
 	}
 	#fp-nav {
     opacity: 0;

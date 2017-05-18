@@ -1,5 +1,10 @@
-.youtube-container{
-	margin-bottom: 10px;
+.tv .youtube-container{
+	margin-bottom: 20px;
 	padding: 20px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.tv .insta-container{
+	padding-top: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);	
 }

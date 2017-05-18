@@ -40,13 +40,17 @@ class Home extends Component {
           <div className="container">
         		<div className="row">
               <div className="col-12 col-lg-6 push-lg-6 insta">
-                <Instagram postsWidth="320"/>
+                <div className="insta-container">
+                  <Instagram postsWidth="320"/>
+                </div>
               </div>
               <div className="col-12 col-lg-6 pull-lg-6 facebook">
-                <FacebookNew postsWidth="320"/>
+                <div className="facebook-container">
+                  <Facebook postsWidth="320"/>
+                </div>
               </div>
       			</div>
-            <SectionTitleDesktop right={90} bottom={80} padding="10px 20px" bgColor="#A6C222" txtColor="#fff">Les réseaux sociaux</SectionTitleDesktop>
+            <SectionTitleDesktop right={90} bottom={180} padding="10px 20px" bgColor="#A6C222" txtColor="#fff">Les réseaux sociaux</SectionTitleDesktop>
     		  </div>
         </div>
         <div id="fp-nav">

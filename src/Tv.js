@@ -8,13 +8,12 @@ import Stats from './Stats.js'
 import SectionTitleDesktop from './SectionTitleDesktop.js'
 import SectionTitle from './SectionTitle.js'
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
-import Scrollspy from 'react-scrollspy'
 import './tv.css'
 
 class Tv extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid tv">
         <div className="row">
           <div className="col-5">
             <div className="youtube-container">
@@ -33,7 +32,6 @@ class Tv extends Component {
             </div>
           </div>
           <div className="col-4">
-            <FacebookNew postsWidth="320"/>
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import News from './News.js'
 import Instagram from './Instagram.js'
-import FacebookNew from './FacebookNew.js'
 import Facebook from './Facebook.js'
 import GoogleMap from './GoogleMap.js'
 import Stats from './Stats.js'

@@ -26,15 +26,17 @@ class GoogleMap extends Component {
 	constructor(props, context) {
     super(props, context);
     this.state = {
-      center:[0,0]
+      center:[0,0],
+      cycloLat: 0,
+      cycloLng: 0
     };
   }
 
 	componentDidMount() {
-    fetch(constantes.serverUrl+'/teampulse-data')
+    fetch(constantes.serverUrl+'/teampulse/data')
       .then(response => response.json())
       .then((body) => {
-        setTimeout(() => this.setState({center:[parseFloat(body.data.latitude),parseFloat(body.data.longitude)]}), 1001);
+        setTimeout(() => this.setState({center:[parseFloat(body.latitude),parseFloat(body.longitude)],cycloLat:parseFloat(body.latitude),cycloLng:parseFloat(body.longitude)}), 1001);
       });
   }
 
@@ -48,7 +50,7 @@ class GoogleMap extends Component {
   render() {
 		return (
       <MapContainer>
-  		  <GoogleMapReact center={this.state.center} onChange={this._onChange.bind(this)} defaultZoom={11}><CycloMarker lat={59.955413} lng={30.337844} radius={10} /></GoogleMapReact>
+  		  <GoogleMapReact center={this.state.center} onChange={this._onChange.bind(this)} defaultZoom={11}><CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={10} /></GoogleMapReact>
       </MapContainer>
     )
   }

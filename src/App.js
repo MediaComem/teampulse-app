@@ -55,9 +55,11 @@ const BasicExample = () => (
       </div>
       <div className="visual-footer hidden-lg-up">
         <div className="container-fluid">
-          A
+          
         </div>
       </div>
+
+
     </div>
   </Router>
 )

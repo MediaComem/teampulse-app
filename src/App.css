@@ -73,16 +73,7 @@ header .container-fluid,header .container-fluid .row{
   align-items: center;
   justify-content: center;
 }
-@media(max-width: 992px){
-  .footer img{
-    max-height: 80px;
-    margin-bottom: 20px;
-  }
-  .footer{
-    box-shadow: 0 3px 6px -2px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    border-top: none;
-  }
-}
+
 #statsSlider .carousel-indicators--round{
     margin-bottom: 0;
 }
@@ -99,4 +90,15 @@ header .container-fluid,header .container-fluid .row{
     max-width: 12px;
     margin: 0 3px;
     height: 12px;
+}
+
+@media(max-width: 992px){
+  .footer img{
+    max-height: 80px;
+    margin-bottom: 20px;
+  }
+  .footer{
+    box-shadow: 0 3px 6px -2px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-top: none;
+  }
 }

@@ -47,6 +47,9 @@
 		margin-top:10px;
 	}
 }
+#fp-nav{
+	display: none;
+}
 @media(min-width: 992px){
 	.insta .carousel{
 		float:left;
@@ -56,6 +59,46 @@
 		float:right;
 		margin-right: 50px; 
 	}
+	#fp-nav {
+    opacity: 0;
+    transition: opacity .3s ease-out;
+    position: fixed;
+    top: 0;
+    display: block;
+    bottom: 0;
+    right: 10px;
+    margin: auto 0!important;
+    width: 32px;
+    height: 200px;
+    z-index: 99;
+    margin-top: -100px; 
+    opacity: 1;
+  }
+  #fp-nav ul {
+    padding: 0;
+    margin: 0;
+  }
+  #fp-nav li {
+    list-style: none;
+  } 
+  #fp-nav li a {
+    width: 14px;
+    height: 14px;
+    transition: all .2s ease-out;
+    border-radius: 50%;
+    display: block;
+    background-color: #fff;
+    border: 2px solid #96BB36;
+    margin: 10px 0;
+    opacity: .2;
+    box-sizing: border-box;
+  }
+  #fp-nav li.active a {
+    background-color: #fff;
+    border: 2px solid #96BB36;
+    opacity: 1;
+    transform: scale(1.06);
+  }
 }
 .carousel-control-next {
     margin-right: 10px;

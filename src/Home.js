@@ -8,13 +8,14 @@ import Stats from './Stats.js'
 import SectionTitleDesktop from './SectionTitleDesktop.js'
 import SectionTitle from './SectionTitle.js'
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
+import Scrollspy from 'react-scrollspy'
 import './Home.css'
 
 class Home extends Component {
   render() {
     return (
       <div>
-      	<div className="container">
+      	<div id="section-1" className="container">
           <SectionTitleDesktop right={1} bottom={50} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitleDesktop>
       		<div className="row news">
             <div className="col-md-2 justify-content-center hidden-sm-down">
@@ -26,7 +27,7 @@ class Home extends Component {
       			</div>
       		</div>
         </div>
-        <div className="map">
+        <div id="section-2" className="map">
           <SectionTitle txtColor="#fff" bgColor="#A6C222">La carte</SectionTitle>
           <div className="container">
             <GoogleMap />
@@ -34,7 +35,7 @@ class Home extends Component {
             <SectionTitleDesktop left={-20} bottom={-55} padding="10px 20px" bgColor="#A6C222" txtColor="#fff">La carte</SectionTitleDesktop>
           </div>
         </div>
-        <div className="socials">
+        <div id="section-3" className="socials">
           <SectionTitle txtColor="#fff" bgColor="#A6C222">Les réseaux sociaux</SectionTitle>
           <div className="container">
         		<div className="row">
@@ -47,6 +48,13 @@ class Home extends Component {
       			</div>
             <SectionTitleDesktop right={90} bottom={80} padding="10px 20px" bgColor="#A6C222" txtColor="#fff">Les réseaux sociaux</SectionTitleDesktop>
     		  </div>
+        </div>
+        <div id="fp-nav">
+          <Scrollspy items={ ['section-1', 'section-2', 'section-3'] } currentClassName="active" offset={-70}>
+            <li><a href="#section-1"></a></li>
+            <li><a href="#section-2"></a></li>
+            <li><a href="#section-3"></a></li>
+          </Scrollspy>
         </div>
       </div>
   	)

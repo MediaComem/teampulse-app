@@ -125,6 +125,34 @@ class StatsContainer extends Component {
     )
   }
 }
+class StatsBis extends Component {
+
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      speed: 0,
+      rate: 0,
+      temp: 0,
+      power: 0
+    };
+  }
+
+  componentDidMount() {
+    fetch(constantes.serverUrl+'/teampulse-data')
+      .then(response => response.json())
+      .then((body) => {
+        this.setState({speed:parseFloat(body.data.avgSpeed).toFixed(1)});
+        this.setState({rate:parseFloat(body.data.avgCadence).toFixed(1)});
+        this.setState({power:parseFloat(body.data.avgPower).toFixed(1)});
+      });
+  }
+
+  render() {
+    return (
+      <StatsContainer stats={[{value:this.state.speed,descr:"Vitesse moyenne", unit:"km/h"},{value:this.state.rate,descr:"Cadence moyenne", unit:"rmp"},{value:this.state.temp,descr:"Température extérieur", unit:"°C"},{value:this.state.power,descr:"Puissance moyenne"},{value:"0",descr:"Altitude", unit:"m"},{value:"10:30",descr:"Heure locale"}]}/>
+    )
+  }
+}
 
 class Stats extends Component {
 

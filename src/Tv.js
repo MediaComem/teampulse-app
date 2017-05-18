@@ -22,7 +22,7 @@ class Tv extends Component {
               <GoogleMap />
             </div>
           </div>
-          <div className="col-3">
+          <div className="col-2">
             <div className="insta-container">
               <Instagram postsWidth="320"/>
             </div>
@@ -30,7 +30,10 @@ class Tv extends Component {
               <Stats />
             </div>
           </div>
-          <div className="col-4">
+          <div className="col-5">
+            <div className="facebook-container">
+              <Facebook/>
+            </div>
           </div>
         </div>
       </div>

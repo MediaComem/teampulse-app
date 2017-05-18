@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import constantes from './constantes.js';
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
 import Slider from 'react-slick'
+import './Facebook.css'
 
 const FacebookEmbedStyle = {
   display:"flex",

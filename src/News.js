@@ -1,24 +1,45 @@
 import React, { Component } from 'react';
 import Flickr from './Flickr.js';
+import Youtube from './Youtube.js';
+import constantes from './constantes.js';
+import { Event } from 'react-socket-io';
 
 class News extends Component {
 
-	constructor(props, context) {
+  constructor(props, context) {
     super(props, context);
+    this.state = {
+      type: "",
+      data: ""
+    };
+    this.onMessage = this.onMessage.bind(this);
+  }
+
+  componentDidMount() {
+    fetch(constantes.serverUrl+'/favori/data')
+      .then(response => response.json())
+      .then((data) => { this.setState({type:data.type})});
+  }
+
+  onMessage(message) {
+    console.log(message)
+    this.setState({type:message.type,data:message.data})
   }
 
   render() {
-  	if(this.props.youtube){
-  		return (
-        <div className="embed-responsive embed-responsive-16by9">
-  		    <iframe src="https://www.youtube.com/embed/HROuJ1ZojhM" frameBorder="0" allowFullScreen></iframe>
-        </div>
-    	)
-  	}else{
-  		return (
-    		<Flickr/>
-    	)
-  	}
+    var stateValue = <div>NULL</div>
+    if(this.state.type === 'youtube'){
+      stateValue = <Youtube data={this.state.data}/>
+    }
+    if(this.state.type === 'flickr'){
+      stateValue = <Flickr data={this.state.data}/>
+    }
+  	return(
+      <div>
+        <Event event='favori' handler={this.onMessage} />
+        {stateValue}
+      </div>
+    )
   }
 }
 

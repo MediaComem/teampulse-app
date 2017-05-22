@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import constantes from './constantes.js';
-
+import { Event } from 'react-socket-io';
 
 const displayFlex = {
   display: "flex",
@@ -43,6 +43,7 @@ export class SuperStat extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {powerValue: 0};
+    this.onMessage = this.onMessage.bind(this);
   }
 
   componentDidMount() {
@@ -51,6 +52,10 @@ export class SuperStat extends Component {
       .then((body) => {
         this.setState({powerValue:parseFloat(body.avgPower).toFixed(1),rateValue:parseFloat(body.avgCadence).toFixed(1),speedValue:parseFloat(body.avgSpeed).toFixed(1)});
       });
+  }
+
+  onMessage(message) {
+    this.setState({powerValue:parseFloat(message.avgPower).toFixed(1),rateValue:parseFloat(message.avgCadence).toFixed(1),speedValue:parseFloat(message.avgSpeed).toFixed(1)});
   }
 
   render() {
@@ -68,6 +73,7 @@ export class SuperStat extends Component {
       <StatContainer displayFlex={this.props.displayFlex} className={this.props.className}>
         {statValue}
         <StatDescr displayFlex={this.props.displayFlex}>{this.props.descr}&nbsp;{this.props.unit}</StatDescr>
+        <Event event='teampulse' handler={this.onMessage} />
       </StatContainer>
     )
   }

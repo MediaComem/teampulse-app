@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import constantes from './constantes.js';
 import InstagramEmbed from 'react-instagram-embed'
 import Slider from 'react-slick'
+import { Event } from 'react-socket-io';
 
 const InstagramEmbedStyle = {
     display:"flex",
@@ -37,12 +38,17 @@ class Instagram extends Component {
     this.state = {
       postsId: [],
     };
+    this.onMessage = this.onMessage.bind(this);
   }
 
 	componentDidMount() {
     fetch(constantes.serverUrl+'/instagram/posts')
       .then(response => response.json())
       .then((data) => { this.setState({postsId:data})});
+  }
+
+  onMessage(message) {
+    this.setState({postsId:message})
   }
 
   render() {
@@ -61,6 +67,7 @@ class Instagram extends Component {
           {this.state.postsId.map(function(post){
             return <div><InstagramEmbed style={InstagramEmbedStyle} hideCaption={true} maxWidth={320} url={post.url} /></div>
           })}
+          <Event event='instagram' handler={this.onMessage} />
         </Slider>
       )
     }else{

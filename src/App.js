@@ -11,6 +11,10 @@ import {
 import Home from './Home.js'
 import Tv from './Tv.js'
 import './App.css';
+import { Socket } from 'react-socket-io';
+
+const uri = 'http://teampulse.herokuapp.com';
+const options = { transports: ['websocket'] };
 
 const DefaultLayout = ({ children }) => (                       
   <div>
@@ -62,15 +66,12 @@ const TvLayout = ({ children }) => (
 
 const BasicExample = () => (
   <Router>
-    <div>
-      
+    <Socket uri={uri} options={options}> 
       <Switch>
         <Route exact path="/" render={() => <DefaultLayout><Home /></DefaultLayout>} />
         <Route exact path="/tv" render={() => <TvLayout><Tv /></TvLayout>} />
       </Switch>
-
-
-    </div>
+    </Socket>
   </Router>
 )
 

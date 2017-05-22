@@ -17,15 +17,21 @@ class Flickr extends Component {
 	constructor(props, context) {
     super(props, context);
     this.state = {
-      imagesUrl: [],
+      imagesUrl: []
     };
   }
 
 	componentDidMount() {
-    fetch(constantes.serverUrl+'/flickrpics')
+    fetch(constantes.serverUrl+'/favori/data')
       .then(response => response.json())
-      .then((data) => { this.setState({imagesUrl:data.picsId});});
+      .then((data) => { this.setState({imagesUrl:data.data.photos});});
   }
+
+  componentWillReceiveProps(newProps) {
+  if (this.state.imagesUrl !== newProps.data.photos) {
+    	this.setState({imagesUrl: newProps.data.photos});
+  	}
+	}
 
   render() {
     return (
@@ -33,9 +39,9 @@ class Flickr extends Component {
 				<div className="carousel-inner fbposts" role="listbox">
 					{this.state.imagesUrl.map(function(image,index){
 						if(index === 0){
-							return <div className="carousel-item active" key={index}><Image src={image} alt="flickr"/></div>
+							return <div className="carousel-item active" key={index}><Image src={image.url} alt="flickr"/></div>
 						}else{
-							return <div className="carousel-item" key={index}><Image src={image} alt="flickr"/></div>
+							return <div className="carousel-item" key={index}><Image src={image.url} alt="flickr"/></div>
 						}
     			})}
 				</div>

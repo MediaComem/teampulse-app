@@ -4,6 +4,7 @@ import constantes from './constantes.js';
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
 import Slider from 'react-slick'
 import './Facebook.css'
+import { Event } from 'react-socket-io';
 
 const FacebookEmbedStyle = {
   display:"flex",
@@ -43,12 +44,17 @@ class Facebook extends Component {
     this.state = {
       postsId: [],
     };
+    this.onMessage = this.onMessage.bind(this);
   }
 
 	componentDidMount() {
     fetch(constantes.serverUrl+'/facebook/posts')
       .then(response => response.json())
       .then((data) => { this.setState({postsId:data})});
+  }
+
+  onMessage(message) {
+    this.setState({postsId:message})
   }
 
   render() {
@@ -69,6 +75,7 @@ class Facebook extends Component {
                       <EmbeddedPost style={FacebookEmbedStyle} href={"https://www.facebook.com/teampulse.ch/posts/"+post.id} width="500" />
                     </FacebookProvider></FbWrapper>
           })}
+          <Event event='facebook' handler={this.onMessage} />
         </Slider>
       )
     }else{

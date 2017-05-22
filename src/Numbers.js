@@ -38,58 +38,6 @@ const StatDescr = styled.div`
   ${(props) => props.displayFlex === true ? cssStatDescr : null}
 `;
 
-
-export class StatSpeed extends Component {
-
-  constructor(props, context) {
-    super(props, context);
-    this.state = {speedValue: 0};
-  }
-
-  componentDidMount() {
-    console.log(this.state.speedValue)
-    fetch(constantes.serverUrl+'/teampulse/data')
-      .then(response => response.json())
-      .then((body) => {
-        this.setState({speedValue:parseFloat(body.avgSpeed).toFixed(1)});
-      });
-  }
-
-  render() {
-    return (
-      <StatContainer displayFlex={this.props.displayFlex} className={this.props.className}>
-        <StatNum displayFlex={this.props.displayFlex}>{this.state.speedValue}</StatNum>
-        <StatDescr displayFlex={this.props.displayFlex}>{this.props.descr}&nbsp;{this.props.unit}</StatDescr>
-      </StatContainer>
-    )
-  }
-}
-
-export class StatRate extends Component {
-
-  constructor(props, context) {
-    super(props, context);
-    this.state = {rateValue: 0};
-  }
-
-  componentDidMount() {
-    fetch(constantes.serverUrl+'/teampulse/data')
-      .then(response => response.json())
-      .then((body) => {
-        this.setState({rateValue:parseFloat(body.avgCadence).toFixed(1)});
-      });
-  }
-
-  render() {
-    return (
-      <StatContainer displayFlex={this.props.displayFlex} className={this.props.className}>
-        <StatNum displayFlex={this.props.displayFlex}>{this.state.rateValue}</StatNum>
-        <StatDescr displayFlex={this.props.displayFlex}>{this.props.descr}&nbsp;{this.props.unit}</StatDescr>
-      </StatContainer>
-    )
-  }
-}
-
 export class SuperStat extends Component {
 
   constructor(props, context) {

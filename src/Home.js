@@ -8,7 +8,7 @@ import SectionTitleDesktop from './SectionTitleDesktop.js'
 import SectionTitle from './SectionTitle.js'
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
 import Scrollspy from 'react-scrollspy'
-import { StatSpeed, StatRate, SuperStat } from './Numbers';
+import { SuperStat } from './Numbers';
 import Slider from 'react-slick'
 import './Home.css'
 
@@ -65,20 +65,20 @@ class Home extends Component {
           <div className="container">
             <div className="stats-desktop-container">
               <div className="row">
-                <div className="stat col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
-                <div className="stat col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
-                <div className="stat col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
-                <div className="stat col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
-                <div className="stat col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
-                <div className="stat last col-2"><StatRate descr="Puissance moyenne" unit=""/></div>
+                <div className="stat col-2"><SuperStat type="rate" displayFlex={false} descr="cadence moyenne" unit="rmp"/></div>
+                <div className="stat col-2"><SuperStat type="speed" displayFlex={false} descr="Vitesse moyenne" unit="km/h"/></div>
+                <div className="stat col-2"><SuperStat type="power" displayFlex={false} descr="Puissance moyenne" unit=""/></div>
+                <div className="stat col-2"><SuperStat type="rate" displayFlex={false} descr="Puissance moyenne" unit=""/></div>
+                <div className="stat col-2"><SuperStat type="rate" displayFlex={false} descr="Puissance moyenne" unit=""/></div>
+                <div className="stat last col-2"><SuperStat type="rate" displayFlex={false} descr="Puissance moyenne" unit=""/></div>
               </div>
             </div>
             <GoogleMap />
             <div id="statsSlider" className="stats-mobile-container">
               <Slider {...settings}>
-                <div><SuperStat type="speed" displayFlex={true} descr="Puissance moyenne" unit=""/></div>
+                <div><SuperStat type="rate" displayFlex={true} descr="cadence moyenne" unit="rmp"/></div>
+                <div><SuperStat type="speed" displayFlex={true} descr="Vitesse moyenne" unit="km/h"/></div>
                 <div><SuperStat type="power" displayFlex={true} descr="Puissance moyenne" unit=""/></div>
-                <div><SuperStat type="rate" displayFlex={true} descr="Puissance moyenne" unit=""/></div>
                 <div><SuperStat displayFlex={true} descr="Puissance moyenne" unit=""/></div>
                 <div><SuperStat displayFlex={true} descr="Puissance moyenne" unit=""/></div>
                 <div><SuperStat displayFlex={true} descr="Puissance moyenne" unit=""/></div>

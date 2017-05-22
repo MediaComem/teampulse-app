@@ -6,7 +6,7 @@ import GoogleMap from './GoogleMap.js'
 import SectionTitleDesktop from './SectionTitleDesktop.js'
 import SectionTitle from './SectionTitle.js'
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
-import { StatSpeed, StatRate, StatPower } from './Numbers';
+import { SuperStat } from './Numbers';
 import './tv.css'
 
 class Tv extends Component {
@@ -30,26 +30,26 @@ class Tv extends Component {
               <div className="container">
                 <div className="row">
                   <div className="col-6">
-                    <StatSpeed descr="Vitesse moyenne" unit="km/h"/>
+                    <SuperStat type="rate" displayFlex={false} descr="cadence moyenne" unit="rmp"/>
                   </div>
                   <div className="col-6">
-                    <StatRate descr="Cadence moyenne" unit="rmp"/>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-6">
-                    <StatPower descr="Puissance moyenne" unit=""/>
-                  </div>
-                  <div className="col-6">
-                    <StatRate descr="Cadence moyenne" unit="rmp"/>
+                    <SuperStat type="speed" displayFlex={false} descr="Vitesse moyenne" unit="km/h"/>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-6">
-                    <StatSpeed descr="Vitesse moyenne" unit="km/h"/>
+                    <SuperStat type="power" displayFlex={false} descr="Puissance moyenne" unit=""/>
                   </div>
                   <div className="col-6">
-                    <StatPower descr="Puissance moyenne" unit=""/>
+                    <SuperStat type="rate" displayFlex={false} descr="Puissance moyenne" unit=""/>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-6">
+                    <SuperStat type="rate" displayFlex={false} descr="Puissance moyenne" unit=""/>
+                  </div>
+                  <div className="col-6">
+                    <SuperStat type="rate" displayFlex={false} descr="Puissance moyenne" unit=""/>
                   </div>
                 </div>
               </div>

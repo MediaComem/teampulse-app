@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Flickr from './Flickr.js';
 import Youtube from './Youtube.js';
+import FacebookVideo from './FacebookVideo.js';
 import constantes from './constantes.js';
 import { Event } from 'react-socket-io';
 
@@ -33,6 +34,9 @@ class News extends Component {
     }
     if(this.state.type === 'flickr'){
       stateValue = <Flickr data={this.state.data}/>
+    }
+    if(this.state.type === 'facebook'){
+      stateValue = <FacebookVideo data={this.state.data}/>
     }
   	return(
       <div>

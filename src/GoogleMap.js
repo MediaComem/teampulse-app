@@ -13,8 +13,8 @@ const CycloMarker = styled.div`
   position: absolute;
   width: ${props => (props.radius) * 2}px;
   height: ${props => (props.radius) * 2}px;
-  left: ${props => (props.radius)}px;
-  top: ${props => (props.radius)}px;
+  left: ${props => -(props.radius)}px;
+  top: ${props => -(props.radius)}px;
 
   border: 5px solid #f44336;
   borderRadius: ${props => (props.radius) * 2}px;

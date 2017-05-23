@@ -22,18 +22,33 @@
 }
 header{
   position: fixed;
-  top:0;
+  top:-20px;
   right: 0;
   left: 0;
   z-index: 1000;
-  height: 80px;
+  height: 100px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#55a549+0,a6c222+100 */
   background: #55a549; /* Old browsers */
   background: -moz-linear-gradient(top, #55a549 0%, #a6c222 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #55a549 0%,#a6c222 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #55a549 0%,#a6c222 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55a549', endColorstr='#a6c222',GradientType=0 ); /* IE6-9 */
+  
+  -webkit-transform: skewY(1deg);
+	-moz-transform: skewY(1deg);
+	-ms-transform: skewY(1deg);
+	-o-transform: skewY(1deg);
+	transform: skewY(1deg);
 }
+header .container-fluid {
+	top: 10px;
+	-webkit-transform: skewY(-1deg);
+	-moz-transform: skewY(-1deg);
+	-ms-transform: skewY(-1deg);
+	-o-transform: skewY(-1deg);
+	transform: skewY(-1deg);
+}
+
 header .container-fluid,header .container-fluid .row{
   height: 100%;
 }
@@ -68,7 +83,24 @@ header .container-fluid,header .container-fluid .row{
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #fff;
+  
+  -webkit-transform: skewY(1deg);
+	-moz-transform: skewY(1deg);
+	-ms-transform: skewY(1deg);
+	-o-transform: skewY(1deg);
+	transform: skewY(1deg);
 }
+
+.footer .container-fluid{
+	margin-top: -5px;
+	margin-bottom: -5px;
+	-webkit-transform: skewY(-1deg);
+	-moz-transform: skewY(-1deg);
+	-ms-transform: skewY(-1deg);
+	-o-transform: skewY(-1deg);
+	transform: skewY(-1deg);
+}
+
 .logo-sponsor{
   align-items: center;
   justify-content: center;
@@ -101,7 +133,28 @@ header .container-fluid,header .container-fluid .row{
     margin-bottom: 20px;
   }
   .footer{
-    box-shadow: 0 3px 6px -2px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    border-top: none;
+	  margin-top: 5px;
+    -webkit-transform: skewY(0deg);
+		-moz-transform: skewY(0deg);
+		-ms-transform: skewY(0deg);
+		-o-transform: skewY(0deg);
+		transform: skewY(0deg);
   }
+  
+  .footer .container-fluid{
+	  box-shadow: 0 3px 6px -2px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-top: none;
+		-webkit-transform: skewY(1deg);
+		-moz-transform: skewY(1deg);
+		-ms-transform: skewY(1deg);
+		-o-transform: skewY(1deg);
+		transform: skewY(1deg);
+	}
+	.footer .container-fluid .row {
+		-webkit-transform: skewY(-1deg);
+		-moz-transform: skewY(-1deg);
+		-ms-transform: skewY(-1deg);
+		-o-transform: skewY(-1deg);
+		transform: skewY(-1deg);
+	}
 }

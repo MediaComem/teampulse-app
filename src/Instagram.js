@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+//import styled from 'styled-components';
 import constantes from './constantes.js';
 import InstagramEmbed from 'react-instagram-embed'
 import Slider from 'react-slick'

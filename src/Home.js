@@ -5,7 +5,7 @@ import Facebook from './Facebook.js'
 import GoogleMap from './GoogleMap.js'
 import SectionTitleDesktop from './SectionTitleDesktop.js'
 import SectionTitle from './SectionTitle.js'
-import FacebookProvider, { EmbeddedPost } from 'react-facebook';
+//import FacebookProvider, { EmbeddedPost } from 'react-facebook';
 import Scrollspy from 'react-scrollspy'
 import { SuperStat } from './Numbers';
 import Slider from 'react-slick'

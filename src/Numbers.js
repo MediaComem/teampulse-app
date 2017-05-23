@@ -55,7 +55,7 @@ export class SuperStat extends Component {
     fetch(constantes.serverUrl + '/teampulse/data')
       .then(response => response.json())
       .then((body) => {
-        this.setState({ powerValue: parseFloat(body.avgPower).toFixed(1), rateValue: parseFloat(body.avgCadence).toFixed(1), speedValue: parseFloat(body.avgSpeed).toFixed(1), tempValue: parseFloat(body.temperature).toFixed(1), altValue: parseInt(body.altitude), rawOffset: parseInt(body.rawOffset), dstOffset: parseInt(body.dstOffset) });
+        this.setState({ powerValue: parseFloat(body.avgPower, 10).toFixed(1), rateValue: parseFloat(body.avgCadence, 10).toFixed(1), speedValue: parseFloat(body.avgSpeed, 10).toFixed(1), tempValue: parseFloat(body.temperature, 10).toFixed(1), altValue: parseInt(body.altitude, 10), rawOffset: parseInt(body.rawOffset, 10), dstOffset: parseInt(body.dstOffset, 10) });
       });
     this.timerID = setInterval(
       () => this.updateTime(),
@@ -68,7 +68,7 @@ export class SuperStat extends Component {
   }
 
   onMessage(message) {
-    this.setState({ powerValue: parseFloat(message.avgPower).toFixed(1), rateValue: parseFloat(message.avgCadence).toFixed(1), speedValue: parseFloat(message.avgSpeed).toFixed(1), tempValue: parseFloat(message.temperature).toFixed(1), altValue: parseInt(message.altitude), rawOffset: parseInt(message.rawOffset), dstOffset: parseInt(message.dstOffset) });
+    this.setState({ powerValue: parseFloat(message.avgPower, 10).toFixed(1), rateValue: parseFloat(message.avgCadence, 10).toFixed(1), speedValue: parseFloat(message.avgSpeed, 10).toFixed(1), tempValue: parseFloat(message.temperature, 10).toFixed(1), altValue: parseInt(message.altitude, 10), rawOffset: parseInt(message.rawOffset, 10), dstOffset: parseInt(message.dstOffset, 10) });
   }
 
   calcLocalTime(offset) {

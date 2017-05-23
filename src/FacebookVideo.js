@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+//import styled from 'styled-components';
 import constantes from './constantes.js';
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
 import './Facebook.css'
@@ -28,7 +28,7 @@ class FacebookVideo extends Component {
   }
 
   render() {
-    if(this.state.postUrl != "") {
+    if(this.state.postUrl !== "") {
       console.log("FB VIDEO")
       console.log(this.state.postUrl)
       return (

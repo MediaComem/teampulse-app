@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+//import logo from './logo.svg';
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  IndexRoute,
-  browserHistory,
-  Link
+  Switch
+  //,IndexRoute,
+  //browserHistory,
+  //Link
 } from 'react-router-dom'
 import Home from './Home.js'
 import Tv from './Tv.js'
@@ -33,19 +33,19 @@ const DefaultLayout = ({ children }) => (
       <div className="container-fluid">
         <div className="row">
           <div className="d-flex col-4 col-lg-1 text-center logo-sponsor">
-            <img className="img-fluid" src="sponsors/vaudh.png" />
+            <img className="img-fluid" src="sponsors/vaudh.png" alt="Logo du Canton de Vaud" />
           </div>
           <div className="d-flex col-4 col-lg-1 text-center logo-sponsor">
-            <img className="img-fluid" src="sponsors/hesav.png" />
+            <img className="img-fluid" src="sponsors/hesav.png" alt="Logo Hesav" />
           </div>
           <div className="d-flex col-4 col-lg-1 text-center logo-sponsor">
-            <img className="img-fluid" src="sponsors/heig.png" />
+            <img className="img-fluid" src="sponsors/heig.png" alt="Logo Heig-vd" />
           </div>
           <div className="d-flex col-6 col-lg-1 text-center logo-sponsor">
-           <img className="img-fluid" src="sponsors/chuv.png" />
+           <img className="img-fluid" src="sponsors/chuv.png" alt="Logo Chuv" />
           </div>
           <div className="d-flex col-6 col-lg-1 text-center logo-sponsor">
-            <img className="img-fluid" src="sponsors/unil.png" />
+            <img className="img-fluid" src="sponsors/unil.png" alt="Logo Unil" />
           </div>
         </div>
       </div>

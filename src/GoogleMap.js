@@ -49,14 +49,26 @@ class GoogleMap extends Component {
       zoom: zoom,      
     });
   }
+  
+  loadRaamTrack(map) {
+	map.data.loadGeoJson('raam2x.json');
+	map.data.setStyle({
+	  strokeColor: 'green',
+	  strokeWeight: 1
+	});
+  }
 
   render() {
 		return (
-      <MapContainer>
-  		  <GoogleMapReact center={this.state.center} onChange={this._onChange.bind(this)} defaultZoom={11}><CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={10} /></GoogleMapReact>
-      </MapContainer>
+			<MapContainer>
+			   <GoogleMapReact center={this.state.center} onChange={this._onChange.bind(this)} defaultZoom={11} apiKey={"AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs"} onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)} yesIWantToUseGoogleMapApiInternals>
+			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={10} />
+			   </GoogleMapReact>
+			</MapContainer>
     )
   }
+  
+  
 }
 
 export default GoogleMap;

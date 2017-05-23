@@ -47,7 +47,7 @@ export class SuperStat extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this.state = { powerValue: 0, localTime: new Date(), rawOffset: 0, dstOffset: 0 };
+    this.state = { powerValue: 0, localTime: 0, rawOffset: 0, dstOffset: 0 };
     this.onMessage = this.onMessage.bind(this);
   }
 
@@ -73,7 +73,10 @@ export class SuperStat extends Component {
 
   calcLocalTime(offset) {
     var utc = new Date().getTime();
-    return new Date(utc +  (1000 * offset));
+    var utcOffset = new Date(utc +  (1000 * offset));
+    var minutes = utcOffset.getUTCMinutes();
+    var hours = utcOffset.getUTCHours();
+    return (hours <10 ? '0' + hours : hours) + ":" + (minutes <10 ? '0' + minutes : minutes)
   }
 
   updateTime() {
@@ -100,7 +103,7 @@ export class SuperStat extends Component {
       statValue = <StatNum displayFlex={this.props.displayFlex}>{this.state.altValue}</StatNum>
     }
     if (this.props.type === 'time') {
-      statValue = <StatNum displayFlex={this.props.displayFlex}>{this.state.localTime.getUTCHours()}:{this.state.localTime.getUTCMinutes()}</StatNum>
+      statValue = <StatNum displayFlex={this.props.displayFlex}>{this.state.localTime}</StatNum>
     }
     return (
       <StatContainer displayFlex={this.props.displayFlex} className={this.props.className}>

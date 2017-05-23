@@ -3,7 +3,6 @@ import News from './News.js'
 import Instagram from './Instagram.js'
 import Facebook from './Facebook.js'
 import GoogleMap from './GoogleMap.js'
-import Stats from './Stats.js'
 import SectionTitleDesktop from './SectionTitleDesktop.js'
 import SectionTitle from './SectionTitle.js'
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';

@@ -33,17 +33,17 @@ class Tv extends Component {
 		        </div>
 		      </div>
 		    </header>
-	      <div className="container-fluid">
+	      <div id="first-section" className="container-fluid">
 	        <div className="row">
 	          <div className="col-5">
 	            <div className="youtube-container">
 	              <News youtube/>
 	            </div>
 	            <div className="map-container">
-	              <GoogleMap />
+	              <GoogleMap height={437}/>
 	            </div>
 	          </div>
-	          <div className="col-3">
+	          <div id="second-section" className="col-3">
 	            <div className="insta-container">
 	              <Instagram postsWidth="320" autoPlay={true} arrows={false} dots={true}/>
 	            </div>
@@ -80,7 +80,7 @@ class Tv extends Component {
 	              </div>
 	            </div>
 	          </div>
-	          <div className="col-4">
+	          <div id="facebook-section" className="col-4">
 	            <div className="facebook-container">
 	              <Facebook autoPlay={true} arrows={false} dots={true} />
 	            </div>

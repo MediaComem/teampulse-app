@@ -29,8 +29,8 @@
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);	 
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	width: 100%;
-	max-width: 460px;
-	padding: 20px;
+	max-width: 520px;
+	padding: 20px 20px 28px 20px;
 	background-image: url(../public/velo.svg);
 	background-repeat: no-repeat;
 	background-position: -100% 100%;
@@ -53,19 +53,18 @@
 .tv .stats-container{
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	padding: 20px;
-	max-width: 460px;
+	max-width: 520px;
 }
 .tv .stats-tv-container{
 	background-color: #fff;
-	padding-bottom: 40px;
-	padding-top: 20px;
+	padding-bottom: 30px;
 }
 .tv .stats-tv-container .slick-dots {
   bottom: -40px;
 }
 
 .tv .insta-container .slick-dots {
-  bottom: -10px;
+  bottom: -18px;
 }
 
 .tv .facebook-container .slick-dots {
@@ -92,4 +91,16 @@
 
 .strong {
 	font-weight: bold;
+}
+
+.tv #second-section {
+	width: 28%;
+	flex: 0 0 28%;
+  max-width: 28%;
+}
+
+.tv #facebook-section {
+	width: 30.333%;
+	flex: 0 0 30.333%;
+  max-width: 30.333%;
 }

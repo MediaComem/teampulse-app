@@ -4,7 +4,7 @@ import GoogleMapReact from 'google-map-react';
 import constantes from './constantes.js';
 
 const MapContainer = styled.div`
-    height:400px;
+    height: ${props => (props.height)}px;
     max-width:100%;
     margin:auto;
   `;
@@ -60,7 +60,7 @@ class GoogleMap extends Component {
 
   render() {
 		return (
-			<MapContainer>
+			<MapContainer height={this.props.height}>
 			   <GoogleMapReact center={this.state.center} onChange={this._onChange.bind(this)} defaultZoom={11} apiKey={"AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs"} onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)} yesIWantToUseGoogleMapApiInternals>
 			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={10} />
 			   </GoogleMapReact>

@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 const SectionTitleDesktop = styled.div`
   position: absolute;
-  font-size: 2.1rem;
+  font-size: 2rem;
   color: ${props => props.txtColor};
   padding: ${props => props.padding};
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 500;
   backgroundColor: ${props => props.bgColor};
   top: ${props => props.top ? props.top + "px" : "auto"}
   right: ${ props => props.right ? props.right+"px" : "auto" }

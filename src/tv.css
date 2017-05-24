@@ -68,6 +68,10 @@
   bottom: 10px;
 }
 
+.tv .facebook-container .slick-track {
+	  padding-bottom: 40px;
+} 
+
 .tv .call-for-action {
 	color: white;
 	margin-top: 20px;

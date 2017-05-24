@@ -76,7 +76,7 @@ class Facebook extends Component {
 	        <Slider {...settings}>
 	          {this.state.postsId.map(function(post){
 	            return <FbWrapper><FacebookProvider appId="269918776508696">
-	                      <EmbeddedPost style={FacebookEmbedStyle} href={"https://www.facebook.com/teampulse.ch/posts/"+post.id} width="500" />
+	                      <EmbeddedPost style={FacebookEmbedStyle} href={"https://www.facebook.com/teampulse.ch/posts/"+post.id} width="500" showText="true"/>
 	                    </FacebookProvider></FbWrapper>
 	          })}
 	        </Slider>

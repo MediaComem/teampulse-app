@@ -17,8 +17,8 @@ const options = { transports: ['websocket'] };
 
 const DefaultLayout = ({ children }) => (                       
   <div>
-    <header className="primary-header">
-      <div className="container-fluid">
+    <header className="primary-header lineDiag-wrapper">
+      <div className="container-fluid lineDiag-content">
         <div className="row">
           <div className="col-md-4 hidden-sm-down"></div>
           <div className="col-6 col-md-4 teampulse-logo"><img src="teampulse_160px.png" alt="Teampulse"/></div>
@@ -28,22 +28,22 @@ const DefaultLayout = ({ children }) => (
     </header>
     <aside className="primary-aside"></aside>
     {children}
-    <div className="footer">
-      <div className="container-fluid">
+    <div className="footer lineDiag-wrapper">
+      <div className="container-fluid lineDiag-content">
         <div className="row">
-          <div className="d-flex col-4 col-lg-1 text-center logo-sponsor">
-            <img className="img-fluid" src="sponsors/vaud.png" alt="Logo du Canton de Vaud" />
-          </div>
-          <div className="d-flex col-4 col-lg-1 text-center logo-sponsor">
+          <div className="d-flex col-4 col-lg-auto text-center logo-sponsor">
             <img className="img-fluid" src="sponsors/hesav.png" alt="Logo Hesav" />
           </div>
-          <div className="d-flex col-4 col-lg-1 text-center logo-sponsor">
+          <div className="d-flex col-4 col-lg-auto text-center logo-sponsor">
             <img className="img-fluid" src="sponsors/heig.png" alt="Logo Heig-vd" />
           </div>
-          <div className="d-flex col-6 col-lg-1 text-center logo-sponsor">
+          <div className="d-flex col-4 col-lg-auto text-center logo-sponsor">
+            <img className="img-fluid" src="sponsors/vaud.png" alt="Logo du Canton de Vaud" />
+          </div>
+          <div className="d-flex col-6 col-lg-auto text-center logo-sponsor">
            <img className="img-fluid" src="sponsors/chuv.png" alt="Logo Chuv" />
           </div>
-          <div className="d-flex col-6 col-lg-1 text-center logo-sponsor">
+          <div className="d-flex col-6 col-lg-auto text-center logo-sponsor">
             <img className="img-fluid" src="sponsors/unil.png" alt="Logo Unil" />
           </div>
         </div>

@@ -56,6 +56,7 @@ class Instagram extends Component {
       arrows: this.props.arrows,
       infinite: true,
       speed: 1000,
+      fade:true,
       dots: this.props.dots,
 			autoplaySpeed: 6000,
       autoplay: this.props.autoPlay,

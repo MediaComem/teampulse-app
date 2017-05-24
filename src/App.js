@@ -32,7 +32,7 @@ const DefaultLayout = ({ children }) => (
       <div className="container-fluid">
         <div className="row">
           <div className="d-flex col-4 col-lg-1 text-center logo-sponsor">
-            <img className="img-fluid" src="sponsors/vaudh.png" alt="Logo du Canton de Vaud" />
+            <img className="img-fluid" src="sponsors/vaud.png" alt="Logo du Canton de Vaud" />
           </div>
           <div className="d-flex col-4 col-lg-1 text-center logo-sponsor">
             <img className="img-fluid" src="sponsors/hesav.png" alt="Logo Hesav" />

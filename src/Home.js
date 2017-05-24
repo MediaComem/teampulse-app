@@ -94,12 +94,12 @@ class Home extends Component {
         		<div className="row">
               <div className="col-12 col-lg-6 push-lg-6 insta">
                 <div className="insta-container">
-                  <Instagram postsWidth="320" autoPlay={false} arrows={true} dots={false}/>
+                  <Instagram postsWidth="320" autoPlay={false} arrows={false} dots={true}/>
                 </div>
               </div>
               <div className="col-12 col-lg-6 pull-lg-6 facebook">
                 <div className="facebook-container">
-                  <Facebook postsWidth="320" autoPlay={false} arrows={true} dots={false}/>
+                  <Facebook postsWidth="320" autoPlay={false} arrows={false} dots={true}/>
                 </div>
               </div>
       			</div>

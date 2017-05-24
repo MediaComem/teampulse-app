@@ -1,6 +1,7 @@
 .news{
 	padding-top: 160px;
 	padding-bottom: 80px;
+	color: #A6C222;
 }
 .map{
 	width: 100%;
@@ -13,9 +14,12 @@
 	padding-bottom: 80px;
 	background-color: #fff;
 }
-.news{
-	color: #A6C222;
+.socials .slick-dots {
+    top: -40px;
+	bottom:auto;
 }
+
+
 @media(max-width: 992px){
 	.news{
 		padding-top: 80px;
@@ -84,7 +88,6 @@
 		margin-left: 50px; 
 		padding-top: 20px;
 		margin-bottom: 20px;
-		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 		width: 100%;
 		max-width: 360px;
 	}
@@ -92,7 +95,6 @@
 		margin-left: 50px; 
 		padding-top: 20px;
 		margin-bottom: 20px;
-		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 		width: 100%;
 		max-width: 550px;
 		height: 700px;

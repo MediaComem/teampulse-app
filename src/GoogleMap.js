@@ -61,7 +61,7 @@ class GoogleMap extends Component {
   render() {
 		return (
 			<MapContainer height={this.props.height}>
-			   <GoogleMapReact center={this.state.center} onChange={this._onChange.bind(this)} defaultZoom={11} apiKey={"AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs"} onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)} yesIWantToUseGoogleMapApiInternals>
+			   <GoogleMapReact center={this.state.center} onChange={this._onChange.bind(this)} defaultZoom={11} bootstrapURLKeys={{key: "AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs"}} onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)} yesIWantToUseGoogleMapApiInternals>
 			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={10} />
 			   </GoogleMapReact>
 			</MapContainer>

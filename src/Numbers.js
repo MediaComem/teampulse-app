@@ -35,12 +35,11 @@ const StatNum = styled.div`
 
 const StatDescr = styled.div`
   color:#A6C222;
-  text-transform: uppercase;
+
   ${(props) => props.displayFlex === true ? cssStatDescr : null}
 `;
 
 const StatUnit = styled.span`
-  text-transform: none;
 `;
 
 export class SuperStat extends Component {

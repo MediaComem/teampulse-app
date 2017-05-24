@@ -53,9 +53,12 @@ class Instagram extends Component {
 
   render() {
     var settings = {
-      arrows: true,
+      arrows: this.props.arrows,
       infinite: true,
-      speed: 500,
+      speed: 1000,
+      dots: this.props.dots,
+			autoplaySpeed: 6000,
+      autoplay: this.props.autoPlay,
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: <PrevArrow />,
@@ -65,7 +68,7 @@ class Instagram extends Component {
       return (
         <Slider {...settings}>
           {this.state.postsId.map(function(post){
-            return <div><InstagramEmbed style={InstagramEmbedStyle} hideCaption={true} maxWidth={320} url={post.url} /></div>
+            return <div><InstagramEmbed style={InstagramEmbedStyle} hideCaption={true} maxWidth={460} url={post.url} /></div>
           })}
           <Event event='instagram' handler={this.onMessage} />
         </Slider>

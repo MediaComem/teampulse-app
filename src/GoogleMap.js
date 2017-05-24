@@ -53,8 +53,8 @@ class GoogleMap extends Component {
   loadRaamTrack(map) {
 	map.data.loadGeoJson('raam2x.json');
 	map.data.setStyle({
-	  strokeColor: 'green',
-	  strokeWeight: 1
+	  strokeColor: 'blue',
+	  strokeWeight: 2
 	});
   }
 

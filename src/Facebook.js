@@ -59,9 +59,12 @@ class Facebook extends Component {
 
   render() {
     var settings = {
-      arrows: true,
+      arrows: this.props.arrows,
       infinite: true,
-      speed: 500,
+      speed: 1000,
+      dots: this.props.dots,
+      autoplaySpeed: 13000,
+      autoplay: this.props.autoPlay,
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: <PrevArrow />,

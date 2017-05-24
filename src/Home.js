@@ -49,7 +49,7 @@ class Home extends Component {
     return (
       <div>
       	<div id="section-1" className="container">
-          <SectionTitleDesktop right={1} bottom={50} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitleDesktop>
+          <SectionTitleDesktop right={1} top={136} padding="10px 20px" bgColor="#fff" txtColor="#A6C222">A la une</SectionTitleDesktop>
       		<div className="row news">
             <div className="col-md-2 justify-content-center hidden-sm-down">
               <p>Ne râtez aucun moment de la course grâce à notre programmation à la une!</p>

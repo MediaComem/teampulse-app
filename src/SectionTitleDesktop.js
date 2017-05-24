@@ -9,6 +9,7 @@ const SectionTitleDesktop = styled.div`
   text-transform: uppercase;
   font-weight: bold;
   backgroundColor: ${props => props.bgColor};
+  top: ${props => props.top ? props.top + "px" : "auto"}
   right: ${ props => props.right ? props.right+"px" : "auto" }
   bottom: ${props => props.bottom}px;
   left: ${ props => props.left ? props.left+"px" : "auto" }

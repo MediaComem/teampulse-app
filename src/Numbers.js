@@ -35,7 +35,7 @@ const StatNum = styled.div`
 
 const StatDescr = styled.div`
   color:#A6C222;
-
+	fontSize:0.95em;
   ${(props) => props.displayFlex === true ? cssStatDescr : null}
 `;
 

@@ -66,12 +66,14 @@ class Instagram extends Component {
     };
     if(this.state.postsId.length > 0) {
       return (
-        <Slider {...settings}>
-          {this.state.postsId.map(function(post){
-            return <div><InstagramEmbed style={InstagramEmbedStyle} hideCaption={true} maxWidth={460} url={post.url} /></div>
-          })}
-          <Event event='instagram' handler={this.onMessage} />
-        </Slider>
+	      <div>
+	        <Slider {...settings}>
+	          {this.state.postsId.map(function(post){
+	            return <div><InstagramEmbed style={InstagramEmbedStyle} hideCaption={true} maxWidth={460} url={post.url} /></div>
+	          })}
+	        </Slider>
+        	<Event event='instagram' handler={this.onMessage} />
+        </div>
       )
     }else{
       return (null)

@@ -30,13 +30,17 @@ class News extends Component {
   render() {
     var stateValue = <div>NULL</div>
     if(this.state.type === 'youtube'){
-      stateValue = <Youtube data={this.state.data}/>
+      stateValue = <Youtube data={this.state.data} loop={this.props.loop} playlist={false}/>
     }
+    if(this.state.type === 'youtube_playlist'){
+      stateValue = <Youtube data={this.state.data} loop={this.props.loop} playlist={true}/>
+    }
+
     if(this.state.type === 'flickr'){
-      stateValue = <Flickr data={this.state.data}/>
+      stateValue = <Flickr data={this.state.data} loop={this.props.loop}/>
     }
     if(this.state.type === 'facebook'){
-      stateValue = <FacebookVideo data={this.state.data}/>
+      stateValue = <FacebookVideo data={this.state.data} loop={this.props.loop}/>
     }
   	return(
       <div>

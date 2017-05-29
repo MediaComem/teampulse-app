@@ -21,13 +21,25 @@ class Youtube extends Component {
   componentWillReceiveProps(newProps) {
   if (this.state.video !== newProps.data.video.v) {
     	this.setState({video: newProps.data.video.v});
+    	this.setState({list: newProps.data.video.list});
   	}
 	}
 
   render() {
+	  let link = null;
+		if(this.props.loop && this.props.playlist) {
+			link = <iframe src={"https://www.youtube.com/embed/videoseries?list="+this.state.list+"&autoplay=1&loop=1&cc_load_policy=1rel=0&amp;controls=0&amp;showinfo=0"} frameBorder="0" allowFullScreen></iframe>	
+		} else if(this.props.playlist) {
+			link = <iframe src={"https://www.youtube.com/embed/videoseries?list="+this.state.list} frameBorder="0" allowFullScreen></iframe>	
+		} else if(this.props.loop) {
+	    link = <iframe src={"https://www.youtube.com/embed/"+this.state.video + "?autoplay=1&loop=1&cc_load_policy=1rel=0&amp;controls=0&amp;showinfo=0&playlist="+this.state.video} frameBorder="0" allowFullScreen></iframe>	
+		} else {
+  		link = <iframe src={"https://www.youtube.com/embed/"+this.state.video} frameBorder="0" allowFullScreen></iframe>
+		}
+
     return (
     	<div className="embed-responsive embed-responsive-16by9">
-		    <iframe src={"https://www.youtube.com/embed/"+this.state.video} frameBorder="0" allowFullScreen></iframe>
+    		{link}
       </div>
     	)
   }

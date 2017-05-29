@@ -46,7 +46,7 @@ class Tv extends Component {
 	        <div className="row">
 	          <div className="col-5">
 	            <div className="youtube-container">
-	              <News youtube/>
+	              <News youtube loop={true}/>
 	            </div>
 	            <div className="map-container">
 	              <GoogleMap height={437}/>

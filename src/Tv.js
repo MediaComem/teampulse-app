@@ -18,9 +18,18 @@ class Tv extends Component {
       autoplay: true,
       dots:true,
       speed: 500,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 8000,
       slidesToShow: 1,
       slidesToScroll: 1,
+    },
+    settingsLogos = {
+      infinite: true,
+      speed: 500,
+      dots: false,
+      fade: true,
+			autoplaySpeed: 3000,
+      autoplay: true,
+      slidesToShow: 1,
     };
     return (
 	    <div className="tv">
@@ -84,6 +93,25 @@ class Tv extends Component {
 	            <div className="facebook-container">
 	              <Facebook autoPlay={true} arrows={false} dots={true} />
 	            </div>
+	            <div className="logos">
+								<Slider {...settingsLogos}>
+									<div className="logo">
+							      <img src="/sponsors/chuv.png" />
+							    </div>
+							    <div className="logo">
+										<img src="/sponsors/heig.png" />
+									</div>
+							    <div className="logo">
+										<img src="/sponsors/hesav.png" />
+									</div>
+							    <div className="logo">
+										<img src="/sponsors/unil.png" />
+									</div>
+							    <div className="logo">
+										<img src="/sponsors/vaud.png" />
+									</div>
+								</Slider>
+							</div>
 	          </div>
 	        </div>
 	      </div>

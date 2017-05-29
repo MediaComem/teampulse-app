@@ -104,3 +104,31 @@
 	flex: 0 0 30.333%;
   max-width: 30.333%;
 }
+
+.tv .logos{
+	float: right;
+	width: 200px;
+	height: 140px;
+	margin-right: 30px;
+}
+
+.tv .logos .slick-track{
+	height: 170px;
+}
+
+.tv .logos. .logo {
+	width: 200px;
+}
+
+.tv .logos {
+	float: right;
+	height: 148px;
+}
+
+.tv .logos .logo img{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	max-height: 120px;
+	max-width: 200px;
+}

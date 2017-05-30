@@ -23,7 +23,6 @@ class News extends Component {
   }
 
   onMessage(message) {
-    console.log(message)
     this.setState({type:message.type,data:message.data})
   }
 

@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 //import styled from 'styled-components';
 import constantes from './constantes.js';
-import FacebookProvider, { EmbeddedPost } from 'react-facebook';
+// import FacebookProvider, { EmbeddedPost } from 'react-facebook';
+import FacebookPlayer  from 'react-facebook-player';
 import './Facebook.css'
+
+
+
+
 
 class FacebookVideo extends Component {
 
@@ -10,6 +15,7 @@ class FacebookVideo extends Component {
     super(props, context);
     this.state = {
       postUrl: "",
+      player: null,
     };
   }
 
@@ -26,15 +32,36 @@ class FacebookVideo extends Component {
       this.forceUpdate()
     }
   }
-
+	
+	onReady = (player) => {
+		console.log("onReady player: ", player)
+    this.setState({
+      player: player,
+    });
+    this.playVideo()
+  }
+	
+	playVideo = () => {
+    const { player } = this.state;
+    console.log("player", player);
+    if (player) player.play();
+  }
   render() {
-    if(this.state.postUrl !== "") {
-      console.log("FB VIDEO")
-      console.log(this.state.postUrl)
+	  var videoId = /\/videos\/(\d+)\/$/.exec(this.props.data.video.url)[1];
+	  console.log(videoId);
+    if(videoId != null) {
       return (
-        <FacebookProvider appId="269918776508696">
-          <EmbeddedPost href={this.state.postUrl} width="auto" data-autoplay="true" />
-        </FacebookProvider>
+	      <FacebookPlayer
+				  appId={ "269918776508696" }                                  
+				  videoId={ videoId.toString() }                                  
+				  className={ "facebook-video" }                        
+				  /* ATTRIBUTES. Ref: http://bit.ly/29OOzWZ */
+				  allowfullscreen={ "true" }
+				  autoplay={ "false" }
+				  /* EVENTS. Ref: http://bit.ly/29JaA7J */
+					onReady={ this.onReady }
+				  onFinishedPlaying={ this.playVideo }
+				/>
       )
     }else{
       console.log("FB VIDEO NULL")

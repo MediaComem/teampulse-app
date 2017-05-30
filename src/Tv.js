@@ -96,19 +96,19 @@ class Tv extends Component {
 	            <div className="logos">
 								<Slider {...settingsLogos}>
 									<div className="logo">
-							      <img src="/sponsors/chuv.png" />
+							      <img src="/sponsors/chuv.png" alt="logos chuv"/>
 							    </div>
 							    <div className="logo">
-										<img src="/sponsors/heig.png" />
+										<img src="/sponsors/heig.png" alt="logos heig"/>
 									</div>
 							    <div className="logo">
-										<img src="/sponsors/hesav.png" />
+										<img src="/sponsors/hesav.png" alt="logos hesav"/>
 									</div>
 							    <div className="logo">
-										<img src="/sponsors/unil.png" />
+										<img src="/sponsors/unil.png" alt="logos unil"/>
 									</div>
 							    <div className="logo">
-										<img src="/sponsors/vaud.png" />
+										<img src="/sponsors/vaud.png" alt="logos vaud"/>
 									</div>
 								</Slider>
 							</div>

@@ -33,7 +33,7 @@ class FacebookVideo extends Component {
       console.log(this.state.postUrl)
       return (
         <FacebookProvider appId="269918776508696">
-          <EmbeddedPost href={this.state.postUrl} width="auto" />
+          <EmbeddedPost href={this.state.postUrl} width="auto" data-autoplay="true" />
         </FacebookProvider>
       )
     }else{

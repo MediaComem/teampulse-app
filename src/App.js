@@ -30,21 +30,21 @@ const DefaultLayout = ({ children }) => (
     {children}
     <div className="footer lineDiag-wrapper">
       <div className="container-fluid lineDiag-content">
-        <div className="row">
-          <div className="d-flex col-4 col-lg-auto text-center logo-sponsor">
+        <div className="logos-sponsors">
+          <div className="logo-sponsor">
             <img className="img-fluid" src="sponsors/hesav.png" alt="Logo Hesav" />
           </div>
-          <div className="d-flex col-4 col-lg-auto text-center logo-sponsor">
+          <div className="logo-sponsor">
             <img className="img-fluid" src="sponsors/heig.png" alt="Logo Heig-vd" />
           </div>
-          <div className="d-flex col-4 col-lg-auto text-center logo-sponsor">
+          <div className="logo-sponsor">
             <img className="img-fluid" src="sponsors/vaud.png" alt="Logo du Canton de Vaud" />
           </div>
-          <div className="d-flex col-6 col-lg-auto text-center logo-sponsor">
-           <img className="img-fluid" src="sponsors/chuv.png" alt="Logo Chuv" />
-          </div>
-          <div className="d-flex col-6 col-lg-auto text-center logo-sponsor">
+          <div className="logo-sponsor">
             <img className="img-fluid" src="sponsors/unil.png" alt="Logo Unil" />
+          </div>
+          <div className="logo-sponsor">
+           <img className="img-fluid" src="sponsors/chuv.png" alt="Logo Chuv" />
           </div>
         </div>
       </div>

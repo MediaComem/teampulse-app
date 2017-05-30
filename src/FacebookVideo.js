@@ -17,6 +17,7 @@ class FacebookVideo extends Component {
       postUrl: "",
       player: null,
     };
+    // this.onReady = this.onReady.bind(this);
   }
 
 	componentDidMount() {
@@ -33,19 +34,11 @@ class FacebookVideo extends Component {
     }
   }
 	
-	onReady = (player) => {
-		console.log("onReady player: ", player)
-    this.setState({
-      player: player,
-    });
-    this.playVideo()
+	onReady(id,player){
+		console.log("onReady player:")
+    console.log(player)
   }
 	
-	playVideo = () => {
-    const { player } = this.state;
-    console.log("player", player);
-    if (player) player.play();
-  }
   render() {
 	  var videoId = /\/videos\/(\d+)\/$/.exec(this.props.data.video.url)[1];
 	  console.log(videoId);

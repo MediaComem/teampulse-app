@@ -120,6 +120,14 @@ header .container-fluid .row {
     max-height: 90px;
 }
 
+.footer img.vaud {
+	max-width: 140px;
+}
+.footer img.heig {
+	max-width: 160px;
+}
+
+
 .footer {
     box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.23);
     padding-top: 10px;
@@ -165,6 +173,10 @@ header .container-fluid .row {
     height: 12px;
 }
 
+.stat {
+	margin-top: 10px;
+}
+
 @media(max-width: 992px) {
     body {
         background: #ccc !important;
@@ -174,6 +186,12 @@ header .container-fluid .row {
         max-width: 100px;
         margin-bottom: 20px;
     }
+    .footer img.vaud {
+			max-width: 90px;
+		}
+		.footer img.heig {
+			max-width: 110px;
+		}
     .footer {
         margin-top: 5px;
         -webkit-transform: skewY(0deg);

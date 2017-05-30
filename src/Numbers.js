@@ -28,13 +28,13 @@ const StatContainer = styled.div`
 `;
 
 const StatNum = styled.div`
-  fontSize:3em;
+  fontSize:2.5em;
   color:#55A549;
   ${(props) => props.displayFlex === true ? cssStatNum : null}
 `;
 
 const StatDescr = styled.div`
-  color:#A6C222;
+  color:#8d8d8d;
 	fontSize:0.95em;
   ${(props) => props.displayFlex === true ? cssStatDescr : null}
 `;

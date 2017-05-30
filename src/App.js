@@ -35,10 +35,10 @@ const DefaultLayout = ({ children }) => (
             <img className="img-fluid" src="sponsors/hesav.png" alt="Logo Hesav" />
           </div>
           <div className="logo-sponsor">
-            <img className="img-fluid" src="sponsors/heig.png" alt="Logo Heig-vd" />
+            <img className="img-fluid heig" src="sponsors/heig.png" alt="Logo Heig-vd" />
           </div>
           <div className="logo-sponsor">
-            <img className="img-fluid" src="sponsors/vaud.png" alt="Logo du Canton de Vaud" />
+            <img className="img-fluid vaud" src="sponsors/vaud.png" alt="Logo du Canton de Vaud" />
           </div>
           <div className="logo-sponsor">
             <img className="img-fluid" src="sponsors/unil.png" alt="Logo Unil" />

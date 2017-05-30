@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import News from './News.js'
+import Favori from './Favori.js'
 import Instagram from './Instagram.js'
 import Facebook from './Facebook.js'
 import GoogleMap from './GoogleMap.js'
@@ -58,7 +58,7 @@ class Home extends Component {
               <p>Suivez l’avancement de l’événement en live et découvrez les interviews des participants.</p>
             </div>
             <div className="col-md-10 justify-content-center news-media">
-              <News />
+              <Favori />
             </div>
           </div>
         </div>

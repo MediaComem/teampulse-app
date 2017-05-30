@@ -5,7 +5,7 @@ import FacebookVideo from './FacebookVideo.js';
 import constantes from './constantes.js';
 import { Event } from 'react-socket-io';
 
-class News extends Component {
+class Favori extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -27,7 +27,7 @@ class News extends Component {
   }
 
   render() {
-    var stateValue = <div>NULL</div>
+    var stateValue = <div></div>
     if(this.state.type === 'youtube'){
       stateValue = <Youtube data={this.state.data} loop={this.props.loop} playlist={false}/>
     }
@@ -36,7 +36,7 @@ class News extends Component {
     }
 
     if(this.state.type === 'flickr'){
-      stateValue = <Flickr data={this.state.data} loop={this.props.loop}/>
+      stateValue = <Flickr data={this.state.data} loop={this.props.loop} autoPlay={true} dots={true} arrow={false}/>
     }
     if(this.state.type === 'facebook'){
       stateValue = <FacebookVideo data={this.state.data} loop={this.props.loop}/>
@@ -50,4 +50,4 @@ class News extends Component {
   }
 }
 
-export default News;
+export default Favori;

@@ -1,7 +1,6 @@
 .news{
 	padding-top: 160px;
 	padding-bottom: 80px;
-	color: #8d8d8d;
 }
 .map{
 	width: 100%;
@@ -22,22 +21,23 @@
 
 @media(max-width: 992px){
 	.news{
-		padding-top: 80px;
-		padding-bottom: 0;
+		padding-top: 70px;
+        padding-bottom: 0;
+        margin-bottom: -5px;
 	}
 	.news-media{
 		padding-right: 0px;
-  	padding-left: 0px;
+  		padding-left: 0px;
 	}
 	.a-la-une{
 		padding-right: 0px;
-  	padding-left: 0px;
-  	width: 100%;
+  		padding-left: 0px;
+  		width: 100%;
 	}
 	.map, .socials{
 		padding-top: 0px;
-    margin-top: 5px;
-    padding-bottom: 0px;
+ 		margin-top: 5px;
+    	padding-bottom: 0px;
 	}
 	.map .container{
 		width: 100%;
@@ -140,9 +140,7 @@
     transform: scale(1.06);
   }
 }
-.carousel-control-next {
-    margin-right: 10px;
-}
-.carousel-control-prev {
-    margin-left: 20px;
+.slick-next:before,
+.slick-prev:before {
+    color: #ccc !important;
 }

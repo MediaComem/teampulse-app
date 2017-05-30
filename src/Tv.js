@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import News from './News.js';
+import Favori from './Favori.js';
 import Instagram from './Instagram.js';
 import Facebook from './Facebook.js';
 import GoogleMap from './GoogleMap.js';
@@ -46,7 +46,7 @@ class Tv extends Component {
 	        <div className="row">
 	          <div className="col-5">
 	            <div className="youtube-container">
-	              <News youtube loop={true}/>
+	              <Favori youtube loop={true}/>
 	            </div>
 	            <div className="map-container">
 	              <GoogleMap height={437}/>

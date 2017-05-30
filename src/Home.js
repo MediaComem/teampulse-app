@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import News from './News.js'
+import Favori from './Favori.js'
 import Instagram from './Instagram.js'
 import Facebook from './Facebook.js'
 import GoogleMap from './GoogleMap.js'
@@ -16,7 +16,7 @@ function PrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, left: '20px', zIndex: '999', backgroundColor: '#ccc' }}
+      style={{ ...style, left: '20px', zIndex: '999' }}
       onClick={onClick}
     ></div>
   );
@@ -27,7 +27,7 @@ function NextArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, right: '20px', zIndex: '999', backgroundColor: '#ccc' }}
+      style={{ ...style, right: '20px', zIndex: '999' }}
       onClick={onClick}
     ></div>
   );
@@ -53,12 +53,12 @@ class Home extends Component {
             <div className="lineDiag-2-content">A la une</div>
           </SectionTitleDesktop>
           <div className="row news">
-            <div className="col-md-2 justify-content-center hidden-sm-down">
+            <div className="col-md-2 justify-content-center hidden-md-down">
               <p>Ne râtez aucun moment de la course grâce à notre programmation à la une!</p>
               <p>Suivez l’avancement de l’événement en live et découvrez les interviews des participants.</p>
             </div>
             <div className="col-md-10 justify-content-center news-media">
-              <News />
+              <Favori />
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ class Home extends Component {
           </div>
         </div>
         <div id="section-3" className="socials">
-          <SectionTitle txtColor="#fff" bgColor="#A6C222">Les réseaux sociaux</SectionTitle>
+          <SectionTitle txtColor="#fff" bgColor="#A6C222" marginBottom="60px">Les réseaux sociaux</SectionTitle>
           <div className="container">
             <div className="row">
               <div className="col-12 col-lg-6 push-lg-6 insta">

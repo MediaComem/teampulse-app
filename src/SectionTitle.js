@@ -13,6 +13,9 @@ const SectionTitle = styled.div`
   @media(min-width: 992px){
     display: none;
   }
+  @media(max-width: 992px){
+    margin-bottom: ${props => props.marginBottom ? props.marginBottom : "auto"};
+  }
 `;
 
 export default SectionTitle;

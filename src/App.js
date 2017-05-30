@@ -12,7 +12,7 @@ import Tv from './Tv.js'
 import './App.css';
 import { Socket } from 'react-socket-io';
 
-const uri = 'http://teampulse.herokuapp.com';
+const uri = 'https://teampulse.herokuapp.com';
 const options = { transports: ['websocket'] };
 
 const DefaultLayout = ({ children }) => (                       

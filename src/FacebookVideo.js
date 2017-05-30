@@ -17,7 +17,6 @@ class FacebookVideo extends Component {
       postUrl: "",
       player: null,
     };
-    // this.onReady = this.onReady.bind(this);
   }
 
 	componentDidMount() {
@@ -35,16 +34,25 @@ class FacebookVideo extends Component {
   }
 	
 	onReady(id,player){
-		console.log("onReady player:")
-    console.log(player)
+		console.log("onReady player:", player)
+     this.setState({
+      player: player,
+    });
+    this.playVideo();
+  }
+  
+  playVideo() {
+		const { player } = this.state;
+		console.log(player);
+    if (player) player.play();
   }
 	
   render() {
-	  var videoId = /\/videos\/(\d+)\/$/.exec(this.props.data.video.url)[1];
+	  var videoId = /\/videos\/(\d+)\/$/.exec(this.props.data.video.url)[1],
+	  videoElement;
 	  console.log(videoId);
-    if(videoId != null) {
-      return (
-	      <FacebookPlayer
+	  if(this.props.loop){
+		  videoElement = <FacebookPlayer
 				  appId={ "269918776508696" }                                  
 				  videoId={ videoId.toString() }                                  
 				  className={ "facebook-video" }                        
@@ -52,10 +60,20 @@ class FacebookVideo extends Component {
 				  allowfullscreen={ "true" }
 				  autoplay={ "false" }
 				  /* EVENTS. Ref: http://bit.ly/29JaA7J */
-					onReady={ this.onReady }
-				  onFinishedPlaying={ this.playVideo }
+					onReady={ this.onReady.bind(this) }
+				  onFinishedPlaying={ this.playVideo.bind(this) }
 				/>
-      )
+		} else {
+			videoElement = <FacebookPlayer
+				  appId={ "269918776508696" }                                  
+				  videoId={ videoId.toString() }                                  
+				  className={ "facebook-video" }                        
+				  allowfullscreen={ "true" }
+				  autoplay={ "false" }
+				/>
+		}
+    if(videoId != null) {
+      return ( videoElement )
     }else{
       console.log("FB VIDEO NULL")
       return (

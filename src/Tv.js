@@ -7,6 +7,8 @@ import GoogleMap from './GoogleMap.js';
 //import SectionTitle from './SectionTitle.js'
 //import FacebookProvider, { EmbeddedPost } from 'react-facebook';
 import { SuperStat } from './Numbers';
+import Loading from 'react-loading-spinner';
+import Spinner from './Spinner';
 import Slider from 'react-slick';
 import './tv.css';
 
@@ -23,6 +25,7 @@ class Tv extends Component {
       slidesToScroll: 1,
     },
     settingsLogos = {
+	    arrows: false,
       infinite: true,
       speed: 500,
       dots: false,

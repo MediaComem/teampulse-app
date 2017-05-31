@@ -25,6 +25,7 @@
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .tv .insta-container{
+	height: 710px;
 	margin-bottom: 20px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);	 
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -37,6 +38,7 @@
 	background-size: 400px auto;
 }
 .tv .facebook-container{
+	height: 710px;
 	padding-top: 20px;
 	margin-bottom: 20px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);	
@@ -108,7 +110,7 @@
 }
 
 .tv .logos .slick-track{
-	height: 170px;
+	height: 165px;
 }
 
 .tv .logos. .logo {

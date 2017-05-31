@@ -11,12 +11,14 @@ class Favori extends Component {
     super(props, context);
     this.state = {
       type: "",
-      data: ""
+      data: "",
+
     };
     this.onMessage = this.onMessage.bind(this);
   }
 
   componentDidMount() {
+	  console.log("done...");
     fetch(constantes.serverUrl+'/favori/data')
       .then(response => response.json())
       .then((data) => { this.setState({type:data.type})});
@@ -24,6 +26,18 @@ class Favori extends Component {
 
   onMessage(message) {
     this.setState({type:message.type,data:message.data})
+  }
+
+  defaultLoadingHandler() {
+    this.setState({
+      defaultLoading: true
+    });
+    setTimeout(() => {
+      this.setState({
+        defaultLoading: false,
+        defaultLoadingContent: 'Content loaded!'
+      })
+    }, 2000);
   }
 
   render() {
@@ -36,7 +50,7 @@ class Favori extends Component {
     }
 
     if(this.state.type === 'flickr'){
-      stateValue = <Flickr data={this.state.data} loop={this.props.loop} autoPlay={true} dots={true} arrow={false}/>
+      stateValue = <Flickr data={this.state.data} loop={this.props.loop} autoPlay={this.props.loop} dots={this.props.dots} arrows={this.props.arrows} imgHeight={this.props.imgHeight}/>
     }
     if(this.state.type === 'facebook'){
       stateValue = <FacebookVideo data={this.state.data} loop={this.props.loop}/>
@@ -47,6 +61,8 @@ class Favori extends Component {
         {stateValue}
       </div>
     )
+    		console.log("here here");
+
   }
 }
 

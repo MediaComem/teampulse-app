@@ -7,8 +7,6 @@ import GoogleMap from './GoogleMap.js';
 //import SectionTitle from './SectionTitle.js'
 //import FacebookProvider, { EmbeddedPost } from 'react-facebook';
 import { SuperStat } from './Numbers';
-import Loading from 'react-loading-spinner';
-import Spinner from './Spinner';
 import Slider from 'react-slick';
 import './tv.css';
 
@@ -49,7 +47,7 @@ class Tv extends Component {
 	        <div className="row">
 	          <div className="col-5">
 	            <div className="youtube-container">
-	              <Favori youtube loop={true}/>
+								<Favori youtube loop={true} arrows={false} dots={false} imgHeight={415}/>
 	            </div>
 	            <div className="map-container">
 	              <GoogleMap height={437}/>
@@ -122,7 +120,7 @@ class Tv extends Component {
   	)
   }
 }
-              
+
 
 
 export default Tv;

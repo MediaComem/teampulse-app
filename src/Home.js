@@ -107,7 +107,7 @@ class Home extends Component {
                 </div>
               </div>
             </div>
-            <SectionTitleDesktop right={90} bottom={180} className="lineDiag-2-wrapper" padding="15px 25px" bgColor="#A6C222" txtColor="#fff">
+            <SectionTitleDesktop right={90} bottom={180} className="lineDiag-2-wrapper reseaux-sociaux" padding="15px 25px" bgColor="#A6C222" txtColor="#fff">
               <div className="lineDiag-2-content">Les réseaux sociaux</div>
             </SectionTitleDesktop>
           </div>

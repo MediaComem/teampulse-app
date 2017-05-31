@@ -14,12 +14,25 @@
 	background-color: #fff;
 }
 .socials .slick-dots {
-    top: -40px;
+  top: -40px;
 	bottom:auto;
+}
+.reseaux-sociaux {
+	right: 90px;
+}
+
+@media (max-width: 1199px) {
+	.reseaux-sociaux {
+		right: 0;
+	}
 }
 
 
+
 @media(max-width: 992px){
+	.reseaux-sociaux {
+		right: auto;
+	}
 	.news{
 		padding-top: 70px;
         padding-bottom: 0;
@@ -48,7 +61,7 @@
 		margin-top: 25px;
 	}
 	.facebook{
-		margin-top:10px;
+		margin-top:100px;
 	}
 	.stats-mobile-container{
 		background-color: #fff;
@@ -73,11 +86,11 @@
 		padding-bottom: 20px;
 	}
 	.stats-desktop-container .stat:after {
-    content:''; 
-    width:1px; 
-    height:60%; 
+    content:'';
+    width:1px;
+    height:60%;
     background: #ccc;
-    position:absolute; 
+    position:absolute;
     right:-4px;
     top:20%;
   }
@@ -85,14 +98,14 @@
     background: none;
 	}
 	.socials .insta .insta-container{
-		margin-left: 50px; 
+		margin-left: 50px;
 		padding-top: 20px;
 		margin-bottom: 20px;
 		width: 100%;
 		max-width: 360px;
 	}
 	.socials .facebook .facebook-container{
-		margin-left: 50px; 
+		margin-left: 50px;
 		padding-top: 20px;
 		margin-bottom: 20px;
 		width: 100%;
@@ -111,7 +124,7 @@
     width: 32px;
     height: 200px;
     z-index: 99;
-    margin-top: -100px; 
+    margin-top: -100px;
     opacity: 1;
   }
   #fp-nav ul {
@@ -120,7 +133,7 @@
   }
   #fp-nav li {
     list-style: none;
-  } 
+  }
   #fp-nav li a {
     width: 14px;
     height: 14px;

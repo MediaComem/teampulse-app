@@ -18,10 +18,9 @@ class Favori extends Component {
   }
 
   componentDidMount() {
-	  console.log("done...");
     fetch(constantes.serverUrl+'/favori/data')
       .then(response => response.json())
-      .then((data) => { this.setState({type:data.type})});
+      .then((data) => { this.setState({type:data.type})})
   }
 
   onMessage(message) {
@@ -61,8 +60,6 @@ class Favori extends Component {
         {stateValue}
       </div>
     )
-    		console.log("here here");
-
   }
 }
 

@@ -46,10 +46,10 @@ class GoogleMap extends Component {
   _onChange({center, zoom}){
     this.setState({
       center: center,
-      zoom: zoom,      
+      zoom: zoom,
     });
   }
-  
+
   loadRaamTrack(map) {
 	map.data.loadGeoJson('raam2x.json');
 	map.data.setStyle({
@@ -59,16 +59,22 @@ class GoogleMap extends Component {
   }
 
   render() {
+    var center;
+    if(this.props.lockCenter) {
+      center = [38.195798, -98.918725];
+    } else {
+      center = this.state.center;
+    }
 		return (
 			<MapContainer height={this.props.height}>
-			   <GoogleMapReact center={this.state.center} onChange={this._onChange.bind(this)} defaultZoom={11} bootstrapURLKeys={{key: "AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs"}} onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)} yesIWantToUseGoogleMapApiInternals>
+			   <GoogleMapReact center={center} onChange={this._onChange.bind(this)} defaultZoom={this.props.zoom} bootstrapURLKeys={{key: "AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs"}} onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)} yesIWantToUseGoogleMapApiInternals>
 			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={10} />
 			   </GoogleMapReact>
 			</MapContainer>
     )
   }
-  
-  
+
+
 }
 
 export default GoogleMap;

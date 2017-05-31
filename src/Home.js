@@ -75,7 +75,7 @@ class Home extends Component {
                 <div className="stat last col-2"><SuperStat type="power" displayFlex={false} descr="Puissance moyenne" unit="watts" /></div>
               </div>
             </div>
-            <GoogleMap height={400} />
+            <GoogleMap height={400} zoom={11} />
             <div id="statsSlider" className="stats-mobile-container">
               <Slider {...settings}>
                 <div><SuperStat type="speed" displayFlex={false} descr="Vitesse moyenne" unit="km/h" /></div>

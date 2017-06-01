@@ -4,3 +4,7 @@ body {
   font-family: 'Quicksand', sans-serif;
   background-color: #fff;
 }
+
+.slick-initialized .slick-slide.slick-active {
+  z-index: 1;
+}

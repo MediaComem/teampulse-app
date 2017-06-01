@@ -27,18 +27,6 @@ class Favori extends Component {
     this.setState({type:message.type,data:message.data})
   }
 
-  defaultLoadingHandler() {
-    this.setState({
-      defaultLoading: true
-    });
-    setTimeout(() => {
-      this.setState({
-        defaultLoading: false,
-        defaultLoadingContent: 'Content loaded!'
-      })
-    }, 2000);
-  }
-
   render() {
     var stateValue = <div></div>
     if(this.state.type === 'youtube'){

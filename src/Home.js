@@ -44,7 +44,6 @@ class Home extends Component {
 
   changeHeight(height) {
     this.setState({"instagram-height": height})
-    console.log("height", height);
     this.setState({
       top: height
     });

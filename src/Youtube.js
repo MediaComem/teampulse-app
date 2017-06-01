@@ -19,8 +19,8 @@ class Youtube extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-  if (this.state.video !== newProps.data.video.v) {
-    	this.setState({video: newProps.data.video.v});
+  if (this.state.video !== newProps.data.video.id) {
+    	this.setState({video: newProps.data.video.id});
     	this.setState({list: newProps.data.video.list});
   	}
 	}

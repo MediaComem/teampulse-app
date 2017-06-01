@@ -4,7 +4,7 @@ import constantes from './constantes.js';
 import Slider from 'react-slick'
 
 const Image = styled.img`
-	height: ${props => props.imgHeight ? props.imgHeight + "px" : "500px"};
+	height: ${props => props.imgHeight};
 	max-width:100%;
 	margin:auto;
 `;

@@ -73,7 +73,7 @@ class Home extends Component {
               <p>Ne râtez aucun moment de la course grâce à notre programmation à la une!</p>
               <p>Suivez l’avancement de l’événement en live et découvrez les interviews des participants.</p>
             </div>
-            <div className="col-md-10 justify-content-center news-media">
+            <div className="col-lg-10 justify-content-center news-media">
               <Favori loop={false} arrows={true} dots={true}/>
             </div>
           </div>

@@ -52,7 +52,7 @@ class Instagram extends Component {
   }
 
   afterChange() {
-    if(this.props.changeHeight != undefined) {
+    if(this.props.changeHeight !== undefined) {
       var insta = document.getElementsByClassName("insta-container")[0];
       this.props.changeHeight(insta.getElementsByClassName("slick-active")[0].offsetHeight);
       // If autoplay is working we reset timeout and it will never end up inside.

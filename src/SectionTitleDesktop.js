@@ -18,6 +18,9 @@ const SectionTitleDesktop = styled.div`
   @media(max-width: 992px){
     display: none;
   }
+  transition:top 0.5s linear;
+  -webkit-transition-property: top;
+  -webkit-transition-duration: 0.5s;
 `;
 
 export default SectionTitleDesktop;

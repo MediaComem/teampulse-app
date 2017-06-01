@@ -62,7 +62,7 @@ class Facebook extends Component {
       arrows: this.props.arrows,
       infinite: true,
       speed: 1000,
-      fade:true,
+      fade: true,
       dots: this.props.dots,
       autoplaySpeed: 13000,
       autoplay: this.props.autoPlay,

@@ -34,6 +34,22 @@ function NextArrow(props) {
 }
 
 class Home extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      "instagram-height": 420,
+      top: 450
+    };
+  }
+
+  changeHeight(height) {
+    this.setState({"instagram-height": height})
+    console.log("height", height);
+    this.setState({
+      top: height
+    });
+  }
+
   render() {
     var settings = {
       arrows: true,
@@ -98,16 +114,16 @@ class Home extends Component {
             <div className="row">
               <div className="col-12 col-lg-6 push-lg-6 insta">
                 <div className="insta-container">
-                  <Instagram postsWidth="320" autoPlay={false} arrows={false} dots={true} />
+                  <Instagram postsWidth="320" autoPlay={true} arrows={false} dots={true} changeHeight={this.changeHeight.bind(this)} />
                 </div>
               </div>
               <div className="col-12 col-lg-6 pull-lg-6 facebook">
                 <div className="facebook-container">
-                  <Facebook postsWidth="320" autoPlay={false} arrows={false} dots={true} />
+                  <Facebook postsWidth="320" autoPlay={true} arrows={false} dots={true} />
                 </div>
               </div>
             </div>
-            <SectionTitleDesktop right={90} bottom={180} className="lineDiag-2-wrapper reseaux-sociaux" padding="15px 25px" bgColor="#A6C222" txtColor="#fff">
+            <SectionTitleDesktop id="reseaux-sociaux" top={this.state.top} right={90} bottom={"auto"} className="lineDiag-2-wrapper reseaux-sociaux" padding="15px 25px" bgColor="#A6C222" txtColor="#fff">
               <div className="lineDiag-2-content">Les réseaux sociaux</div>
             </SectionTitleDesktop>
           </div>

@@ -23,7 +23,7 @@
 
 @media (max-width: 1199px) {
 	.reseaux-sociaux {
-		right: 0;
+		right: 0 !important;
 	}
 }
 

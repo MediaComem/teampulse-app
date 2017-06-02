@@ -38,7 +38,7 @@ class Home extends Component {
     super(props, context);
     this.state = {
       "instagram-height": 420,
-      top: 450
+      "top": 450
     };
     this.afterChange()
   }
@@ -84,7 +84,7 @@ class Home extends Component {
               <p>Suivez l’avancement de l’événement en live et découvrez les interviews des participants.</p>
             </div>
             <div className="col-lg-10 justify-content-center news-media">
-              <Favori loop={false} arrows={true} dots={true} forceLoop={true}/>
+              <Favori loop={false} arrows={false} dots={true} forceLoop={true}/>
             </div>
           </div>
         </div>

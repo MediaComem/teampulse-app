@@ -20,6 +20,9 @@
 .reseaux-sociaux {
 	right: 90px;
 }
+.news .slick-slider{
+		margin-bottom: 0px;
+}
 
 @media (max-width: 1199px) {
 	.reseaux-sociaux {
@@ -30,6 +33,9 @@
 
 
 @media(max-width: 992px){
+	html, body {
+	  overflow-x: hidden;
+	}
 	.reseaux-sociaux {
 		right: auto;
 	}
@@ -37,6 +43,9 @@
 		padding-top: 90px;
     padding-bottom: 0;
     margin-bottom: -5px;
+	}
+	.news .slick-slider {
+			margin-bottom: 30px;
 	}
 	.news-media{
 		padding-right: 0px;

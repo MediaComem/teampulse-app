@@ -40,6 +40,7 @@ class Home extends Component {
       "instagram-height": 420,
       top: 450
     };
+    this.afterChange()
   }
 
   changeHeight(height) {
@@ -47,6 +48,15 @@ class Home extends Component {
     this.setState({
       top: height
     });
+  }
+
+  afterChange() {
+    // If autoplay is working we reset timeout and it will never end up inside.
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+        // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
+        this.slider.innerSlider.play();
+    }, 3200);
   }
 
   render() {
@@ -59,7 +69,8 @@ class Home extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: <PrevArrow />,
-      nextArrow: <NextArrow />
+      nextArrow: <NextArrow />,
+      afterChange: this.afterChange.bind(this)
     };
     return (
       <div>
@@ -92,7 +103,7 @@ class Home extends Component {
             </div>
             <GoogleMap height={400} zoom={11} />
             <div id="statsSlider" className="stats-mobile-container">
-              <Slider {...settings}>
+              <Slider ref={ c => this.slider = c } {...settings}>
                 <div><SuperStat type="speed" displayFlex={false} descr="Vitesse moyenne" unit="km/h" /></div>
                 <div><SuperStat type="rate" displayFlex={false} descr="Cadence moyenne" unit="rmp" /></div>
                 <div><SuperStat type="power" displayFlex={true} descr="Puissance moyenne" unit="" /></div>

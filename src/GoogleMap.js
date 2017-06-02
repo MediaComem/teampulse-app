@@ -24,6 +24,23 @@ const CycloMarker = styled.div`
   fontSize: 16;
 `;
 
+function createMapOptions(maps) {
+  console.log("test");
+// next props are exposed at maps
+// "Animation", "ControlPosition", "MapTypeControlStyle", "MapTypeId",
+// "NavigationControlStyle", "ScaleControlStyle", "StrokePosition", "SymbolPath", "ZoomControlStyle",
+// "DirectionsStatus", "DirectionsTravelMode", "DirectionsUnitSystem", "DistanceMatrixStatus",
+// "DistanceMatrixElementStatus", "ElevationStatus", "GeocoderLocationType", "GeocoderStatus", "KmlLayerStatus",
+// "MaxZoomStatus", "StreetViewStatus", "TransitMode", "TransitRoutePreference", "TravelMode", "UnitSystem"
+return {
+  mapTypeControlOptions: {
+    position: maps.ControlPosition.TOP_RIGHT
+  },
+  scaleControl: true,
+  mapTypeControl: true
+};
+}
+
 class GoogleMap extends Component {
 
 	constructor(props, context) {
@@ -67,7 +84,7 @@ class GoogleMap extends Component {
     }
 		return (
 			<MapContainer height={this.props.height}>
-			   <GoogleMapReact center={center} onChange={this._onChange.bind(this)} defaultZoom={this.props.zoom} bootstrapURLKeys={{key: "AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs"}} onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)} yesIWantToUseGoogleMapApiInternals>
+			   <GoogleMapReact options={createMapOptions} center={center} onChange={this._onChange.bind(this)} defaultZoom={this.props.zoom} bootstrapURLKeys={{key: "AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs"}} onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)} yesIWantToUseGoogleMapApiInternals>
 			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={10} />
 			   </GoogleMapReact>
 			</MapContainer>

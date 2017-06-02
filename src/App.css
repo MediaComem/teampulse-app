@@ -121,12 +121,12 @@ header .container-fluid .row {
 }
 
 .footer img.vaud {
-	max-width: 140px;
-}
-.footer img.heig {
-	max-width: 160px;
+    max-width: 140px;
 }
 
+.footer img.heig {
+    max-width: 160px;
+}
 
 .footer {
     box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.23);
@@ -141,15 +141,15 @@ header .container-fluid .row {
 }
 
 .logos-sponsors {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-flow: flex-start;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: flex-start;
 }
 
 .logo-sponsor {
-		display: flex;
-		margin: 20px;
+    display: flex;
+    margin: 20px;
     align-items: center;
 }
 
@@ -174,21 +174,29 @@ header .container-fluid .row {
 }
 
 .stat {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 @media(max-width: 992px) {
+    #section-1 {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
     .footer img {
         max-height: 60px;
         max-width: 100px;
         margin-bottom: 20px;
     }
     .footer img.vaud {
-			max-width: 90px;
-		}
-		.footer img.heig {
-			max-width: 110px;
-		}
+        max-width: 90px;
+    }
+    .footer img.heig {
+        max-width: 110px;
+    }
     .footer {
         margin-top: 5px;
         -webkit-transform: skewY(0deg);
@@ -214,25 +222,14 @@ header .container-fluid .row {
         transform: skewY(-1deg);
     }
     .logos-sponsors {
-		  display: inline-flex;
-		  flex-direction: row;
-		  flex-wrap: wrap;
-		  justify-content: center
-		}
-
-		.logo-sponsor {
-				display: flex;
-				margin: 20px;
-		    align-items: center;
-		}
-}
-@media(max-width: 576px) {
-  #section-1 {
-      max-width: 100% !important;
-      width:100% !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-  }
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+    .logo-sponsor {
+        display: flex;
+        margin: 20px;
+        align-items: center;
+    }
 }

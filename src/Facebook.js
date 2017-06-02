@@ -45,6 +45,7 @@ class Facebook extends Component {
       postsId: [],
     };
     this.onMessage = this.onMessage.bind(this);
+    this.afterChange()
   }
 
 	componentDidMount() {
@@ -55,6 +56,17 @@ class Facebook extends Component {
 
   onMessage(message) {
     this.setState({postsId:message})
+  }
+
+  afterChange() {
+    if(this.props.forceLoop) {
+      // If autoplay is working we reset timeout and it will never end up inside.
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+          // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
+          this.slider.innerSlider.play();
+      }, 13200);
+    }
   }
 
   render() {
@@ -70,11 +82,12 @@ class Facebook extends Component {
       slidesToScroll: 1,
       prevArrow: <PrevArrow />,
       nextArrow: <NextArrow />,
+      afterChange: this.afterChange.bind(this)
     };
     if(this.state.postsId.length > 0) {
       return (
 	      <div>
-	        <Slider {...settings}>
+	          <Slider ref={ c => this.slider = c } {...settings}>
 	          {this.state.postsId.map(function(post){
 	            return <FbWrapper key={post.id}><FacebookProvider appId="269918776508696">
 	                      <EmbeddedPost style={FacebookEmbedStyle} href={"https://www.facebook.com/teampulse.ch/posts/"+post.id} width="500" showText={true}/>

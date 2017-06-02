@@ -73,7 +73,7 @@ class Home extends Component {
               <p>Suivez l’avancement de l’événement en live et découvrez les interviews des participants.</p>
             </div>
             <div className="col-lg-10 justify-content-center news-media">
-              <Favori loop={false} arrows={true} dots={true}/>
+              <Favori loop={false} arrows={true} dots={true} forceLoop={true}/>
             </div>
           </div>
         </div>
@@ -118,7 +118,7 @@ class Home extends Component {
               </div>
               <div className="col-12 col-lg-6 pull-lg-6 facebook">
                 <div className="facebook-container">
-                  <Facebook postsWidth="320" autoPlay={true} arrows={false} dots={true} />
+                  <Facebook postsWidth="320" autoPlay={true} arrows={false} dots={true} forceLoop={true} />
                 </div>
               </div>
             </div>

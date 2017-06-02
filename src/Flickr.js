@@ -4,7 +4,7 @@ import constantes from './constantes.js';
 import Slider from 'react-slick'
 
 const Image = styled.img`
-	height: ${props => props.imgHeight};
+	height: ${props => props.imgHeight}px;
 	max-width:100%;
 	margin:auto;
 `;
@@ -16,6 +16,7 @@ class Flickr extends Component {
 		this.state = {
 			imagesUrl: []
 		};
+		this.afterChange()
 	}
 
 	componentDidMount() {
@@ -30,6 +31,17 @@ class Flickr extends Component {
 		}
 	}
 
+	afterChange() {
+    if(this.props.forceLoop) {
+      // If autoplay is working we reset timeout and it will never end up inside.
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+          // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
+          this.slider.innerSlider.play();
+      }, 3200);
+    }
+  }
+
 	render() {
 		var settings = {
 			arrows: this.props.arrows,
@@ -41,13 +53,14 @@ class Flickr extends Component {
 			autoplaySpeed: 3000,
 			autoplay: this.props.loop,
 			slidesToShow: 1,
-			slidesToScroll: 1
+			slidesToScroll: 1,
+			afterChange: this.afterChange.bind(this)
 		};
 		var imgHeight = this.props.imgHeight;
 		if (this.state.imagesUrl.length > 0) {
 			return (
 				<div >
-					<Slider {...settings}>
+					<Slider ref={ c => this.slider = c } {...settings}>
 						{this.state.imagesUrl.map(function (image, index) {
 							if (index === 0) {
 								return <div className="carousel-item active" key={index}><Image src={image.url} alt="flickr" imgHeight={imgHeight}/></div>

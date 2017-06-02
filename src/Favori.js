@@ -37,7 +37,7 @@ class Favori extends Component {
     }
 
     if(this.state.type === 'flickr'){
-      stateValue = <Flickr data={this.state.data} loop={this.props.loop} autoPlay={this.props.loop} dots={this.props.dots} arrows={this.props.arrows} imgHeight={this.props.imgHeight}/>
+      stateValue = <Flickr data={this.state.data} loop={this.props.loop} autoPlay={this.props.loop} dots={this.props.dots} arrows={this.props.arrows} imgHeight={this.props.imgHeight} forceLoop={this.props.forceLoop}/>
     }
     if(this.state.type === 'facebook'){
       stateValue = <FacebookVideo data={this.state.data} loop={this.props.loop}/>

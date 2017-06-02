@@ -23,6 +23,15 @@
 .news .slick-slider{
 		margin-bottom: 0px;
 }
+.socials .insta-container{
+	margin-bottom: 20px;
+}
+.socials .facebook-container{
+	margin-bottom: 20px;
+	transition:height 0.5s linear;
+  -webkit-transition-property: height;
+  -webkit-transition-duration: 0.5s;
+}
 
 @media (max-width: 1199px) {
 	.reseaux-sociaux {
@@ -106,14 +115,14 @@
   .stats-desktop-container .stat.last:after {
     background: none;
 	}
-	.socials .insta .insta-container{
+	.socials .insta-container{
 		margin-left: 50px;
 		padding-top: 20px;
 		margin-bottom: 20px;
 		width: 100%;
 		max-width: 360px;
 	}
-	.socials .facebook .facebook-container{
+	.socials .facebook-container{
 		margin-left: 50px;
 		padding-top: 20px;
 		margin-bottom: 20px;

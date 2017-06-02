@@ -45,13 +45,13 @@ class Facebook extends Component {
       postsId: [],
     };
     this.onMessage = this.onMessage.bind(this);
-    this.afterChange()
   }
 
 	componentDidMount() {
     fetch(constantes.serverUrl+'/facebook/posts')
       .then(response => response.json())
       .then((data) => { this.setState({postsId:data})});
+      this.afterChange()
   }
 
   onMessage(message) {
@@ -60,6 +60,13 @@ class Facebook extends Component {
 
   afterChange() {
     if(this.props.forceLoop) {
+      var facebook = document.getElementsByClassName("facebook-container")[0];
+      var slider = facebook.getElementsByClassName("slick-active")[0];
+
+      if(slider !== undefined) {
+        console.log(slider.offsetHeight);
+        facebook.style.height = slider.offsetHeight+"px";
+      }
       // If autoplay is working we reset timeout and it will never end up inside.
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {

@@ -116,6 +116,7 @@ class Home extends Component {
             <SectionTitleDesktop left={-20} bottom={-40} className="lineDiag-2-wrapper" padding="15px 25px" bgColor="#A6C222" txtColor="#fff">
               <div className="lineDiag-2-content">La carte</div>
             </SectionTitleDesktop>
+            <a className="right small" href="https://data.teampulse.ch/raam/map">plus de statistiques</a>
           </div>
         </div>
         <div id="section-3" className="socials">

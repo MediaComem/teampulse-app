@@ -32,6 +32,10 @@
   -webkit-transition-property: height;
   -webkit-transition-duration: 0.5s;
 }
+a.right {
+	margin: 3px;
+	float: right;
+}
 
 @media (max-width: 1199px) {
 	.reseaux-sociaux {
@@ -68,7 +72,7 @@
 	.map, .socials{
 		padding-top: 0px;
  		margin-top: 5px;
-    	padding-bottom: 0px;
+    padding-bottom: 0px;
 	}
 	.map .container{
 		width: 100%;

@@ -64,7 +64,6 @@ class Facebook extends Component {
       var slider = facebook.getElementsByClassName("slick-active")[0];
 
       if(slider !== undefined) {
-        console.log(slider.offsetHeight);
         facebook.style.height = slider.offsetHeight+"px";
       }
       // If autoplay is working we reset timeout and it will never end up inside.

@@ -23,7 +23,15 @@
     font-size: large;
 }
 
-.lineDiag-wrapper {
+.lineDiag-wrapperRight {
+    -webkit-transform: skewY(-1deg);
+    -moz-transform: skewY(-1deg);
+    -ms-transform: skewY(-1deg);
+    -o-transform: skewY(-1deg);
+    transform: skewY(-1deg);
+}
+
+.lineDiag-contentRight {
     -webkit-transform: skewY(1deg);
     -moz-transform: skewY(1deg);
     -ms-transform: skewY(1deg);
@@ -31,7 +39,15 @@
     transform: skewY(1deg);
 }
 
-.lineDiag-content {
+.lineDiag-wrapperLeft {
+    -webkit-transform: skewY(1deg);
+    -moz-transform: skewY(1deg);
+    -ms-transform: skewY(1deg);
+    -o-transform: skewY(1deg);
+    transform: skewY(1deg);
+}
+
+.lineDiag-contentLeft {
     -webkit-transform: skewY(-1deg);
     -moz-transform: skewY(-1deg);
     -ms-transform: skewY(-1deg);
@@ -98,7 +114,7 @@ header .container-fluid .row {
 }
 
 .race-logo {
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .race-logo img {

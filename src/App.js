@@ -17,19 +17,19 @@ const options = { transports: ['websocket'] };
 
 const DefaultLayout = ({ children }) => (                       
   <div>
-    <header className="primary-header lineDiag-wrapper">
-      <div className="container-fluid lineDiag-content">
+    <header className="primary-header lineDiag-wrapperRight">
+      <div className="container-fluid lineDiag-contentRight">
         <div className="row">
-          <div className="col-md-4 hidden-sm-down"></div>
-          <div className="col-6 col-md-4 teampulse-logo"><img src="teampulse_160px.png" alt="Teampulse"/></div>
           <div className="col-6 col-md-4 race-logo"><img src="race_160px.png"  alt="Race Across America 17"/></div>
+          <div className="col-6 col-md-4 teampulse-logo"><img src="teampulse_160px.png" alt="Teampulse"/></div>
+          <div className="col-md-4 hidden-sm-down"></div>
         </div>
       </div>
     </header>
     <aside className="primary-aside"></aside>
     {children}
-    <div className="footer lineDiag-wrapper">
-      <div className="container-fluid lineDiag-content">
+    <div className="footer lineDiag-wrapperLeft">
+      <div className="container-fluid lineDiag-contentLeft">
         <div className="logos-sponsors">
           <div className="logo-sponsor">
             <img className="img-fluid" src="sponsors/hesav.png" alt="Logo Hesav" />

@@ -42,6 +42,13 @@ const StatDescr = styled.div`
 const StatUnit = styled.span`
 `;
 
+
+function parseFloatToFixed(num, x, base) {
+  x = parseFloat(x, base);
+  var pow = Math.pow(base || 10, x);
+  return +(Math.round(num * pow) / pow);
+}
+
 export class SuperStat extends Component {
 
   constructor(props, context) {
@@ -54,7 +61,7 @@ export class SuperStat extends Component {
     fetch(constantes.serverUrl + '/teampulse/data')
       .then(response => response.json())
       .then((body) => {
-        this.setState({ powerValue: parseFloat(body.avgPower, 10).toFixed(1), rateValue: parseFloat(body.avgCadence, 10).toFixed(1), speedValue: parseFloat(body.avgSpeed, 10).toFixed(1), tempValue: parseFloat(body.temperature, 10).toFixed(1), altValue: parseInt(body.altitude, 10), rawOffset: parseInt(body.rawOffset, 10), dstOffset: parseInt(body.dstOffset, 10) });
+        this.setState({ powerValue: parseFloatToFixed(body.avgPower, 1, 10) || "-", rateValue: parseFloatToFixed(body.avgCadence, 1, 10) || "-", speedValue: parseFloatToFixed(body.avgSpeed, 1, 10) || "-", tempValue: parseFloatToFixed(body.temperature, 1, 10) || "-", altValue: parseInt(body.altitude, 10) || "-", rawOffset: parseInt(body.rawOffset, 10) || "-", dstOffset: parseInt(body.dstOffset, 10) || "-" });
       });
     this.timerID = setInterval(
       () => this.updateTime(),
@@ -67,15 +74,15 @@ export class SuperStat extends Component {
   }
 
   onMessage(message) {
-    this.setState({ powerValue: parseFloat(message.avgPower, 10).toFixed(1), rateValue: parseFloat(message.avgCadence, 10).toFixed(1), speedValue: parseFloat(message.avgSpeed, 10).toFixed(1), tempValue: parseFloat(message.temperature, 10).toFixed(1), altValue: parseInt(message.altitude, 10), rawOffset: parseInt(message.rawOffset, 10), dstOffset: parseInt(message.dstOffset, 10) });
+    this.setState({ powerValue: parseFloatToFixed(message.avgPower, 1, 10) || "-", rateValue: parseFloatToFixed(message.avgCadence, 1, 10) || "-", speedValue: parseFloatToFixed(message.avgSpeed, 1, 10) || "-", tempValue: parseFloatToFixed(message.temperature, 1, 10) || "-", altValue: parseInt(message.altitude, 10) || "-", rawOffset: parseInt(message.rawOffset, 10) || "-", dstOffset: parseInt(message.dstOffset, 10) || "-" });
   }
 
   calcLocalTime(offset) {
     var utc = new Date().getTime();
-    var utcOffset = new Date(utc +  (1000 * offset));
+    var utcOffset = new Date(utc + (1000 * offset));
     var minutes = utcOffset.getUTCMinutes();
     var hours = utcOffset.getUTCHours();
-    return (hours <10 ? '0' + hours : hours) + ":" + (minutes <10 ? '0' + minutes : minutes)
+    return (hours < 10 ? '0' + hours : hours) + ":" + (minutes < 10 ? '0' + minutes : minutes)
   }
 
   updateTime() {

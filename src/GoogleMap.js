@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import GoogleMapReact from 'google-map-react';
 import constantes from './constantes.js';
+import GMM from './GoogleMapMarker.js';
 
 const MapContainer = styled.div`
     height: ${props => (props.height)}px;
@@ -16,22 +17,15 @@ const CycloMarker = styled.div`
   left: ${props => -(props.radius)/2}px;
   top: ${props => -(props.radius)/2}px;
 
-  border: 2px solid #f44336;
+  border: 2px solid #051392;
   borderRadius: ${props => (props.radius)}px;
-  backgroundColor: white;
+  backgroundColor: #051392;
   textAlign: center;
-  color: #3f51b5;
+  color: #051392;
   fontSize: 16;
 `;
 
 function createMapOptions(maps) {
-  console.log("test");
-// next props are exposed at maps
-// "Animation", "ControlPosition", "MapTypeControlStyle", "MapTypeId",
-// "NavigationControlStyle", "ScaleControlStyle", "StrokePosition", "SymbolPath", "ZoomControlStyle",
-// "DirectionsStatus", "DirectionsTravelMode", "DirectionsUnitSystem", "DistanceMatrixStatus",
-// "DistanceMatrixElementStatus", "ElevationStatus", "GeocoderLocationType", "GeocoderStatus", "KmlLayerStatus",
-// "MaxZoomStatus", "StreetViewStatus", "TransitMode", "TransitRoutePreference", "TravelMode", "UnitSystem"
 return {
   mapTypeControlOptions: {
     position: maps.ControlPosition.TOP_RIGHT
@@ -48,7 +42,8 @@ class GoogleMap extends Component {
     this.state = {
       center:[0,0],
       cycloLat: 0,
-      cycloLng: 0
+      cycloLng: 0,
+      cyclistChange: []
     };
   }
 
@@ -56,7 +51,28 @@ class GoogleMap extends Component {
     fetch(constantes.serverUrl+'/teampulse/data')
       .then(response => response.json())
       .then((body) => {
-        setTimeout(() => this.setState({center:[parseFloat(body.latitude),parseFloat(body.longitude)],cycloLat:parseFloat(body.latitude),cycloLng:parseFloat(body.longitude)}), 1001);
+        setTimeout(() => this.setState({
+          center:[
+            parseFloat(body.latitude),
+            parseFloat(body.longitude)
+          ],
+          cycloLat:parseFloat(body.latitude),
+          cycloLng:parseFloat(body.longitude),
+          cyclistChange: [
+            {
+              lat: 39.286433,
+              lng: -101.544462,
+              name: "John",
+              date: 1494333792000
+            },
+            {
+              lat: 38.139777,
+              lng: -105.693883,
+              name: "Albert",
+              date: 1494334069000
+            }
+          ]
+        }), 1001);
       });
   }
 
@@ -82,10 +98,25 @@ class GoogleMap extends Component {
     } else {
       center = this.state.center;
     }
+
+    const cyclistChange = this.state.cyclistChange;
 		return (
 			<MapContainer height={this.props.height}>
-			   <GoogleMapReact options={createMapOptions} center={center} onChange={this._onChange.bind(this)} defaultZoom={this.props.zoom} bootstrapURLKeys={{key: "AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs"}} onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)} yesIWantToUseGoogleMapApiInternals>
-			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={10} />
+			   <GoogleMapReact
+          options={createMapOptions}
+          center={center}
+          onChange={this._onChange.bind(this)}
+          defaultZoom={this.props.zoom}
+          bootstrapURLKeys={{key: "AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs"}}
+          onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)}
+          yesIWantToUseGoogleMapApiInternals
+          >
+			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={20} />
+            {
+              cyclistChange.map(function (data, index) {
+                return <GMM key={index} lat={data.lat} lng={data.lng} name={data.name} time={data.date} radius={10} />
+              })
+            }
 			   </GoogleMapReact>
 			</MapContainer>
     )

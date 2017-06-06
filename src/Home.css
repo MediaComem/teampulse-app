@@ -1,189 +1,207 @@
-.news{
-	padding-top: 160px;
-	padding-bottom: 80px;
+.news {
+    padding-top: 140px;
+    padding-bottom: 100px;
 }
-.map{
-	width: 100%;
-	padding-top: 80px;
-	padding-bottom: 80px;
-	background: #A6C222;
+
+.map {
+    width: 100%;
+    position: relative;
+    background: #A6C222;
 }
-.socials{
-	padding-top: 80px;
-	padding-bottom: 80px;
-	background-color: #fff;
+
+.map .container {
+    padding-top: 60px;
+    padding-bottom: 80px;
 }
+
+.socials {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #fff;
+}
+
 .socials .slick-dots {
-  top: -30px;
-	bottom:auto;
+    top: -30px;
+    bottom: auto;
 }
 
 .reseaux-sociaux {
-	right: 90px;
+    right: 90px;
 }
-.news .slick-slider{
-		margin-bottom: 0px;
+
+.news .slick-slider {
+    margin-bottom: 0px;
 }
-.socials .insta-container{
-	margin-bottom: 20px;
+
+.socials .insta-container {
+    margin-bottom: 20px;
 }
-.socials .facebook-container{
-	margin-bottom: 20px;
-	transition:height 0.5s linear;
-  -webkit-transition-property: height;
-  -webkit-transition-duration: 0.5s;
+
+.socials .facebook-container {
+    margin-bottom: 20px;
+    transition: height 0.5s linear;
+    -webkit-transition-property: height;
+    -webkit-transition-duration: 0.5s;
 }
+
 a.right {
-	color: #051392;
-	margin: 3px;
-	float: right;
+    color: #051392;
+    margin: 3px;
+    float: right;
 }
 
 @media (max-width: 1199px) {
-	.reseaux-sociaux {
-		right: 0 !important;
-	}
+    .reseaux-sociaux {
+        right: 0 !important;
+    }
 }
 
+@media(max-width: 992px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    .reseaux-sociaux {
+        right: auto;
+    }
+    .news {
+        padding-top: 73px;
+        padding-bottom: 0;
+        margin-bottom: -5px;
+    }
+    .news .slick-slider {
+        margin-bottom: 40px;
+    }
+    .news .slick-dots {
+        bottom: -30px;
+    }
+    .news-media {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .a-la-une {
+        padding-right: 0px;
+        padding-left: 0px;
+        width: 100%;
+    }
+    .map,
+    .socials {
+        padding-top: 0px;
+        margin-top: 5px;
+        padding-bottom: 0px;
+    }
+    .map .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .socials .container {
+        margin-top: 25px;
+    }
+    .socials .slick-dots {
+        top: -40px;
+        bottom: auto;
+    }
+    .facebook {
+        margin-top: 100px;
+    }
+    .stats-mobile-container {
+        background-color: #fff;
+        padding-bottom: 20px;
+    }
+    .stats-mobile-container .slick-dots {
+        bottom: -20px;
+    }
+    .stats-desktop-container {
+        display: none;
+    }
+}
 
+#fp-nav {
+    display: none;
+}
 
-@media(max-width: 992px){
-	html, body {
-	  overflow-x: hidden;
-	}
-	.reseaux-sociaux {
-		right: auto;
-	}
-	.news{
-		padding-top: 70px;
-    padding-bottom: 0;
-    margin-bottom: -5px;
-	}
-	.news .slick-slider {
-			margin-bottom: 40px;
-	}
-	.news .slick-dots {
-		bottom: -30px;
-	}
-	.news-media{
-		padding-right: 0px;
-  		padding-left: 0px;
-	}
-	.a-la-une{
-		padding-right: 0px;
-  		padding-left: 0px;
-  		width: 100%;
-	}
-	.map, .socials{
-		padding-top: 0px;
- 		margin-top: 5px;
-    padding-bottom: 0px;
-	}
-	.map .container{
-		width: 100%;
-		margin: 0 auto;
-		padding: 0;
-	}
-	.socials .container{
-		margin-top: 25px;
-	}
-	.socials .slick-dots {
-	  top: -40px;
-		bottom:auto;
-	}
-	.facebook{
-		margin-top:100px;
-	}
-	.stats-mobile-container{
-		background-color: #fff;
-		padding-bottom: 20px;
-	}
-	.stats-mobile-container .slick-dots {
-    bottom: -20px;
-  }
-  .stats-desktop-container{
-		display: none;
-	}
+@media(min-width: 992px) {
+    .news {
+        min-height: 840px;
+        max-height: 95vh;
+    }
+    .stats-mobile-container {
+        display: none;
+    }
+    .stats-desktop-container {
+        background-color: #fff;
+        padding-bottom: 20px;
+    }
+    .stats-desktop-container .stat:after {
+        content: '';
+        width: 1px;
+        height: 60%;
+        background: #ccc;
+        position: absolute;
+        right: -4px;
+        top: 20%;
+    }
+    .stats-desktop-container .stat.last:after {
+        background: none;
+    }
+    .socials .insta-container {
+        margin-left: 50px;
+        padding-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 360px;
+    }
+    .socials .facebook-container {
+        margin-left: 50px;
+        padding-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 550px;
+        height: 700px;
+    }
+    #fp-nav {
+        opacity: 0;
+        transition: opacity .3s ease-out;
+        position: fixed;
+        top: 0;
+        display: block;
+        bottom: 0;
+        right: 0;
+        margin: auto 0!important;
+        width: 32px;
+        height: 200px;
+        z-index: 99;
+        margin-top: -100px;
+        opacity: 1;
+    }
+    #fp-nav ul {
+        padding: 0;
+        margin: 0;
+    }
+    #fp-nav li {
+        list-style: none;
+    }
+    #fp-nav li a {
+        width: 14px;
+        height: 14px;
+        transition: all .2s ease-out;
+        border-radius: 50%;
+        display: block;
+        background-color: black;
+        border: 2px solid black;
+        margin: 10px 0;
+        opacity: .2;
+        box-sizing: border-box;
+    }
+    #fp-nav li.active a {
+        background-color: #fff;
+        border: 2px solid #96BB36;
+        opacity: 1;
+        transform: scale(1.06);
+    }
 }
-#fp-nav{
-	display: none;
-}
-@media(min-width: 992px){
-	.stats-mobile-container{
-		display: none;
-	}
-	.stats-desktop-container{
-		background-color: #fff;
-		padding-bottom: 20px;
-	}
-	.stats-desktop-container .stat:after {
-    content:'';
-    width:1px;
-    height:60%;
-    background: #ccc;
-    position:absolute;
-    right:-4px;
-    top:20%;
-  }
-  .stats-desktop-container .stat.last:after {
-    background: none;
-	}
-	.socials .insta-container{
-		margin-left: 50px;
-		padding-top: 20px;
-		margin-bottom: 20px;
-		width: 100%;
-		max-width: 360px;
-	}
-	.socials .facebook-container{
-		margin-left: 50px;
-		padding-top: 20px;
-		margin-bottom: 20px;
-		width: 100%;
-		max-width: 550px;
-		height: 700px;
-	}
-	#fp-nav {
-    opacity: 0;
-    transition: opacity .3s ease-out;
-    position: fixed;
-    top: 0;
-    display: block;
-    bottom: 0;
-    right: 10px;
-    margin: auto 0!important;
-    width: 32px;
-    height: 200px;
-    z-index: 99;
-    margin-top: -100px;
-    opacity: 1;
-  }
-  #fp-nav ul {
-    padding: 0;
-    margin: 0;
-  }
-  #fp-nav li {
-    list-style: none;
-  }
-  #fp-nav li a {
-    width: 14px;
-    height: 14px;
-    transition: all .2s ease-out;
-    border-radius: 50%;
-    display: block;
-    background-color: black;
-    border: 2px solid black;
-    margin: 10px 0;
-    opacity: .2;
-    box-sizing: border-box;
-  }
-  #fp-nav li.active a {
-    background-color: #fff;
-    border: 2px solid #96BB36;
-    opacity: 1;
-    transform: scale(1.06);
-  }
-}
+
 .slick-next:before,
 .slick-prev:before {
     color: #ccc !important;

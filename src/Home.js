@@ -75,22 +75,18 @@ class Home extends Component {
     return (
       <div>
         <div id="section-1" className="container">
-          <SectionTitleDesktop right={1} top={136} className="lineDiag-2-wrapper" padding="15px 25px" bgColor="#fff" txtColor="#A6C222">
+          <SectionTitleDesktop right={1} top={116} className="lineDiag-2-wrapper" padding="15px 25px" bgColor="#fff" txtColor="#A6C222">
             <div className="lineDiag-2-content">A la une</div>
           </SectionTitleDesktop>
           <div className="row news">
-            <div className="col-md-2 justify-content-center hidden-md-down">
-              <p>Ne râtez aucun moment de la course grâce à notre programmation à la une!</p>
-              <p>Suivez l’avancement de l’événement en live et découvrez les interviews des participants.</p>
-            </div>
-            <div className="col-lg-10 justify-content-center news-media">
+            <div className="col-lg-12 justify-content-center news-media">
               <Favori loop={false} arrows={false} dots={true} forceLoop={true}/>
             </div>
           </div>
         </div>
-        <div id="section-2" className="map">
-          <SectionTitle txtColor="#fff" bgColor="#A6C222">La carte</SectionTitle>
-          <div className="container">
+        <div id="section-2" className="map lineDiag-section">
+          <SectionTitle txtColor="#fff" bgColor="#A6C222" padding="15px 25px">La carte</SectionTitle>
+          <div className="container lineDiag-content-section">
             <div className="stats-desktop-container">
               <div className="row">
                 <div className="stat col-2"><SuperStat type="speed" displayFlex={false} descr="Vitesse moyenne" unit="km/h" /></div>
@@ -113,14 +109,14 @@ class Home extends Component {
                 <div><SuperStat type="power" displayFlex={false} descr="Puissance moyenne" unit="watts" /></div>
               </Slider>
             </div>
-            <SectionTitleDesktop left={-20} bottom={-40} className="lineDiag-2-wrapper" padding="15px 25px" bgColor="#A6C222" txtColor="#fff">
+            <SectionTitleDesktop left={-20} bottom={40} className="lineDiag-2-wrapper" padding="15px 25px" bgColor="#A6C222" txtColor="#fff">
               <div className="lineDiag-2-content">La carte</div>
             </SectionTitleDesktop>
             <a className="right small hidden-md-down" href="https://data.teampulse.ch/raam/map">plus de statistiques</a>
           </div>
         </div>
         <div id="section-3" className="socials">
-          <SectionTitle txtColor="#fff" bgColor="#A6C222" marginBottom="60px">Les réseaux sociaux</SectionTitle>
+          <SectionTitle txtColor="#fff" bgColor="#A6C222" marginBottom="60px" padding="15px 25px">Les réseaux sociaux</SectionTitle>
           <div className="container">
             <div className="row">
               <div className="col-12 col-lg-6 push-lg-6 insta">

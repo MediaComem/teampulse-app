@@ -2,6 +2,9 @@
     min-height: 0;
     min-width: 0;
 }
+#root{
+    overflow:hidden;
+}
 
 .App {
     text-align: center;
@@ -55,20 +58,30 @@
     transform: skewY(-1deg);
 }
 
-.lineDiag-2-wrapper {
-    -webkit-transform: skewY(1deg);
-    -moz-transform: skewY(1deg);
-    -ms-transform: skewY(1deg);
-    -o-transform: skewY(1deg);
-    transform: skewY(1deg);
+.lineDiag-section:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100vw 3em 0;
+    border-color: transparent transparent #a6c222 transparent;
+    margin-top: -2.95em;
+    overflow: hidden;
 }
 
-.lineDiag-2-content {
-    -webkit-transform: skewY(-1deg);
-    -moz-transform: skewY(-1deg);
-    -ms-transform: skewY(-1deg);
-    -o-transform: skewY(-1deg);
-    transform: skewY(-1deg);
+.lineDiag-section:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3em 100vw 0 0;
+    border-color: #a6c222 transparent transparent transparent;
+    margin-bottom: 2.95em;
+    overflow: hidden;
 }
 
 header {
@@ -194,6 +207,9 @@ header .container-fluid .row {
 }
 
 @media(max-width: 992px) {
+    .lineDiag-section:before, .lineDiag-section:after{
+        display:none;
+    }
     #section-1 {
         max-width: 100% !important;
         width: 100% !important;

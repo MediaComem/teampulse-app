@@ -31,8 +31,7 @@ return {
     position: maps.ControlPosition.TOP_RIGHT
   },
   scaleControl: true,
-  mapTypeControl: true,
-  language: "fr"
+  mapTypeControl: true
 };
 }
 
@@ -108,7 +107,8 @@ class GoogleMap extends Component {
           center={center}
           onChange={this._onChange.bind(this)}
           defaultZoom={this.props.zoom}
-          bootstrapURLKeys={{key: "AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs"}}
+          bootstrapURLKeys={{key: "AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs", language:"fr"}}
+
           onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)}
           yesIWantToUseGoogleMapApiInternals
           >

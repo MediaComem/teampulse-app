@@ -15,7 +15,7 @@ class Youtube extends Component {
 	componentDidMount() {
     fetch(constantes.serverUrl+'/favori/data')
       .then(response => response.json())
-      .then((data) => { this.setState({video:data.data.video.v}) });
+      .then((data) => { this.setState({video:data.data.video.id}) });
   }
 
   componentWillReceiveProps(newProps) {

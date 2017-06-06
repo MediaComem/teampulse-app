@@ -31,7 +31,8 @@ return {
     position: maps.ControlPosition.TOP_RIGHT
   },
   scaleControl: true,
-  mapTypeControl: true
+  mapTypeControl: true,
+  language: "fr"
 };
 }
 

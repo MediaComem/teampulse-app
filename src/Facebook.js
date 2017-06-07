@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import constantes from './constantes.js';
 import FacebookProvider, { EmbeddedPost } from 'react-facebook';
-import Slider from 'react-slick'
+import Slider from 'react-slick';
+import MediaQuery from 'react-responsive';
+
 import './Facebook.css'
 import { Event } from 'react-socket-io';
 
@@ -76,7 +78,7 @@ class Facebook extends Component {
   }
 
   render() {
-    var settings = {
+    var settingsDesktop = {
       arrows: this.props.arrows,
       infinite: true,
       speed: 1000,
@@ -90,18 +92,43 @@ class Facebook extends Component {
       nextArrow: <NextArrow />,
       afterChange: this.afterChange.bind(this)
     };
+    var settingsMobile = {
+      arrows: this.props.arrows,
+      infinite: true,
+      speed: 1000,
+      fade: false,
+      dots: this.props.dots,
+      autoplaySpeed: 13000,
+      autoplay: this.props.autoPlay,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: <PrevArrow />,
+      nextArrow: <NextArrow />,
+      afterChange: this.afterChange.bind(this)
+    };
     if(this.state.postsId.length > 0) {
       return (
-	      <div>
-	          <Slider ref={ c => this.slider = c } {...settings}>
-	          {this.state.postsId.map(function(post){
-	            return <FbWrapper key={post.id}><FacebookProvider appId="269918776508696">
-	                      <EmbeddedPost style={FacebookEmbedStyle} href={"https://www.facebook.com/teampulse.ch/posts/"+post.id} width="500" showText={true}/>
-	                   </FacebookProvider></FbWrapper>
-	          })}
-	        </Slider>
-	        <Event event='facebook' handler={this.onMessage} />
-	      </div>
+        <div>
+          <MediaQuery query='(max-width: 991px)'>
+            <Slider ref={ c => this.slider = c } {...settingsMobile}>
+            {this.state.postsId.map(function(post){
+              return <FbWrapper key={post.id}><FacebookProvider appId="269918776508696">
+                        <EmbeddedPost style={FacebookEmbedStyle} href={"https://www.facebook.com/teampulse.ch/posts/"+post.id} width="500" showText={true}/>
+                     </FacebookProvider></FbWrapper>
+            })}
+            </Slider>
+          </MediaQuery>
+          <MediaQuery query='(min-width: 992px)'>
+            <Slider ref={ c => this.slider = c } {...settingsDesktop}>
+            {this.state.postsId.map(function(post){
+              return <FbWrapper key={post.id}><FacebookProvider appId="269918776508696">
+                        <EmbeddedPost style={FacebookEmbedStyle} href={"https://www.facebook.com/teampulse.ch/posts/"+post.id} width="500" showText={true}/>
+                     </FacebookProvider></FbWrapper>
+            })}
+            </Slider>
+          </MediaQuery>
+          <Event event='facebook' handler={this.onMessage} />
+        </div>
       )
     }else{
       return (null)

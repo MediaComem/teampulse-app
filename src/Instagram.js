@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 //import styled from 'styled-components';
 import constantes from './constantes.js';
-import InstagramEmbed from 'react-instagram-embed'
-import Slider from 'react-slick'
+import InstagramEmbed from 'react-instagram-embed';
+import Slider from 'react-slick';
 import { Event } from 'react-socket-io';
+import MediaQuery from 'react-responsive';
 
 const InstagramEmbedStyle = {
     display:"flex",
@@ -65,13 +66,27 @@ class Instagram extends Component {
   }
 
   render() {
-    var settings = {
+    var settingsDesktop = {
       arrows: this.props.arrows,
       infinite: true,
       speed: 1000,
       fade: true,
       dots: this.props.dots,
-			autoplaySpeed: 6000,
+      autoplaySpeed: 6000,
+      autoplay: this.props.autoPlay,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: <PrevArrow />,
+      nextArrow: <NextArrow />,
+      afterChange: this.afterChange.bind(this)
+    };
+    var settingsMobile = {
+      arrows: this.props.arrows,
+      infinite: true,
+      speed: 1000,
+      fade: false,
+      dots: this.props.dots,
+      autoplaySpeed: 6000,
       autoplay: this.props.autoPlay,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -82,17 +97,32 @@ class Instagram extends Component {
     if(this.state.postsId.length > 0) {
       return (
 	      <div>
-	        <Slider ref={ c => this.slider = c } {...settings}>
-	          {this.state.postsId.map(function(post){
-	            return <div key={post.id}>
-                <InstagramEmbed
-                  style={InstagramEmbedStyle}
-                  hideCaption={true}
-                  maxWidth={460}
-                  url={post.url} />
-              </div>;
-	          })}
-	        </Slider>
+          <MediaQuery query='(max-width: 991px)'>
+  	        <Slider ref={ c => this.slider = c } {...settingsMobile}>
+  	          {this.state.postsId.map(function(post){
+  	            return <div key={post.id}>
+                  <InstagramEmbed
+                    style={InstagramEmbedStyle}
+                    hideCaption={true}
+                    maxWidth={460}
+                    url={post.url} />
+                </div>;
+  	          })}
+  	        </Slider>
+          </MediaQuery>
+          <MediaQuery query='(min-width: 992px)'>
+            <Slider ref={ c => this.slider = c } {...settingsDesktop}>
+              {this.state.postsId.map(function(post){
+                return <div key={post.id}>
+                  <InstagramEmbed
+                    style={InstagramEmbedStyle}
+                    hideCaption={true}
+                    maxWidth={460}
+                    url={post.url} />
+                </div>;
+              })}
+            </Slider>
+          </MediaQuery>
         	<Event event='instagram' handler={this.onMessage} />
         </div>
       )

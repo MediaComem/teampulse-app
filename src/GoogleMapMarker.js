@@ -101,8 +101,8 @@ class GMM extends Component {
   _displayDate(time) {
     console.log(new Date(time).toString());
     var d = new Date(time),
-      minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-      hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours();
+      minutes = d.getMinutes().toString().length === 1 ? '0'+d.getMinutes() : d.getMinutes(),
+      hours = d.getHours().toString().length === 1 ? '0'+d.getHours() : d.getHours();
     return +' '+hours+':'+minutes + ' le ' + days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
   }
 

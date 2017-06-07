@@ -122,9 +122,14 @@ a.right {
 }
 
 @media(min-width: 992px) {
-    .news {
-        min-height: 840px;
+    #section-1 {
         max-height: 95vh;
+    }
+    #section-1 .embed-responsive{
+        max-height:70vh !important;
+    }
+    #section-1 .carousel-item img{
+        max-height:70vh !important;
     }
     .stats-mobile-container {
         display: none;
@@ -165,7 +170,7 @@ a.right {
         max-width: 550px;
         height: 700px;
     }
-		.socials .slick-dots {
+    .socials .slick-dots {
         top: -35px;
     }
     #fp-nav {

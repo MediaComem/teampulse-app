@@ -84,9 +84,9 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div id="section-2" className="map lineDiag-section">
+        <div id="section-2" className="map lineDiag-wrapperRight">
           <SectionTitle txtColor="#fff" bgColor="#A6C222" padding="15px 25px">La carte</SectionTitle>
-          <div className="container lineDiag-content-section">
+          <div className="container lineDiag-contentRight">
             <div className="stats-desktop-container">
               <div className="row">
                 <div className="stat col-2"><SuperStat type="speed" displayFlex={false} descr="Vitesse moyenne" unit="km/h" /></div>

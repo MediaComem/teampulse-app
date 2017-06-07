@@ -58,7 +58,7 @@
     transform: skewY(-1deg);
 }
 
-.lineDiag-section:before {
+/*.lineDiag-section:before {
     content: "";
     position: absolute;
     display: block;
@@ -82,7 +82,7 @@
     border-color: #a6c222 transparent transparent transparent;
     margin-bottom: 2.95em;
     overflow: hidden;
-}
+}*/
 
 header {
     position: fixed;

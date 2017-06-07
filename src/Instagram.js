@@ -33,15 +33,14 @@ function NextArrow(props) {
   );
 }
 class Instagram extends Component {
-
 	constructor(props, context) {
     super(props, context);
     this.state = {
       postsId: [],
+      isPlaying: true
     };
     this.onMessage = this.onMessage.bind(this);
   }
-
 	componentDidMount() {
     fetch(constantes.serverUrl+'/instagram/posts')
       .then(response => response.json())
@@ -53,7 +52,7 @@ class Instagram extends Component {
   }
 
   afterChange() {
-    if(this.props.changeHeight !== undefined) {
+    if(this.props.changeHeight !== undefined && this.state.isPlaying) {
       var insta = document.getElementsByClassName("insta-container")[0];
       this.props.changeHeight(insta.getElementsByClassName("slick-active")[0].offsetHeight);
       // If autoplay is working we reset timeout and it will never end up inside.
@@ -62,6 +61,24 @@ class Instagram extends Component {
           // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
           this.slider.innerSlider.play();
       }, 6200);
+    }
+  }
+
+  _onHover() {
+    if(this.slider !== undefined) {
+      this.slider.innerSlider.pause();
+      this.setState({
+        isPlaying: false
+      })
+      clearTimeout(this.timer);
+    }
+  }
+  _onHoverExit() {
+    if(this.slider !== undefined) {
+      this.slider.innerSlider.play();
+      this.setState({
+        isPlaying: true
+      })
     }
   }
 
@@ -96,7 +113,7 @@ class Instagram extends Component {
     };
     if(this.state.postsId.length > 0) {
       return (
-	      <div>
+	      <div onMouseOver={this._onHover.bind(this)} onMouseLeave={this._onHoverExit.bind(this)}>
           <MediaQuery query='(max-width: 991px)'>
   	        <Slider ref={ c => this.slider = c } {...settingsMobile}>
   	          {this.state.postsId.map(function(post){

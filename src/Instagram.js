@@ -59,7 +59,7 @@ class Instagram extends Component {
       this.timer = setTimeout(() => {
           // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
           this.slider.innerSlider.play();
-      }, 2200);
+      }, 6200);
     }
   }
 

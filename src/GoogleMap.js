@@ -58,22 +58,15 @@ class GoogleMap extends Component {
           ],
           cycloLat:parseFloat(body.latitude),
           cycloLng:parseFloat(body.longitude),
-          cyclistChange: [
-            {
-              lat: 39.286433,
-              lng: -101.544462,
-              name: "John",
-              date: 1494333792000
-            },
-            {
-              lat: 38.139777,
-              lng: -105.693883,
-              name: "Albert",
-              date: 1494334069000
-            }
-          ]
         }), 1001);
       });
+    fetch(constantes.serverUrl+'/teampulse/switch')
+      .then(response => response.json())
+      .then((body) => {
+        setTimeout(() => this.setState({
+          cyclistChange: body
+        }), 1001);
+      })
   }
 
   _onChange({center, zoom}){
@@ -115,7 +108,7 @@ class GoogleMap extends Component {
 			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={20} />
             {
               cyclistChange.map(function (data, index) {
-                return <GMM key={index} lat={data.lat} lng={data.lng} name={data.name} time={data.date} radius={10} />
+                return <GMM key={index} lat={data.latitude} lng={data.longitude} name={data.contestant} time={data.localTime} radius={10} />
               })
             }
 			   </GoogleMapReact>

@@ -64,9 +64,9 @@ class Flickr extends Component {
 					<Slider ref={ c => this.slider = c } {...settings}>
 						{this.state.imagesUrl.map(function (image, index) {
 							if (index === 0) {
-								return <div className="carousel-item active" key={index}><Image src={image.url} alt="flickr" imgHeight={imgHeight}/></div>
+								return <div className="carousel-item active" key={index}><Image src={image.url_large} srcSet={image.url_large + " 1024w," + image.url_medium800 + " 800w," + image.url_medium640 + " 640w," + image.url_medium + " 500w," + image.url_small + " 320w"} alt="flickr" imgHeight={imgHeight}/></div>
 							} else {
-								return <div className="carousel-item" key={index}><Image src={image.url} alt="flickr" imgHeight={imgHeight} /></div>
+								return <div className="carousel-item" key={index}><Image src={image.url_large} srcSet={image.url_large + " 1024w," + image.url_medium800 + " 800w," + image.url_medium640 + " 640w," + image.url_medium + " 500w," + image.url_small + " 320w"} alt="flickr" imgHeight={imgHeight} /></div>
 							}
 						})}
 					</Slider>

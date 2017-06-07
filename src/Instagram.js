@@ -56,6 +56,7 @@ class Instagram extends Component {
       var insta = document.getElementsByClassName("insta-container")[0];
       this.props.changeHeight(insta.getElementsByClassName("slick-active")[0].offsetHeight);
       // If autoplay is working we reset timeout and it will never end up inside.
+      clearTimeout(this.timer);
       this.timer = setTimeout(() => {
           // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
           this.slider.innerSlider.play();

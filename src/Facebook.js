@@ -45,6 +45,7 @@ class Facebook extends Component {
     super(props, context);
     this.state = {
       postsId: [],
+      isPlaying: true
     };
     this.onMessage = this.onMessage.bind(this);
   }
@@ -61,7 +62,7 @@ class Facebook extends Component {
   }
 
   afterChange() {
-    if(this.props.forceLoop) {
+    if(this.props.forceLoop && this.state.isPlaying) {
       var facebook = document.getElementsByClassName("facebook-container")[0];
       var slider = facebook.getElementsByClassName("slick-active")[0];
 
@@ -74,6 +75,24 @@ class Facebook extends Component {
           // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
           this.slider.innerSlider.play();
       }, 13200);
+    }
+  }
+
+  _onHover() {
+    if(this.slider !== undefined) {
+      this.slider.innerSlider.pause();
+      this.setState({
+        isPlaying: false
+      })
+      clearTimeout(this.timer);
+    }
+  }
+  _onHoverExit() {
+    if(this.slider !== undefined) {
+      this.slider.innerSlider.play();
+      this.setState({
+        isPlaying: true
+      })
     }
   }
 
@@ -108,7 +127,7 @@ class Facebook extends Component {
     };
     if(this.state.postsId.length > 0) {
       return (
-        <div>
+        <div onMouseOver={this._onHover.bind(this)} onMouseLeave={this._onHoverExit.bind(this)}>
           <MediaQuery query='(max-width: 991px)'>
             <Slider ref={ c => this.slider = c } {...settingsMobile}>
             {this.state.postsId.map(function(post){

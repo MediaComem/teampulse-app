@@ -43,8 +43,8 @@ const fadeOut = keyframes`
 const Fade = styled.div`
   display: inline-block;
   visibility: ${props => props.out ? 'hidden' : 'visible'};
-  animation: ${props => props.out ? fadeOut : fadeIn} 0.1s linear;
-  transition: visibility 0.1s linear;
+  animation: ${props => props.out ? fadeOut : fadeIn} 0.2s linear;
+  transition: visibility 0.2s linear;
 `;
 
 const Description = styled.div`
@@ -56,20 +56,37 @@ const Description = styled.div`
   color:#000;
   background:white;
   border: 2px solid #051392;
-  -webkit-border-radius:5px;
-  -moz-border-radius:5px;
-  border-radius:5px;
   min-width: 200px;
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -15px;
-    left: 5px;
-    border-width: 15px 15px 0;
-    border-style: solid;
+  &::before {
+    content:"";
+    position:absolute;
+    bottom:-16px; /* value = - border-top-width - border-bottom-width */
+    left:5px; /* controls horizontal position */
+    border-width:16px 16px 0;
+    border-style:solid;
     border-color: #051392 transparent;
-    display: block;
-    width: 0;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+  }
+  &::after {
+    content:"";
+    position:absolute;
+    bottom:-13px; /* value = - border-top-width - border-bottom-width */
+    left:8px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+    border-width:13px 13px 0;
+    border-style:solid;
+    border-color:#fff transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+  }
+  p{
+    margin: 0px;
+    font-size: 0.7rem;
+  }
+  h5 {
+    font-size: 0.9rem;
   }
 `;
 
@@ -99,10 +116,9 @@ class GMM extends Component {
   }
 
   _displayDate(time) {
-    console.log(new Date(time).toString());
     var d = new Date(time),
-      minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-      hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours();
+      minutes = d.getMinutes().toString().length === 1 ? '0'+d.getMinutes() : d.getMinutes(),
+      hours = d.getHours().toString().length === 1 ? '0'+d.getHours() : d.getHours();
     return +' '+hours+':'+minutes + ' le ' + days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
   }
 
@@ -120,6 +136,7 @@ class GMM extends Component {
                 out={!this.state.visible}
                 >
                 <Description>
+                  <h5>Changement de cycliste</h5>
                   <p><strong>cycliste:</strong> {this.props.name}</p>
                   <p><strong>Heure:</strong> {this.state.displayTime}</p>
                 </Description>

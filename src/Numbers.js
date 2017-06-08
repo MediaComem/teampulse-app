@@ -17,7 +17,7 @@ const cssStatNum = {
 }
 
 const cssStatDescr = {
-  width: "30%",
+  width: "10%",
   textAlign: "left",
   paddingLeft: "3px"
 }
@@ -96,27 +96,27 @@ export class SuperStat extends Component {
   render() {
     var statValue = <StatNum>N/A</StatNum>
     if (this.props.type === 'speed') {
-      statValue = <StatNum displayFlex={this.props.displayFlex}>{this.state.speedValue}</StatNum>
+      statValue = <StatNum className="stats-value" displayFlex={this.props.displayFlex}>{this.state.speedValue}</StatNum>
     }
     if (this.props.type === 'rate') {
-      statValue = <StatNum displayFlex={this.props.displayFlex}>{this.state.rateValue}</StatNum>
+      statValue = <StatNum className="stats-value" displayFlex={this.props.displayFlex}>{this.state.rateValue}</StatNum>
     }
     if (this.props.type === 'power') {
-      statValue = <StatNum displayFlex={this.props.displayFlex}>{this.state.powerValue}</StatNum>
+      statValue = <StatNum className="stats-value" displayFlex={this.props.displayFlex}>{this.state.powerValue}</StatNum>
     }
     if (this.props.type === 'temp') {
-      statValue = <StatNum displayFlex={this.props.displayFlex}>{this.state.tempValue}</StatNum>
+      statValue = <StatNum className="stats-value" displayFlex={this.props.displayFlex}>{this.state.tempValue}</StatNum>
     }
     if (this.props.type === 'alt') {
-      statValue = <StatNum displayFlex={this.props.displayFlex}>{this.state.altValue}</StatNum>
+      statValue = <StatNum className="stats-value" displayFlex={this.props.displayFlex}>{this.state.altValue}</StatNum>
     }
     if (this.props.type === 'time') {
-      statValue = <StatNum displayFlex={this.props.displayFlex}>{this.state.localTime}</StatNum>
+      statValue = <StatNum className="stats-value stats-value4" displayFlex={this.props.displayFlex}>{this.state.localTime}</StatNum>
     }
     return (
       <StatContainer displayFlex={this.props.displayFlex} className={this.props.className}>
         {statValue}
-        <StatDescr displayFlex={this.props.displayFlex}>{this.props.descr}&nbsp;<StatUnit>({this.props.unit})</StatUnit></StatDescr>
+        <StatDescr className="stats-desc" displayFlex={this.props.displayFlex}>{this.props.descr}&nbsp;<StatUnit className="stats-unit">({this.props.unit})</StatUnit></StatDescr>
         <Event event='teampulse' handler={this.onMessage} />
       </StatContainer>
     )

@@ -51,24 +51,17 @@ const Description = styled.div`
   position:absolute;
   bottom:-5px;
   left: -22px;
-  padding:5px 10px;
+  padding:15px;
   margin:1em 0 3em;
-  color:#000;
+  color:#051392;
   background:white;
-  border: 2px solid #051392;
-  min-width: 200px;
-  &::before {
-    content:"";
-    position:absolute;
-    bottom:-16px; /* value = - border-top-width - border-bottom-width */
-    left:5px; /* controls horizontal position */
-    border-width:16px 16px 0;
-    border-style:solid;
-    border-color: #051392 transparent;
-    /* reduce the damage in FF3.0 */
-    display:block;
-    width:0;
-  }
+  min-width: 220px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+  -webkit-box-shadow: 0px 9px 18px 5px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0px 9px 18px 5px rgba(0,0,0,0.35);
+  box-shadow: 0px 9px 18px 5px rgba(0,0,0,0.35);
   &::after {
     content:"";
     position:absolute;
@@ -82,11 +75,19 @@ const Description = styled.div`
     width:0;
   }
   p{
-    margin: 0px;
-    font-size: 0.7rem;
+    margin: 3px 0px;
+    font-size: 0.8rem;
   }
   h5 {
+    text-transform: uppercase;
     font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  hr {
+    margin: 0 0 10px 0;
+    border: 1px solid #051392;
+    width: 50px;
   }
 `;
 
@@ -99,7 +100,9 @@ class GMM extends Component {
     super(props);
     this.state = {
       visible: false,
-      displayTime: this._displayDate(this.props.time)
+      displayDate: this._displayDate(this.props.time),
+      displayTime: this._displayTime(this.props.time),
+      displayCyclistName: this._displayCyclistName(this.props.name)
     }
   }
 
@@ -116,10 +119,38 @@ class GMM extends Component {
   }
 
   _displayDate(time) {
+    var d = new Date(time);
+    return days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
+  }
+
+  _displayTime(time) {
     var d = new Date(time),
-      minutes = d.getMinutes().toString().length === 1 ? '0'+d.getMinutes() : d.getMinutes(),
-      hours = d.getHours().toString().length === 1 ? '0'+d.getHours() : d.getHours();
-    return +' '+hours+':'+minutes + ' le ' + days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
+    minutes = d.getMinutes().toString().length === 1 ? '0'+d.getMinutes() : d.getMinutes(),
+    hours = d.getHours().toString().length === 1 ? '0'+d.getHours() : d.getHours();
+    return hours+':'+minutes
+  }
+
+  _displayCyclistName(name) {
+    switch (name) {
+      case "CYCLIST_001":
+        return "001";
+      case "CYCLIST_002":
+        return "002";
+      case "CYCLIST_003":
+        return "003";
+      case "CYCLIST_004":
+        return "004";
+      case "CYCLIST_005":
+        return "005";
+      case "CYCLIST_006":
+        return "006";
+      case "CYCLIST_007":
+        return "007";
+      case "CYCLIST_008":
+        return "008";
+      default:
+        return "Inconnu";
+    }
   }
 
   render() {
@@ -137,8 +168,10 @@ class GMM extends Component {
                 >
                 <Description>
                   <h5>Changement de cycliste</h5>
-                  <p><strong>cycliste:</strong> {this.props.name}</p>
-                  <p><strong>Heure:</strong> {this.state.displayTime}</p>
+                  <hr />
+                  <p>Cycliste: {this.state.displayCyclistName}</p>
+                  <p>Heure: {this.state.displayTime}</p>
+                  <p>Date: {this.state.displayDate}</p>
                 </Description>
               </Fade>
            </div>

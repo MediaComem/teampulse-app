@@ -108,12 +108,26 @@ a.right {
     .stats-mobile-container {
         background-color: #fff;
         padding-bottom: 20px;
+        padding-top: 20px;
     }
     .stats-mobile-container .slick-dots {
         bottom: -20px;
     }
     .stats-desktop-container {
         display: none;
+    }
+    .stats-value{
+        font-size:3.2em;
+    }
+    /* 4 Number */
+    .stats-value4{
+        width:60%;
+    }
+    .stats-desc{
+        padding-left: 10px;
+    }
+    .stats-unit{
+        display:block;
     }
 }
 
@@ -125,11 +139,15 @@ a.right {
     #section-1 {
         max-height: 95vh;
     }
-    #section-1 .embed-responsive{
-        max-height:70vh !important;
+    #section-1 .embed-responsive {
+        max-height: 70vh !important;
     }
-    #section-1 .carousel-item img{
-        max-height:70vh !important;
+    #section-1 .carousel-item img {
+        max-height: 70vh !important;
+    }
+    .stat {
+        padding-right: 25px !important;
+        padding-left: 25px !important;
     }
     .stats-mobile-container {
         display: none;

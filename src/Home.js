@@ -94,19 +94,18 @@ class Home extends Component {
                 <div className="stat col-2"><SuperStat type="time" displayFlex={false} descr="Heure locale" unit="hh:mm" /></div>
                 <div className="stat col-2"><SuperStat type="alt" displayFlex={false} descr="Altitude" unit="m" /></div>
                 <div className="stat col-2"><SuperStat type="temp" displayFlex={false} descr="Température extérieure" unit="°C" /></div>
-                <div className="stat last col-2"><SuperStat type="power" displayFlex={false} descr="Puissance moyenne" unit="watts" /></div>
+                <div className="stat last col-2"><SuperStat type="power" displayFlex={false} descr="Puissance moyenne" unit="w" /></div>
               </div>
             </div>
             <GoogleMap height={400} zoom={5} />
             <div id="statsSlider" className="stats-mobile-container">
               <Slider ref={ c => this.slider = c } {...settings}>
-                <div><SuperStat type="speed" displayFlex={false} descr="Vitesse moyenne" unit="km/h" /></div>
-                <div><SuperStat type="rate" displayFlex={false} descr="Cadence moyenne" unit="rmp" /></div>
-                <div><SuperStat type="power" displayFlex={true} descr="Puissance moyenne" unit="" /></div>
-                <div><SuperStat type="time" displayFlex={false} descr="Heure locale" unit="hh:mm" /></div>
-                <div><SuperStat type="alt" displayFlex={false} descr="Altitude" unit="m" /></div>
-                <div><SuperStat type="temp" displayFlex={false} descr="Température extérieure" unit="°C" /></div>
-                <div><SuperStat type="power" displayFlex={false} descr="Puissance moyenne" unit="watts" /></div>
+                <div><SuperStat type="speed" displayFlex={true} descr="Vitesse moyenne" unit="km/h" /></div>
+                <div><SuperStat type="rate" displayFlex={true} descr="Cadence moyenne" unit="rmp" /></div>
+                <div><SuperStat type="time" displayFlex={true} descr="Heure locale" unit="hh:mm" /></div>
+                <div><SuperStat type="alt" displayFlex={true} descr="Altitude" unit="m" /></div>
+                <div><SuperStat type="temp" displayFlex={true} descr="Température extérieure" unit="°C" /></div>
+                <div><SuperStat type="power" displayFlex={true} descr="Puissance moyenne" unit="w" /></div>
               </Slider>
             </div>
             <SectionTitleDesktop left={-20} bottom={40} className="lineDiag-2-wrapper" padding="15px 25px" bgColor="#A6C222" txtColor="#fff">

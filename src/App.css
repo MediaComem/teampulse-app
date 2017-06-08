@@ -58,6 +58,23 @@
     transform: skewY(-1deg);
 }
 
+.slick-arrow.slick-prev{
+    background: url('../public/icon_arrow_left.svg') no-repeat !important;
+}
+
+.slick-arrow.slick-next{
+    background: url('../public/icon_arrow_right.svg') no-repeat !important;
+}
+
+.slick-next, .slick-prev{
+    height:30px !important;
+    width:30px !important;
+}
+
+.slick-next::before, .slick-prev::before, .slick-next::before, [dir="rtl"] .slick-prev::before{
+    display:none;
+}
+
 header {
     position: fixed;
     top: -20px;

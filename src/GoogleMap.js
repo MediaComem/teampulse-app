@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import GoogleMapReact from 'google-map-react';
 import constantes from './constantes.js';
 import GMM from './GoogleMapMarker.js';
+import { Event } from 'react-socket-io';
 
 const MapContainer = styled.div`
     height: ${props => (props.height)}px;
@@ -45,6 +46,7 @@ class GoogleMap extends Component {
       cycloLng: 0,
       cyclistChange: []
     };
+    this.onMessage = this.onMessage.bind(this);
   }
 
 	componentDidMount() {
@@ -67,6 +69,14 @@ class GoogleMap extends Component {
           cyclistChange: body
         }), 1001);
       })
+  }
+
+  onMessage(message) {
+    console.log(message);
+    this.setState({
+      cycloLat:parseFloat(message.latitude),
+      cycloLng:parseFloat(message.longitude),
+    });
   }
 
   _onChange({center, zoom}){
@@ -112,6 +122,7 @@ class GoogleMap extends Component {
               })
             }
 			   </GoogleMapReact>
+         <Event event='teampulse' handler={this.onMessage} />
 			</MapContainer>
     )
   }

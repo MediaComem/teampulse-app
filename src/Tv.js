@@ -11,12 +11,25 @@ import Slider from 'react-slick';
 import './tv.css';
 
 class Tv extends Component {
+  componentDidMount() {
+    var component = this;
+    window.addEventListener('resize', function(){
+      if(screen.width === window.innerWidth){
+       component.fullScreen()
+      }
+    });
+  }
+
+  fullScreen() {
+    window.location.reload(false);
+  }
+
   render() {
 	  var settings = {
       arrows: false,
       infinite: true,
       autoplay: true,
-      dots:true,
+      dots:false,
       speed: 500,
       autoplaySpeed: 8000,
       slidesToShow: 1,
@@ -37,9 +50,9 @@ class Tv extends Component {
 		    <header className="primary-header">
 		      <div className="container-fluid">
 		        <div className="row">
-		          <div className="col-6 col-md-4 call-for-action"><p>suivez nos coureurs sur :</p><p className="strong">teampulse.ch</p></div>
-		          <div className="col-6 col-md-4 teampulse-logo"><img src="teampulse_160px.png" alt="Teampulse"/></div>
-		          <div className="col-6 col-md-4 race-logo"><img src="race_160px.png"  alt="Race Across America 17"/></div>
+		          <div className="col-4 col-md-4 call-for-action"><p>suivez nos coureurs sur :</p><p className="strong">live.teampulse.ch</p></div>
+		          <div className="col-4 col-md-4 teampulse-logo"><img src="teampulse_160px.png" alt="Teampulse"/></div>
+		          <div className="col-4 col-md-4 race-logo"><img className="right" src="race_160px.png"  alt="Race Across America 17"/></div>
 		        </div>
 		      </div>
 		    </header>
@@ -50,12 +63,12 @@ class Tv extends Component {
 								<Favori youtube loop={true} arrows={false} dots={false} imgHeight={415}/>
 	            </div>
 	            <div className="map-container">
-	              <GoogleMap height={437} zoom={4} lockCenter={true}/>
+	              <GoogleMap height={437} zoom={4} center={[38.195798, -98.918725]}/>
 	            </div>
 	          </div>
 	          <div id="second-section" className="col-3">
 	            <div className="insta-container">
-	              <Instagram postsWidth="320" autoPlay={true} arrows={false} dots={true}/>
+	              <Instagram postsWidth="320" autoPlay={true} arrows={false} dots={false}/>
 	            </div>
 	            <div className="stats-container">
 	              <div id="statsSlider" className="stats-tv-container">
@@ -92,7 +105,7 @@ class Tv extends Component {
 	          </div>
 	          <div id="facebook-section" className="col-4">
 	            <div className="facebook-container">
-	              <Facebook autoPlay={true} arrows={false} dots={true} />
+	              <Facebook autoPlay={true} arrows={false} dots={false} />
 	            </div>
 	            <div className="logos">
 								<Slider {...settingsLogos}>

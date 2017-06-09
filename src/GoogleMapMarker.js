@@ -105,6 +105,16 @@ class GMM extends Component {
       displayCyclistName: this._displayCyclistName(this.props.name)
     }
   }
+  componentWillReceiveProps(newProps) {
+    if(newProps.closePopup === true) {
+      this._onMouseLeave()
+    }
+	}
+  _onClick(props) {
+    this.setState({
+      visible: !this.state.visible
+    })
+  }
 
   _onMouseEnter(props) {
     this.setState({
@@ -154,7 +164,6 @@ class GMM extends Component {
   }
 
   render() {
-    //console.log(this.props);
     return <div>
               <CycloMarker2
                 lat={this.props.lat}
@@ -162,6 +171,7 @@ class GMM extends Component {
                 radius={this.props.radius}
                 onMouseEnter={this._onMouseEnter.bind(this)}
                 onMouseLeave={this._onMouseLeave.bind(this)}
+                onClick={this._onClick.bind(this)}
                 />
               <Fade
                 out={!this.state.visible}

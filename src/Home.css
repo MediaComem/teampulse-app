@@ -3,6 +3,32 @@
     padding-bottom: 100px;
 }
 
+.news .slick-next {
+    right: -25px;
+}
+
+.news .slick-prev {
+    left: -25px;
+    z-index: 2;
+}
+
+.news .slick-slide {
+    position: relative;
+}
+
+.news .slick-track {
+    height: 70vh;
+}
+
+.news .slick-slide img {
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
 .map {
     width: 100%;
     position: relative;
@@ -69,8 +95,23 @@ a.right {
         padding-bottom: 0;
         margin-bottom: -5px;
     }
-    .news .slick-slider {
-        margin-bottom: 40px;
+    .news .slick-track {
+        height: 100%;
+    }
+    .news .slick-next {
+        right: 10px;
+    }
+    .news .slick-prev {
+        left: 10px;
+    }
+    .news .slick-slide {
+        height: 60vh;
+    }
+    .news .slick-slide img {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        object-fit: cover;
     }
     .news .slick-dots {
         bottom: -30px;
@@ -116,18 +157,18 @@ a.right {
     .stats-desktop-container {
         display: none;
     }
-    .stats-value{
-        font-size:3.2em;
+    .stats-value {
+        font-size: 3.2em;
     }
     /* 4 Number */
-    .stats-value4{
-        width:60%;
+    .stats-value4 {
+        width: 60%;
     }
-    .stats-desc{
+    .stats-desc {
         padding-left: 10px;
     }
-    .stats-unit{
-        display:block;
+    .stats-unit {
+        display: block;
     }
 }
 

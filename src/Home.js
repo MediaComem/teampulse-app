@@ -63,7 +63,7 @@ class Home extends Component {
     var settings = {
       arrows: true,
       infinite: true,
-      dots: true,
+      dots: false,
       speed: 500,
       autoplaySpeed: 3000,
       slidesToShow: 1,
@@ -80,7 +80,7 @@ class Home extends Component {
           </SectionTitleDesktop>
           <div className="row news">
             <div className="col-lg-12 justify-content-center news-media">
-              <Favori loop={false} arrows={false} dots={true} forceLoop={true}/>
+              <Favori loop={false} arrows={true} dots={false} forceLoop={true}/>
             </div>
           </div>
         </div>

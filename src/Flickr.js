@@ -5,8 +5,13 @@ import Slider from 'react-slick'
 
 const Image = styled.img`
 	height: ${props => props.imgHeight}px;
+	width: ${props => props.imgWidth}px;
 	max-width:100%;
 	margin:auto;
+`;
+
+const div = styled.div`
+	height: ${props => props.imgHeight}px;
 `;
 
 class Flickr extends Component {
@@ -32,15 +37,15 @@ class Flickr extends Component {
 	}
 
 	afterChange() {
-    if(this.props.forceLoop) {
-      // If autoplay is working we reset timeout and it will never end up inside.
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-          // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
-          this.slider.innerSlider.play();
-      }, 3200);
-    }
-  }
+		if (this.props.forceLoop) {
+			// If autoplay is working we reset timeout and it will never end up inside.
+			clearTimeout(this.timer);
+			this.timer = setTimeout(() => {
+				// This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
+				this.slider.innerSlider.play();
+			}, 3200);
+		}
+	}
 
 	render() {
 		var settings = {
@@ -48,8 +53,9 @@ class Flickr extends Component {
 			infinite: true,
 			speed: 1000,
 			fade: false,
-			draggable:false,
+			draggable: false,
 			swipe: true,
+			lazyload: 'progressive',
 			dots: this.props.dots,
 			autoplaySpeed: 3000,
 			autoplay: this.props.loop,
@@ -57,17 +63,19 @@ class Flickr extends Component {
 			slidesToScroll: 1,
 			afterChange: this.afterChange.bind(this)
 		};
-		var imgHeight = this.props.imgHeight;
 		if (this.state.imagesUrl.length > 0) {
 			return (
 				<div >
-					<Slider ref={ c => this.slider = c } {...settings}>
-						{this.state.imagesUrl.map(function (image, index) {
-							if (index === 0) {
-								return <div className="carousel-item active" key={index}><Image src={image.url_large} srcSet={image.url_large + " 1024w," + image.url_medium800 + " 800w," + image.url_medium640 + " 640w," + image.url_medium + " 500w," + image.url_small + " 320w"} alt="flickr" imgHeight={imgHeight}/></div>
-							} else {
-								return <div className="carousel-item" key={index}><Image src={image.url_large} srcSet={image.url_large + " 1024w," + image.url_medium800 + " 800w," + image.url_medium640 + " 640w," + image.url_medium + " 500w," + image.url_small + " 320w"} alt="flickr" imgHeight={imgHeight} /></div>
-							}
+					<Slider ref={c => this.slider = c} {...settings}>
+						{this.state.imagesUrl.map((image, index) => {
+
+							var srcset = image
+								.map(s => s.source + " " + s.width + "w")
+								.join(",");
+
+							var largest = image[image.length - 1];
+
+							return <div className={'carousel-item ' + (index === 0 ? 'active' : '')} key={index}><Image src={largest.source} srcSet={srcset} alt="flickr" imgWidth={largest.width}/></div>
 						})}
 					</Slider>
 				</div>

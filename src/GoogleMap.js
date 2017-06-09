@@ -70,7 +70,6 @@ class GoogleMap extends Component {
         setTimeout(() => this.setState({
           cyclistChange: body
         }), 1001);
-        console.log(body);
       })
   }
 

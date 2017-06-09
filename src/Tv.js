@@ -11,6 +11,19 @@ import Slider from 'react-slick';
 import './tv.css';
 
 class Tv extends Component {
+  componentDidMount() {
+    var component = this;
+    window.addEventListener('resize', function(){
+      if(screen.width === window.innerWidth){
+       component.fullScreen()
+      }
+    });
+  }
+
+  fullScreen() {
+    window.location.reload(false);
+  }
+
   render() {
 	  var settings = {
       arrows: false,

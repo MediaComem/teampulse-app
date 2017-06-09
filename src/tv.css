@@ -56,7 +56,7 @@
 }
 .tv .stats-tv-container{
 	background-color: #fff;
-	padding-bottom: 30px;
+	padding: 15px 0px;
 }
 .tv .stats-tv-container .slick-dots {
   bottom: -40px;

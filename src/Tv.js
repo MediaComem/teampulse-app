@@ -16,7 +16,7 @@ class Tv extends Component {
       arrows: false,
       infinite: true,
       autoplay: true,
-      dots:true,
+      dots:false,
       speed: 500,
       autoplaySpeed: 8000,
       slidesToShow: 1,
@@ -55,7 +55,7 @@ class Tv extends Component {
 	          </div>
 	          <div id="second-section" className="col-3">
 	            <div className="insta-container">
-	              <Instagram postsWidth="320" autoPlay={true} arrows={false} dots={true}/>
+	              <Instagram postsWidth="320" autoPlay={true} arrows={false} dots={false}/>
 	            </div>
 	            <div className="stats-container">
 	              <div id="statsSlider" className="stats-tv-container">
@@ -92,7 +92,7 @@ class Tv extends Component {
 	          </div>
 	          <div id="facebook-section" className="col-4">
 	            <div className="facebook-container">
-	              <Facebook autoPlay={true} arrows={false} dots={true} />
+	              <Facebook autoPlay={true} arrows={false} dots={false} />
 	            </div>
 	            <div className="logos">
 								<Slider {...settingsLogos}>

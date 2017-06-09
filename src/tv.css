@@ -39,7 +39,8 @@
 	background-size: 400px auto;
 }
 .tv .facebook-container{
-	height: 790px;
+	overflow: hidden;
+	height: 780px;
 	padding-top: 20px;
 	margin-bottom: 20px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -106,12 +107,12 @@
 .tv .logos{
 	float: right;
 	width: 200px;
-	height: 140px;
+	height: 100px;
 	margin-right: 30px;
 }
 
 .tv .logos .slick-track{
-	height: 140px;
+	height: 100px;
 }
 
 .tv .logos. .logo {
@@ -120,14 +121,14 @@
 
 .tv .logos {
 	float: right;
-	height: 148px;
+	height: 108px;
 }
 
 .tv .logos .logo img {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	max-height: 120px;
+	max-height: 90px;
 	max-width: 200px;
 }
 

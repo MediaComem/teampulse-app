@@ -41,10 +41,11 @@ class GoogleMap extends Component {
 	constructor(props, context) {
     super(props, context);
     this.state = {
-      center:[0,0],
+      center: this.props.center,
       cycloLat: 0,
       cycloLng: 0,
-      cyclistChange: []
+      cyclistChange: [],
+      closePopup: false
     };
     this.onMessage = this.onMessage.bind(this);
   }
@@ -68,11 +69,11 @@ class GoogleMap extends Component {
         setTimeout(() => this.setState({
           cyclistChange: body
         }), 1001);
+        console.log(body);
       })
   }
 
   onMessage(message) {
-    console.log(message);
     this.setState({
       cycloLat:parseFloat(message.latitude),
       cycloLng:parseFloat(message.longitude),
@@ -86,6 +87,13 @@ class GoogleMap extends Component {
     });
   }
 
+  _onClick() {
+    console.log("popup");
+    this.setState({
+        closePopup: true
+    })
+  }
+
   loadRaamTrack(map) {
 	map.data.loadGeoJson('raam2x.json');
 	map.data.setStyle({
@@ -95,30 +103,25 @@ class GoogleMap extends Component {
   }
 
   render() {
-    var center;
-    if(this.props.lockCenter) {
-      center = [38.195798, -98.918725];
-    } else {
-      center = this.state.center;
-    }
-
     const cyclistChange = this.state.cyclistChange;
+    const map = this;
 		return (
 			<MapContainer height={this.props.height}>
 			   <GoogleMapReact
           options={createMapOptions}
-          center={center}
+          center={this.state.center}
           onChange={this._onChange.bind(this)}
+          onClick={this._onClick.bind(this)}
           defaultZoom={this.props.zoom}
           bootstrapURLKeys={{key: "AIzaSyAf7QBjbsRt6Hv-aixRFPr_9f-WjSNkAWs", language:"fr"}}
 
           onGoogleApiLoaded={({map, maps}) => this.loadRaamTrack(map)}
           yesIWantToUseGoogleMapApiInternals
           >
-			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={20} />
+			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={15} />
             {
               cyclistChange.map(function (data, index) {
-                return <GMM key={index} lat={data.latitude} lng={data.longitude} name={data.contestant} time={data.localTime} radius={10} />
+                return <GMM key={index} lat={data.latitude} lng={data.longitude} name={data.contestant} time={data.localTime} radius={10} closePopup={map.state.closePopup} />
               })
             }
 			   </GoogleMapReact>

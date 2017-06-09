@@ -37,9 +37,9 @@ class Tv extends Component {
 		    <header className="primary-header">
 		      <div className="container-fluid">
 		        <div className="row">
-		          <div className="col-6 col-md-4 call-for-action"><p>suivez nos coureurs sur :</p><p className="strong">teampulse.ch</p></div>
-		          <div className="col-6 col-md-4 teampulse-logo"><img src="teampulse_160px.png" alt="Teampulse"/></div>
-		          <div className="col-6 col-md-4 race-logo"><img src="race_160px.png"  alt="Race Across America 17"/></div>
+		          <div className="col-4 col-md-4 call-for-action"><p>suivez nos coureurs sur :</p><p className="strong">live.teampulse.ch</p></div>
+		          <div className="col-4 col-md-4 teampulse-logo"><img src="teampulse_160px.png" alt="Teampulse"/></div>
+		          <div className="col-4 col-md-4 race-logo"><img className="right" src="race_160px.png"  alt="Race Across America 17"/></div>
 		        </div>
 		      </div>
 		    </header>

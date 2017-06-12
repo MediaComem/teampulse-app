@@ -15,7 +15,7 @@ import { Socket } from 'react-socket-io';
 const uri = 'https://teampulse.herokuapp.com';
 const options = { transports: ['websocket'] };
 
-const DefaultLayout = ({ children }) => (                       
+const DefaultLayout = ({ children }) => (
   <div>
     <header className="primary-header lineDiag-wrapperRight">
       <div className="container-fluid lineDiag-contentRight">
@@ -51,21 +51,20 @@ const DefaultLayout = ({ children }) => (
     </div>
     <div className="visual-footer hidden-lg-up">
       <div className="container-fluid">
-        
       </div>
-    </div>                                      
-  </div>           
-); 
-const TvLayout = ({ children }) => (                       
+    </div>
+  </div>
+);
+const TvLayout = ({ children }) => (
   <div>
-    {children}                              
-  </div>           
-); 
+    {children}
+  </div>
+);
 
 
 const BasicExample = () => (
   <Router>
-    <Socket uri={uri} options={options}> 
+    <Socket uri={uri} options={options}>
       <Switch>
         <Route exact path="/" render={() => <DefaultLayout><Home /></DefaultLayout>} />
         <Route exact path="/tv" render={() => <TvLayout><Tv /></TvLayout>} />

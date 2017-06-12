@@ -37,17 +37,8 @@ class Home extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      "instagram-height": 420,
-      "top": 450
     };
     this.afterChange()
-  }
-
-  changeHeight(height) {
-    this.setState({"instagram-height": height})
-    this.setState({
-      top: height
-    });
   }
 
   afterChange() {
@@ -120,7 +111,7 @@ class Home extends Component {
             <div className="row">
               <div className="col-12 col-lg-6 push-lg-6 insta">
                 <div className="insta-container">
-                  <Instagram postsWidth="320" autoPlay={true} arrows={false} dots={true} changeHeight={this.changeHeight.bind(this)} />
+                  <Instagram postsWidth="320" autoPlay={true} arrows={false} dots={true} />
                 </div>
               </div>
               <div className="col-12 col-lg-6 pull-lg-6 facebook">
@@ -129,7 +120,7 @@ class Home extends Component {
                 </div>
               </div>
             </div>
-            <SectionTitleDesktop id="reseaux-sociaux" top={this.state.top} right={90} bottom={"auto"} className="lineDiag-2-wrapper reseaux-sociaux" padding="15px 25px" bgColor="#A6C222" txtColor="#fff">
+            <SectionTitleDesktop id="reseaux-sociaux" right={90} bottom={"auto"} className="lineDiag-2-wrapper reseaux-sociaux" padding="15px 25px" bgColor="#A6C222" txtColor="#fff">
               <div className="lineDiag-2-content">Les réseaux sociaux</div>
             </SectionTitleDesktop>
           </div>

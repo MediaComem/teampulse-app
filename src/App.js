@@ -28,31 +28,34 @@ const DefaultLayout = ({ children }) => (
     </header>
     <aside className="primary-aside"></aside>
     {children}
-    <div className="footer lineDiag-wrapperLeft">
-      <div className="container-fluid lineDiag-contentLeft">
-        <div className="logos-sponsors">
-          <div className="logo-sponsor">
-            <img className="img-fluid" src="sponsors/hesav.png" alt="Logo Hesav" />
-          </div>
-          <div className="logo-sponsor">
-            <img className="img-fluid heig" src="sponsors/heig.png" alt="Logo Heig-vd" />
-          </div>
-          <div className="logo-sponsor">
-            <img className="img-fluid vaud" src="sponsors/vaud.png" alt="Logo du Canton de Vaud" />
-          </div>
-          <div className="logo-sponsor">
-            <img className="img-fluid" src="sponsors/unil.png" alt="Logo Unil" />
-          </div>
-          <div className="logo-sponsor">
-           <img className="img-fluid" src="sponsors/chuv.png" alt="Logo Chuv" />
+    <footer>
+      <div className="footer lineDiag-wrapperRight">
+        <div className="container-fluid lineDiag-contentRight">
+          <div className="logos-sponsors">
+            <div className="logo-sponsor">
+              <img className="img-fluid" src="sponsors/hesav.png" alt="Logo Hesav" />
+            </div>
+            <div className="logo-sponsor">
+              <img className="img-fluid heig" src="sponsors/heig.png" alt="Logo Heig-vd" />
+            </div>
+            <div className="logo-sponsor">
+              <img className="img-fluid vaud" src="sponsors/vaud.png" alt="Logo du Canton de Vaud" />
+            </div>
+            <div className="logo-sponsor">
+              <img className="img-fluid" src="sponsors/unil.png" alt="Logo Unil" />
+            </div>
+            <div className="logo-sponsor">
+             <img className="img-fluid" src="sponsors/chuv.png" alt="Logo Chuv" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div className="visual-footer hidden-lg-up">
-      <div className="container-fluid">
+
+      <div className="visual-footer hidden-lg-up">
+        <div className="container-fluid">
+        </div>
       </div>
-    </div>
+    </footer>
   </div>
 );
 const TvLayout = ({ children }) => (

@@ -81,7 +81,6 @@ a.right {
         right: 0 !important;
     }
 }
-
 @media(max-width: 991px) {
     html,
     body {
@@ -278,4 +277,21 @@ a.right {
 .slick-next:before,
 .slick-prev:before {
     color: #ccc !important;
+}
+@media screen and (min-aspect-ratio: 8/5) {
+  .news .slick-slide {
+      height: 80vh;
+  }
+  header.primary-header {
+      height: 80px;
+  }
+  .news {
+    padding-top: 52px;
+  }
+  header .teampulse-logo img {
+    max-width: 240px;
+  }
+  header .race-logo img {
+    max-width: 95px;
+  }
 }

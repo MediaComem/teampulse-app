@@ -68,7 +68,7 @@ class GoogleMap extends Component {
       .then(response => response.json())
       .then((body) => {
         setTimeout(() => this.setState({
-          cyclistChange: body
+          cyclistChange: body.data
         }), 1001);
       })
   }

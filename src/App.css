@@ -215,7 +215,7 @@ footer {
 }
 
 @media(max-width: 992px) {
-    iframe {
+    #section-3 iframe {
         pointer-events: none;
     }
     #section-2.lineDiag-wrapperRight,

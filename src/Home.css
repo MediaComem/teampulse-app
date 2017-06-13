@@ -278,7 +278,7 @@ a.right {
 .slick-prev:before {
     color: #ccc !important;
 }
-@media screen and (min-aspect-ratio: 8/5) {
+@media screen and (min-aspect-ratio: 8/5 || max-width: 991px) {
   .news .slick-slide {
       height: 80vh;
   }

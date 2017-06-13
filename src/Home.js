@@ -75,7 +75,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div id="section-2" className="map lineDiag-wrapperRight">
+        <div id="section-2" className="map lineDiag-wrapperRight" >
           <SectionTitle txtColor="#fff" bgColor="#A6C222" padding="15px 25px">La carte</SectionTitle>
           <div className="container lineDiag-contentRight">
             <div className="stats-desktop-container">
@@ -126,7 +126,7 @@ class Home extends Component {
           </div>
         </div>
         <div id="fp-nav">
-          <Scrollspy items={['section-1', 'section-2', 'section-3']} currentClassName="active" offset={-70}>
+          <Scrollspy items={['section-1', 'section-2', 'section-3']} currentClassName="active" offset={-400}>
             <li><a href="#section-1"></a></li>
             <li><a href="#section-2"></a></li>
             <li><a href="#section-3"></a></li>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import constantes from './constantes.js';
 import Slider from 'react-slick'
+import objectFitImages from 'object-fit-images';
 
 const Image = styled.img`
 	height: ${props => props.imgHeight}px;
@@ -27,10 +28,12 @@ class Flickr extends Component {
 	componentDidMount() {
 		fetch(constantes.serverUrl + '/favori/data')
 			.then(response => response.json())
-			.then((data) => {
+			.then(data => {
 				this.setState({ imagesUrl: data.data.photos });
 				this.setState({ photosetUrl: data.data.photoset.url });
-			});
+			})
+			.then(d => objectFitImages());
+		
 	}
 
 	componentWillReceiveProps(newProps) {

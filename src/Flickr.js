@@ -27,12 +27,16 @@ class Flickr extends Component {
 	componentDidMount() {
 		fetch(constantes.serverUrl + '/favori/data')
 			.then(response => response.json())
-			.then((data) => { this.setState({ imagesUrl: data.data.photos }); });
+			.then((data) => {
+				this.setState({ imagesUrl: data.data.photos });
+				this.setState({ photosetUrl: data.data.photoset.url });
+			});
 	}
 
 	componentWillReceiveProps(newProps) {
 		if (this.state.imagesUrl !== newProps.data.photos) {
-			this.setState({ imagesUrl: newProps.data.photos });
+			this.setState({ imagesUrl: newProps.data.photos })
+			this.setState({ photosetUrl: newProps.data.photoset.url });
 		}
 	}
 
@@ -75,7 +79,13 @@ class Flickr extends Component {
 
 							var largest = image[image.length - 1];
 
-							return <div className={'carousel-item ' + (index === 0 ? 'active' : '')} key={index}><Image src={largest.source} srcSet={srcset} alt="flickr" imgWidth={largest.width}/></div>
+							return (
+								<div className={'carousel-item ' + (index === 0 ? 'active' : '')} key={index}>
+									<a href={this.state.photosetUrl}>
+										<Image src={largest.source} srcSet={srcset} alt="flickr" imgWidth={largest.width} />
+									</a>
+								</div>
+							)
 						})}
 					</Slider>
 				</div>

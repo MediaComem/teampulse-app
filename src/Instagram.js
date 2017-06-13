@@ -79,6 +79,9 @@ class Instagram extends Component {
       })
     }
   }
+  _onClickMobile(url){
+    location.href = url;
+  }
 
   render() {
     var settingsDesktop = {
@@ -110,6 +113,7 @@ class Instagram extends Component {
       afterChange: this.afterChange.bind(this)
     };
     if(this.state.postsId.length > 0) {
+      var this_ = this;
       return (
 	      <div onMouseOver={this._onHover.bind(this)} onMouseLeave={this._onHoverExit.bind(this)}>
           <MediaQuery query='(max-width: 991px)'>
@@ -120,7 +124,7 @@ class Instagram extends Component {
                     style={InstagramEmbedStyle}
                     hideCaption={true}
                     maxWidth={460}
-                    url={post.url} />
+                    url={post.url} onClick={this_._onClickMobile.bind(this_,post.url)} />
                 </div>;
   	          })}
   	        </Slider>

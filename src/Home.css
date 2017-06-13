@@ -27,6 +27,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     object-fit: contain;
+    font-family: 'object-fit: contain;'
 }
 
 .map {
@@ -116,6 +117,7 @@ a.right {
         width: 100%;
         padding: 0;
         object-fit: cover;
+        font-family: 'object-fit: cover;'
     }
     .news .slick-dots {
         bottom: -30px;

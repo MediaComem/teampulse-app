@@ -1,145 +1,163 @@
-
 .tv header {
-	position: relative;
-	height: 120px;
-	-webkit-transform: skewY(-0.5deg);
-	-moz-transform: skewY(-0.5deg);
-	-ms-transform: skewY(-0.5deg);
-	-o-transform: skewY(-0.5deg);
-	transform: skewY(-0.5deg);
-	margin-bottom: 20px;
+    position: relative;
+    height: 120px;
+    -webkit-transform: skewY(-0.5deg);
+    -moz-transform: skewY(-0.5deg);
+    -ms-transform: skewY(-0.5deg);
+    -o-transform: skewY(-0.5deg);
+    transform: skewY(-0.5deg);
+    margin-bottom: 20px;
 }
 
 .tv header .container-fluid {
-	top: 10px;
-	-webkit-transform: skewY(0.5deg);
-	-moz-transform: skewY(0.5deg);
-	-ms-transform: skewY(0.5deg);
-	-o-transform: skewY(0.5deg);
-	transform: skewY(0.5deg);
+    top: 10px;
+    -webkit-transform: skewY(0.5deg);
+    -moz-transform: skewY(0.5deg);
+    -ms-transform: skewY(0.5deg);
+    -o-transform: skewY(0.5deg);
+    transform: skewY(0.5deg);
 }
 
-.tv .youtube-container{
-	height: 450px;
-	margin-bottom: 20px;
-	padding: 20px;
-	-webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
-	box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
+.tv .youtube-container {
+    height: 450px;
+    margin-bottom: 20px;
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
 }
-.tv .insta-container{
-	height: 710px;
-	margin-bottom: 20px;
-	-webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
-	box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
-	width: 100%;
-	max-width: 520px;
-	padding: 20px 20px 28px 20px;
-	background-image: url(../public/velo.svg);
-	background-repeat: no-repeat;
-	background-position: -100% 100%;
-	background-size: 400px auto;
+
+.tv .insta-container {
+    height: 710px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 520px;
+    padding: 20px 20px 28px 20px;
+    background-image: url(../public/velo.svg);
+    background-repeat: no-repeat;
+    background-position: -100% 100%;
+    background-size: 400px auto;
 }
-.tv .facebook-container{
-	overflow: hidden;
-	height: 780px;
-	padding-top: 20px;
-	margin-bottom: 20px;
-	padding-top: 20px;
-	-webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
-	box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
-	width: 100%;
-	max-width: 550px;
+
+.tv .facebook-container {
+    overflow: hidden;
+    height: 780px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 550px;
 }
-.tv .stats-container{
-	-webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
-	box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.2);
-	padding: 20px;
-	max-width: 520px;
+
+.tv .stats-container {
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 520px;
 }
-.tv .stats-tv-container{
-	background-color: #fff;
-	padding: 15px 0px;
+
+.tv .stats-tv-container {
+    background-color: #fff;
+    padding: 15px 0px;
 }
+
 .tv .stats-tv-container .slick-dots {
-  bottom: -40px;
+    bottom: -40px;
 }
 
 .tv .insta-container .slick-dots {
-  bottom: -18px;
+    bottom: -18px;
 }
 
 .tv .facebook-container .slick-dots {
-  bottom: 10px;
+    bottom: 10px;
 }
 
 .tv .facebook-container .slick-track {
-	  padding-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 .tv .call-for-action {
-	color: white;
-	margin-top: 28px;
-	font-size: large;
+    color: white;
+    margin-top: 28px;
+    font-size: large;
 }
+
 .tv .call-for-action p {
-	margin-top: 0px;
-	margin-bottom: 2px;
+    margin-top: 0px;
+    margin-bottom: 2px;
 }
+
 .tv .call-for-action p:first-child {
-	margin-top: 8px;
-	margin-bottom: 0px;
+    margin-top: 8px;
+    margin-bottom: 0px;
 }
 
 .strong {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .tv #second-section {
-	width: 28%;
-	flex: 0 0 28%;
-  max-width: 28%;
+    width: 28%;
+    flex: 0 0 28%;
+    max-width: 28%;
 }
 
 .tv #facebook-section {
-	width: 30.333%;
-	flex: 0 0 30.333%;
-  max-width: 30.333%;
-}
-
-.tv .logos{
-	float: right;
-	width: 200px;
-	height: 100px;
-	margin-right: 30px;
-}
-
-.tv .logos .slick-track{
-	height: 100px;
-}
-
-.tv .logos. .logo {
-	width: 200px;
+    width: 30.333%;
+    flex: 0 0 30.333%;
+    max-width: 30.333%;
 }
 
 .tv .logos {
-	float: right;
-	height: 108px;
+    float: right;
+    width: 200px;
+    height: 100px;
+    margin-right: 30px;
+}
+
+.tv .logos .slick-track {
+    height: 100px;
+}
+
+.tv .logos. .logo {
+    width: 200px;
+}
+
+.tv .logos {
+    float: right;
+    height: 108px;
 }
 
 .tv .logos .logo img {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	max-height: 90px;
-	max-width: 200px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-height: 90px;
+    max-width: 200px;
 }
 
 .tv .right {
-	top: 30px;
-	right: 15px;
-  position: absolute;
+    top: 30px;
+    right: 15px;
+    position: absolute;
+}
+
+.tv #first-section .slick-slide img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    object-fit: contain;
+    font-family: 'object-fit: contain;'
+}
+
+.tv #first-section .youtube-container div{
+	height:100% !important;
 }

@@ -2,8 +2,9 @@
     min-height: 0;
     min-width: 0;
 }
-#root{
-    overflow:hidden;
+
+#root {
+    overflow: hidden;
 }
 
 .App {
@@ -58,21 +59,25 @@
     transform: skewY(-1deg);
 }
 
-.slick-arrow.slick-prev{
+.slick-arrow.slick-prev {
     background: url('../public/icon_arrow_left.svg') no-repeat !important;
 }
 
-.slick-arrow.slick-next{
+.slick-arrow.slick-next {
     background: url('../public/icon_arrow_right.svg') no-repeat !important;
 }
 
-.slick-next, .slick-prev{
-    height:30px !important;
-    width:15px !important;
+.slick-next,
+.slick-prev {
+    height: 30px !important;
+    width: 15px !important;
 }
 
-.slick-next::before, .slick-prev::before, .slick-next::before, [dir="rtl"] .slick-prev::before{
-    display:none;
+.slick-next::before,
+.slick-prev::before,
+.slick-next::before,
+[dir="rtl"] .slick-prev::before {
+    display: none;
 }
 
 header {
@@ -135,7 +140,6 @@ header .container-fluid .row {
     }
 }
 
-
 .footer img {
     max-width: 120px;
     max-height: 70px;
@@ -148,18 +152,20 @@ header .container-fluid .row {
 .footer img.heig {
     max-width: 130px;
 }
+
 footer {
-  position: relative;
-  height: 200px;
+    position: relative;
+    height: 200px;
 }
+
 .footer {
-  position: absolute;
-  bottom: -15px;
-  left: 0px;
-  right: 0px;
-  -webkit-box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.15);
-  -moz-box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.15);
-  box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.15);
+    position: absolute;
+    bottom: -15px;
+    left: 0px;
+    right: 0px;
+    -webkit-box-shadow: 0px 0px 13px 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 0px 13px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 13px 5px rgba(0, 0, 0, 0.15);
     padding-top: 10px;
     padding-bottom: 20px;
     background-color: #fff;
@@ -232,8 +238,12 @@ footer {
 }
 
 @media(max-width: 992px) {
-    #section-2.lineDiag-wrapperRight, #section-2 .lineDiag-contentRight{
-        transform:none;
+    #section-3 iframe {
+        pointer-events: none;
+    }
+    #section-2.lineDiag-wrapperRight,
+    #section-2 .lineDiag-contentRight {
+        transform: none;
     }
     #section-1 {
         max-width: 100% !important;
@@ -258,7 +268,7 @@ footer {
       height: 300px;
     }
     .footer {
-      bottom: -20px;
+        bottom: -20px;
         margin-top: 5px;
         -webkit-transform: skewY(0deg);
         -moz-transform: skewY(0deg);
@@ -295,12 +305,6 @@ footer {
 @media(max-width: 767px) {
   .social-links-container {
     margin-top: 20px;
-  }
-}
-
-@media(max-width: 697px) {
-  footer {
-    height: 300px;
   }
 }
 @media(max-width: 477px) {

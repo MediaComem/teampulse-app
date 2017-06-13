@@ -96,6 +96,10 @@ class Facebook extends Component {
     }
   }
 
+  _onClickMobile(url){
+    location.href = url;
+  }
+
   render() {
     var settingsDesktop = {
       arrows: this.props.arrows,
@@ -126,12 +130,13 @@ class Facebook extends Component {
       afterChange: this.afterChange.bind(this)
     };
     if(this.state.postsId.length > 0) {
+      var this_ = this;
       return (
         <div onMouseOver={this._onHover.bind(this)} onMouseLeave={this._onHoverExit.bind(this)}>
           <MediaQuery query='(max-width: 991px)'>
             <Slider ref={ c => this.slider = c } {...settingsMobile}>
             {this.state.postsId.map(function(post){
-              return <FbWrapper key={post.id}><FacebookProvider appId="269918776508696">
+              return <FbWrapper key={post.id} onClick={this_._onClickMobile.bind(this_,"https://www.facebook.com/teampulse.ch/posts/"+post.id)}><FacebookProvider appId="269918776508696">
                         <EmbeddedPost style={FacebookEmbedStyle} href={"https://www.facebook.com/teampulse.ch/posts/"+post.id} width="500" showText={true}/>
                      </FacebookProvider></FbWrapper>
             })}

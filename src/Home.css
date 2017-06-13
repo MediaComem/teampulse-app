@@ -81,6 +81,7 @@ a.right {
         right: 0 !important;
     }
 }
+
 @media(max-width: 991px) {
     html,
     body {
@@ -96,6 +97,10 @@ a.right {
     }
     .news .slick-track {
         height: 100%;
+    }
+    .news .slick-prev,
+    .news .slick-next {
+        mix-blend-mode: difference;
     }
     .news .slick-next {
         right: 10px;
@@ -161,11 +166,11 @@ a.right {
     }
     /* 4 Number */
     .stats-value4 {
-        width: 60%;
+        width: 65%;
     }
     .stats-desc {
         padding-left: 10px !important;
-        font-size:.7em !important;
+        font-size: .7em !important;
     }
     .stats-unit {
         display: block;
@@ -278,20 +283,21 @@ a.right {
 .slick-prev:before {
     color: #ccc !important;
 }
+
 @media screen and (min-aspect-ratio: 8/5 || max-width: 991px) {
-  .news .slick-slide {
-      height: 80vh;
-  }
-  header.primary-header {
-      height: 80px;
-  }
-  .news {
-    padding-top: 52px;
-  }
-  header .teampulse-logo img {
-    max-width: 240px;
-  }
-  header .race-logo img {
-    max-width: 95px;
-  }
+    .news .slick-slide {
+        height: 80vh;
+    }
+    header.primary-header {
+        height: 80px;
+    }
+    .news {
+        padding-top: 52px;
+    }
+    header .teampulse-logo img {
+        max-width: 240px;
+    }
+    header .race-logo img {
+        max-width: 95px;
+    }
 }

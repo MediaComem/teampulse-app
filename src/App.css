@@ -80,6 +80,24 @@
     display: none;
 }
 
+#root .slick-dots li {
+    margin: 0 3px;
+}
+
+#root .slick-dots li button::before {
+    content: '○';
+    font-size: 18px;
+    text-align: center;
+    opacity: 1;
+    color: #C6C6C6;
+}
+
+#root .slick-dots li.slick-active button::before {
+    content: '●';
+    opacity: 1;
+    color: #C6C6C6;
+}
+
 header {
     position: fixed;
     top: -20px;

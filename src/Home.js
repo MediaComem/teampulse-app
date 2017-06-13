@@ -10,6 +10,7 @@ import Scrollspy from 'react-scrollspy'
 import { SuperStat } from './Numbers';
 import Slider from 'react-slick'
 import './Home.css'
+import scrollToElement from 'scroll-to-element'
 
 function PrevArrow(props) {
   const { className, style, onClick } = props
@@ -48,6 +49,13 @@ class Home extends Component {
         // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
         this.slider.innerSlider.play();
     }, 3200);
+  }
+
+  addOffset(event){
+    var el = event.target
+    scrollToElement(el.getAttribute('href'),{
+      offset: -40
+    });
   }
 
   render() {
@@ -127,9 +135,9 @@ class Home extends Component {
         </div>
         <div id="fp-nav">
           <Scrollspy items={['section-1', 'section-2', 'section-3']} currentClassName="active" offset={-400}>
-            <li><a href="#section-1"></a></li>
-            <li><a href="#section-2"></a></li>
-            <li><a href="#section-3"></a></li>
+            <li><a href="#section-1" onClick={this.addOffset.bind(this)}></a></li>
+            <li><a href="#section-2" onClick={this.addOffset.bind(this)}></a></li>
+            <li><a href="#section-3" onClick={this.addOffset.bind(this)}></a></li>
           </Scrollspy>
         </div>
       </div >

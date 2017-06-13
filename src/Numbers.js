@@ -11,7 +11,7 @@ const displayFlex = {
 }
 
 const cssStatNum = {
-  width: "50%",
+  width: "55%",
   textAlign: "right",
   paddingRight: "3px"
 }

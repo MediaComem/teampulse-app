@@ -11,6 +11,7 @@ import { SuperStat } from './Numbers';
 import Slider from 'react-slick'
 import './Home.css'
 import scrollToElement from 'scroll-to-element'
+import PageLoader from './PageLoader.js'
 
 function PrevArrow(props) {
   const { className, style, onClick } = props
@@ -38,8 +39,10 @@ class Home extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
+      loaded:false
     };
     this.afterChange()
+    window.onload = this.pageLoaded.bind(this)
   }
 
   afterChange() {
@@ -49,6 +52,10 @@ class Home extends Component {
         // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
         this.slider.innerSlider.play();
     }, 3200);
+  }
+
+  pageLoaded(){
+    this.setState({loaded:true})
   }
 
   addOffset(event){
@@ -73,6 +80,7 @@ class Home extends Component {
     };
     return (
       <div>
+        <PageLoader/>
         <div id="section-1" className="container">
           <SectionTitleDesktop right={1} top={116} className="lineDiag-2-wrapper" padding="15px 25px" bgColor="#fff" txtColor="#A6C222">
             <div className="lineDiag-2-content">A la une</div>
@@ -140,7 +148,7 @@ class Home extends Component {
             <li><a href="#section-3" onClick={this.addOffset.bind(this)}></a></li>
           </Scrollspy>
         </div>
-      </div >
+      </div>
     )
   }
 }

@@ -43,6 +43,22 @@
     transform: skewY(1deg);
 }
 
+.lineDiag-wrapperRight.popup {
+    -webkit-transform: skewY(-1deg) translate(-50%, -50%);
+    -moz-transform: skewY(-1deg) translate(-50%, -50%);
+    -ms-transform: skewY(-1deg) translate(-50%, -50%);
+    -o-transform: skewY(-1deg) translate(-50%, -50%);
+    transform: skewY(-1deg) translate(-50%, -50%);
+}
+
+.lineDiag-contentRight.popup {
+    -webkit-transform: skewY(1deg) translate(-50%, -50%);
+    -moz-transform: skewY(1deg) translate(-50%, -50%);
+    -ms-transform: skewY(1deg) translate(-50%, -50%);
+    -o-transform: skewY(1deg) translate(-50%, -50%);
+    transform: skewY(1deg) translate(-50%, -50%);
+}
+
 .lineDiag-wrapperLeft {
     -webkit-transform: skewY(1deg);
     -moz-transform: skewY(1deg);
@@ -95,6 +111,7 @@
 #root .slick-dots li.slick-active button::before {
     content: '●';
     opacity: 1;
+    font-size: 18px;
     color: #C6C6C6;
 }
 

@@ -89,7 +89,7 @@ class Facebook extends Component {
   }
   _onHoverExit() {
     if(this.slider !== undefined) {
-      this.slider.innerSlider.play();
+      this.afterChange();
       this.setState({
         isPlaying: true
       })

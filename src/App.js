@@ -28,16 +28,16 @@ const DefaultLayout = ({ children }) => (
     </header>
     <aside className="primary-aside"></aside>
     {children}
-    <footer class="">
+    <footer>
       <div className="footer lineDiag-wrapperRight">
         <div className="container-fluid lineDiag-contentRight">
           <div className="row">
             <div className="social-links col-md-4 col-lg-3 col-12">
               <div className="social-links-container">
-                <a href="https://www.facebook.com/search/top/?q=teampulse"><img src="/SVG/facebook-square.svg" type="image/svg+xml" /></a>
-                <a href="https://www.flickr.com/photos/150269572@N07/"><img src="/SVG/flickr.svg" type="image/svg+xml" /></a>
-                <a href="https://www.instagram.com/teampulse_raam17/"><img src="/SVG/instagram.svg" type="image/svg+xml" /></a>
-                <a href="https://www.youtube.com/channel/UCCg-nD4e4d-MwCBtFNPWBpA"><img src="/SVG/youtube-play.svg" type="image/svg+xml" /></a>
+                <a href="https://www.facebook.com/teampulse.ch/"><img src="/SVG/facebook-square.svg" type="image/svg+xml" alt="Facebook Teampulse" /></a>
+                <a href="https://www.flickr.com/photos/150269572@N07/"><img src="/SVG/flickr.svg" type="image/svg+xml" alt="Flickr Teampulse" /></a>
+                <a href="https://www.instagram.com/teampulse_raam17/"><img src="/SVG/instagram.svg" type="image/svg+xml" alt="Instagram Teampulse" /></a>
+                <a href="https://www.youtube.com/channel/UCCg-nD4e4d-MwCBtFNPWBpA"><img src="/SVG/youtube-play.svg" type="image/svg+xml" alt="Youtube Teampulse" /></a>
               </div>
             </div>
             <div className="logos-sponsors col-md-8 col-lg-9 col-12">

@@ -49,8 +49,8 @@ class Home extends Component {
     // If autoplay is working we reset timeout and it will never end up inside.
     clearTimeout(this.timer);
     this.timer = setTimeout(() => {
-        // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
-        this.slider.innerSlider.play();
+      // This will start play again, important here is to have a timeout that exceeds your "autoplaySpeed".
+      this.slider.innerSlider.play();
     }, 3200);
   }
 
@@ -58,11 +58,19 @@ class Home extends Component {
     this.setState({loaded:true})
   }
 
-  addOffset(event){
+  addOffset(event) {
     var el = event.target
-    scrollToElement(el.getAttribute('href'),{
+    scrollToElement(el.getAttribute('href'), {
       offset: -40
     });
+  }
+
+  keepLocation() {
+    var st, oldOffset = window.pageYOffset;
+    if (window.pageYOffset != null ||document.body.scrollWidth != null) {
+      st = oldOffset;
+    }
+    setTimeout(function(){window.scrollTo(0,st)}, 10);
   }
 
   render() {
@@ -80,14 +88,26 @@ class Home extends Component {
     };
     return (
       <div>
-        <PageLoader/>
+        {this.state.loaded ? '' : <PageLoader/>}
+        <div id="popup1" className="overlay">
+          <div className="popup lineDiag-wrapperRight">
+            <div className="lineDiag-contentRight">
+              <h2>Infos</h2>
+              <a className="close" href="#" onClick={this.keepLocation.bind(this)}>&times;</a>
+              <div className="content">
+                Les valeurs moyennes sont calculées sur une période de 30 minutes.<br/><br/>
+                Retrouvez plus de statistiques sur <a href="https://data.teampulse.ch/raam/map">https://data.teampulse.ch/raam/map</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <div id="section-1" className="container">
           <SectionTitleDesktop right={1} top={116} className="lineDiag-2-wrapper" padding="15px 25px" bgColor="#fff" txtColor="#A6C222">
             <div className="lineDiag-2-content">A la une</div>
           </SectionTitleDesktop>
           <div className="row news">
             <div className="col-lg-12 justify-content-center news-media">
-              <Favori loop={false} arrows={true} dots={false} forceLoop={true}/>
+              <Favori loop={false} arrows={true} dots={false} forceLoop={true} />
             </div>
           </div>
         </div>
@@ -95,6 +115,9 @@ class Home extends Component {
           <SectionTitle txtColor="#fff" bgColor="#A6C222" padding="15px 25px">La carte</SectionTitle>
           <div className="container lineDiag-contentRight">
             <div className="stats-desktop-container">
+              <div className="row">
+                <a className="stats-info" href="#popup1"><img src="icon_info.svg" alt="Information sur les statistiques" /></a>
+              </div>
               <div className="row">
                 <div className="stat col-2"><SuperStat type="speed" displayFlex={false} descr="Vitesse moyenne" unit="km/h" /></div>
                 <div className="stat col-2"><SuperStat type="rate" displayFlex={false} descr="Cadence moyenne" unit="rmp" /></div>
@@ -106,7 +129,7 @@ class Home extends Component {
             </div>
             <GoogleMap height={400} zoom={5} />
             <div id="statsSlider" className="stats-mobile-container">
-              <Slider ref={ c => this.slider = c } {...settings}>
+              <Slider ref={c => this.slider = c} {...settings}>
                 <div><SuperStat type="speed" displayFlex={true} descr="Vitesse moyenne" unit="km/h" /></div>
                 <div><SuperStat type="rate" displayFlex={true} descr="Cadence moyenne" unit="rmp" /></div>
                 <div><SuperStat type="time" displayFlex={true} descr="Heure locale" unit="hh:mm" /></div>
@@ -118,7 +141,6 @@ class Home extends Component {
             <SectionTitleDesktop left={-20} bottom={40} className="lineDiag-2-wrapper" padding="15px 25px" bgColor="#A6C222" txtColor="#fff">
               <div className="lineDiag-2-content">La carte</div>
             </SectionTitleDesktop>
-            <a className="right small hidden-md-down" href="https://data.teampulse.ch/raam/map">plus de statistiques</a>
           </div>
         </div>
         <div id="section-3" className="socials">

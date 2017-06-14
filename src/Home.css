@@ -1,3 +1,65 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: visibility 0s linear 1000ms, opacity 1000ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    padding: 40px;
+    background: #fff;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #A6C222;
+}
+
+.popup .close {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #A6C222;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+    .popup {
+        width: 70%;
+    }
+}
+
 .news {
     padding-top: 140px;
     padding-bottom: 100px;
@@ -27,6 +89,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     object-fit: contain;
+    font-family: 'object-fit: contain;'
 }
 
 .map {
@@ -57,6 +120,25 @@
 
 .news .slick-slider {
     margin-bottom: 0px;
+}
+
+.stats-info {
+    width: 18px;
+    right: 10px;
+    position: absolute;
+    z-index: 1000;
+}
+
+.stats-desc .stats-info {
+    position: absolute;
+    right: initial;
+    padding-left: 5px;
+}
+
+.stats-desc .stats-info img {
+    width: 12px;
+    display: inline;
+    color: #c6c6c6;
 }
 
 .socials .insta-container {
@@ -116,6 +198,7 @@ a.right {
         width: 100%;
         padding: 0;
         object-fit: cover;
+        font-family: 'object-fit: cover;'
     }
     .news .slick-dots {
         bottom: -30px;

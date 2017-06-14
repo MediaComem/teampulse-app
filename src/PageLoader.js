@@ -19,7 +19,7 @@ class PageLoader extends Component {
   render() {
     return (
       <LoadingContainer>
-        <img src="loading.gif"/>
+        <img src="loading_300.gif"/>
       </LoadingContainer>
     )
   }

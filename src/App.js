@@ -28,7 +28,7 @@ const DefaultLayout = ({ children }) => (
     </header>
     <aside className="primary-aside"></aside>
     {children}
-    <footer class="">
+    <footer>
       <div className="footer lineDiag-wrapperRight">
         <div className="container-fluid lineDiag-contentRight">
           <div className="row">

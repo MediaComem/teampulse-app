@@ -17,7 +17,7 @@ const cssStatNum = {
 }
 
 const cssStatDescr = {
-  width: "10%",
+  width: "45%",
   textAlign: "left",
   paddingLeft: "3px"
 }
@@ -116,7 +116,7 @@ export class SuperStat extends Component {
     return (
       <StatContainer displayFlex={this.props.displayFlex} className={this.props.className}>
         {statValue}
-        <StatDescr className="stats-desc" displayFlex={this.props.displayFlex}>{this.props.descr}&nbsp;<StatUnit className="stats-unit">({this.props.unit})</StatUnit></StatDescr>
+        <StatDescr className="stats-desc" displayFlex={this.props.displayFlex}>{this.props.descr}&nbsp;<StatUnit className="stats-unit">({this.props.unit})<a className="stats-info hidden-md-up" href="#popup1"><img src="icon_info.svg" alt="Information sur les statistiques" /></a></StatUnit></StatDescr>
         <Event event='teampulse' handler={this.onMessage} />
       </StatContainer>
     )

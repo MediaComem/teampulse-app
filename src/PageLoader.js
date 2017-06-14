@@ -19,9 +19,11 @@ class PageLoader extends Component {
   render() {
     return (
       <LoadingContainer>
-        <img src="loading_300.gif"/>
+        <video width="100" height="100" autoPlay="true" loop="true">
+            <source src="loading_300.mp4" type="video/mp4"/>
+        </video>
       </LoadingContainer>
-    )
+          )
   }
 }
 

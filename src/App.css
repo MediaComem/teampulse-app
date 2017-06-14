@@ -95,6 +95,7 @@
 #root .slick-dots li.slick-active button::before {
     content: '●';
     opacity: 1;
+    font-size: 18px;
     color: #C6C6C6;
 }
 

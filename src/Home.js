@@ -76,15 +76,9 @@ class Home extends Component {
   render() {
     var settings = {
       arrows: true,
-      infinite: true,
       dots: false,
-      speed: 500,
-      autoplaySpeed: 3000,
-      slidesToShow: 1,
-      slidesToScroll: 1,
       prevArrow: <PrevArrow />,
-      nextArrow: <NextArrow />,
-      afterChange: this.afterChange.bind(this)
+      nextArrow: <NextArrow />
     };
     return (
       <div>

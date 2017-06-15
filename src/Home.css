@@ -260,10 +260,6 @@ a.right {
     .stats-value {
         font-size: 3.5em !important;
     }
-    /* 4 Number */
-    .stats-value4 {
-        width: 65%;
-    }
     .stats-desc {
         padding-left: 10px !important;
         font-size: .7em !important;

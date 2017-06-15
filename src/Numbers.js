@@ -11,19 +11,18 @@ const displayFlex = {
 }
 
 const cssStatNum = {
-  width: "55%",
   textAlign: "right",
   paddingRight: "3px"
 }
 
 const cssStatDescr = {
-  width: "45%",
   textAlign: "left",
   paddingLeft: "3px"
 }
 
 const StatContainer = styled.div`
   textAlign: center;
+  justifyContent: center;
   ${(props) => props.displayFlex === true ? displayFlex : null}
 `;
 
@@ -38,6 +37,7 @@ const StatDescr = styled.div`
   text-transform:uppercase;
   line-height: 1.4;
 	fontSize:0.80em;
+  width:60px;
   ${(props) => props.displayFlex === true ? cssStatDescr : null}
 `;
 
@@ -111,12 +111,12 @@ export class SuperStat extends Component {
       statValue = <StatNum className="stats-value" displayFlex={this.props.displayFlex}>{this.state.altValue}</StatNum>
     }
     if (this.props.type === 'time') {
-      statValue = <StatNum className="stats-value stats-value4" displayFlex={this.props.displayFlex}>{this.state.localTime}</StatNum>
+      statValue = <StatNum className="stats-value" displayFlex={this.props.displayFlex}>{this.state.localTime}</StatNum>
     }
     return (
       <StatContainer displayFlex={this.props.displayFlex} className={this.props.className}>
         {statValue}
-        <StatDescr className="stats-desc" displayFlex={this.props.displayFlex}>{this.props.descr}&nbsp;<StatUnit className="stats-unit">({this.props.unit})<a className="stats-info hidden-md-up" href="#popup1"><img src="icon_info.svg" alt="Information sur les statistiques" /></a></StatUnit></StatDescr>
+        <StatDescr className="stats-desc" displayFlex={this.props.displayFlex}>{this.props.descr}&nbsp;<StatUnit className="stats-unit">({this.props.unit})<a className="stats-info hidden-lg-up" href="#popup1"><img src="icon_info.svg" alt="Information sur les statistiques" /></a></StatUnit></StatDescr>
         <Event event='teampulse' handler={this.onMessage} />
       </StatContainer>
     )

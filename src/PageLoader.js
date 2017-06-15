@@ -16,16 +16,22 @@ const LoadingContainer = styled.div`
 `;
 
 class PageLoader extends Component {
+
+  componentDidMount() {
+    var video = document.getElementById('loading');
+    video.play();
+  }
+
   render() {
     return (
       <LoadingContainer>
-        <video width="100" height="100" autoPlay="true" loop="true">
-            <source src="loading_300.mp4" type="video/mp4"/>
-            <source src="loading_300.ogg" type="video/ogg">
-            <source src="loading_300.webm" type="video/webm">
+        <video id="loading" width="100" height="100" autoPlay="true" loop="true">
+          <source src="loading_300.mp4" type="video/mp4" />
+          <source src="loading_300.ogg" type="video/ogg" />
+          <source src="loading_300.webm" type="video/webm" />
         </video>
       </LoadingContainer>
-          )
+    )
   }
 }
 

@@ -37,7 +37,6 @@ const StatDescr = styled.div`
   text-transform:uppercase;
   line-height: 1.4;
 	fontSize:0.80em;
-  width:60px;
   ${(props) => props.displayFlex === true ? cssStatDescr : null}
 `;
 

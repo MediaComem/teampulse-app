@@ -263,6 +263,7 @@ a.right {
     .stats-desc {
         padding-left: 10px !important;
         font-size: .7em !important;
+        width: 60px;
     }
     .stats-unit {
         display: block;

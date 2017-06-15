@@ -1,0 +1,41 @@
+
+	.loading{
+	  -webkit-animation: pace-theme-center-circle-spin linear infinite 2s;
+  -moz-animation: pace-theme-center-circle-spin linear infinite 2s;
+  -ms-animation: pace-theme-center-circle-spin linear infinite 2s;
+  -o-animation: pace-theme-center-circle-spin linear infinite 2s;
+  animation: pace-theme-center-circle-spin linear infinite 2s;
+
+      transform-origin: center center;
+
+	  will-change: transform;
+
+	  -webkit-backface-visibility: hidden;
+-webkit-perspective: 1000;
+
+  }
+
+	@-webkit-keyframes pace-theme-center-circle-spin {
+  from { -webkit-transform: rotate3d(0,0,1,0deg); }
+  to { -webkit-transform: rotate3d(0,0,1, 360deg); }
+}
+
+@-moz-keyframes pace-theme-center-circle-spin {
+  from { -moz-transform: rotate3d(0,0,1,0deg); }
+  to { -moz-transform: rotate3d(0,0,1, 360deg); }
+}
+
+@-ms-keyframes pace-theme-center-circle-spin {
+  from { -ms-transform: rotate3d(0,0,1,0deg); }
+  to { -ms-transform: rotate3d(0,0,1, 360deg); }
+}
+
+@-o-keyframes pace-theme-center-circle-spin {
+  from { -o-transform: rotate3d(0,0,1,0deg); }
+  to { -o-transform: rotate3d(0,0,1, 360deg); }
+}
+
+@keyframes pace-theme-center-circle-spin {
+  from { transform: rotate3d(0,0,1,0deg); }
+  to { transform: rotate3d(0,0,1, 360deg); }
+}

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import './PageLoader.css'
+
 
 const LoadingContainer = styled.div`
   font-size: 2.1rem;
@@ -15,22 +17,18 @@ const LoadingContainer = styled.div`
   align-items: center;
 `;
 
-class PageLoader extends Component {
+const Image = styled.img`
+  width:200px;
+  height:200px;
+`;
 
-  componentDidMount() {
-    var video = document.getElementById('loading');
-    video.play();
-  }
+class PageLoader extends Component {
 
   render() {
     return (
       <LoadingContainer>
-        <video id="loading" width="100" height="100" autoPlay="true" loop="true">
-          <source src="loading_300.mp4" type="video/mp4" />
-          <source src="loading_300.ogg" type="video/ogg" />
-          <source src="loading_300.webm" type="video/webm" />
-        </video>
-      </LoadingContainer>
+        <Image className="loading" src="loading.svg" alt="" />
+      </LoadingContainer >
     )
   }
 }

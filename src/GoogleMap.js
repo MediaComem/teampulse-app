@@ -57,11 +57,11 @@ class GoogleMap extends Component {
       .then((body) => {
         setTimeout(() => this.setState({
           center:[
-            parseFloat(body.latitude),
-            parseFloat(body.longitude)
+            parseFloat(body.data[0].latitude),
+            parseFloat(body.data[0].longitude)
           ],
-          cycloLat:parseFloat(body.latitude),
-          cycloLng:parseFloat(body.longitude),
+          cycloLat:parseFloat(body.data[0].latitude),
+          cycloLng:parseFloat(body.data[0].longitude),
         }), 1001);
       });
     fetch(constantes.serverUrl+'/teampulse/switch')
@@ -74,6 +74,7 @@ class GoogleMap extends Component {
   }
 
   onMessage(message) {
+    //message = message.data[0]
     this.setState({
       cycloLat:parseFloat(message.latitude),
       cycloLng:parseFloat(message.longitude),
@@ -121,6 +122,7 @@ class GoogleMap extends Component {
 			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={15} />
             {
               cyclistChange.map(function (data, index) {
+                //data = data.data[0];
                 return <GMM key={index} lat={data.latitude} lng={data.longitude} name={data.contestant} time={data.localTime} radius={10} closePopup={map.state.closePopup} />
               })
             }

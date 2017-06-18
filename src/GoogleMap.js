@@ -68,7 +68,7 @@ class GoogleMap extends Component {
       .then(response => response.json())
       .then((body) => {
         setTimeout(() => this.setState({
-          cyclistChange: [body.data]
+          cyclistChange: body.data
         }), 1001);
       })
   }
@@ -119,12 +119,12 @@ class GoogleMap extends Component {
           yesIWantToUseGoogleMapApiInternals
         >
           <CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={15} />
-          {
+          {/*{
             cyclistChange.map(function (data, index) {
               console.log(data);
-              //return <GMM key={index} lat={data.latitude} lng={data.longitude} name={data.contestant} time={data.localTime} radius={10} closePopup={map.state.closePopup} />
+              return <GMM key={index} lat={data.latitude} lng={data.longitude} name={data.contestant} time={data.localTime} radius={10} closePopup={map.state.closePopup} />
             })
-          }
+          }*/}
         </GoogleMapReact>
         <Event event='teampulse' handler={this.onMessage} />
       </MapContainer>

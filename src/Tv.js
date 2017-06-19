@@ -63,7 +63,7 @@ class Tv extends Component {
 								<Favori youtube loop={true} arrows={false} dots={false} imgHeight={415}/>
 	            </div>
 	            <div className="map-container">
-	              <GoogleMap height={437} zoom={4} center={[38.195798, -98.918725]}/>
+	              <GoogleMap height={437} zoom={4} center={[38.195798, -98.918725]} autoCenter={false}/>
 	            </div>
 	          </div>
 	          <div id="second-section" className="col-3">

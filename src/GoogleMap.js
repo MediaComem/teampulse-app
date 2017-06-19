@@ -42,12 +42,18 @@ class GoogleMap extends Component {
 	constructor(props, context) {
     super(props, context);
     this.state = {
-      center: this.props.center,
+      center: [0,0],
       cycloLat: 0,
       cycloLng: 0,
       cyclistChange: [],
       closePopup: false
     };
+
+    if(this.props.autoCenter) {
+      this.setState({
+        center: this.props.center,
+      });
+    }
     this.onMessage = this.onMessage.bind(this);
   }
 
@@ -55,14 +61,24 @@ class GoogleMap extends Component {
     fetch(constantes.serverUrl+'/teampulse/data')
       .then(response => response.json())
       .then((body) => {
-        setTimeout(() => this.setState({
-          center:[
-            parseFloat(body.latitude),
-            parseFloat(body.longitude)
-          ],
-          cycloLat:parseFloat(body.latitude),
-          cycloLng:parseFloat(body.longitude),
-        }), 1001);
+        setTimeout(() => {
+          this.setState({
+            cycloLat:parseFloat(body.latitude),
+            cycloLng:parseFloat(body.longitude),
+          })
+          if(this.props.autoCenter) {
+            this.setState({
+              center:[
+                parseFloat(body.latitude),
+                parseFloat(body.longitude)
+              ]
+            })
+          } else {
+            this.setState({
+              center: this.props.center
+            })
+          }
+      }, 1001);
       });
     fetch(constantes.serverUrl+'/teampulse/switch')
       .then(response => response.json())
@@ -81,10 +97,12 @@ class GoogleMap extends Component {
   }
 
   _onChange({center, zoom}){
-    this.setState({
-      center: center,
-      zoom: zoom,
-    });
+    if(this.props.autoCenter) {
+      this.setState({
+        center: center,
+        zoom: zoom,
+      });
+    }
   }
 
   _onClick() {

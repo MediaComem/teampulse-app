@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.7);
-    transition: visibility 0s linear 1000ms, opacity 1000ms;
+    /*transition: visibility 0s linear 1000ms, opacity 1000ms;*/
     visibility: hidden;
     opacity: 0;
     z-index: 1000;
@@ -23,7 +23,20 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transition: all 5s ease-in-out;
+    transition: all 2s ease-in-out;
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 .popup h2 {
@@ -247,13 +260,10 @@ a.right {
     .stats-value {
         font-size: 3.5em !important;
     }
-    /* 4 Number */
-    .stats-value4 {
-        width: 65%;
-    }
     .stats-desc {
         padding-left: 10px !important;
         font-size: .7em !important;
+        width: 60px;
     }
     .stats-unit {
         display: block;

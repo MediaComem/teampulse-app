@@ -11,19 +11,18 @@ const displayFlex = {
 }
 
 const cssStatNum = {
-  width: "55%",
   textAlign: "right",
   paddingRight: "3px"
 }
 
 const cssStatDescr = {
-  width: "45%",
   textAlign: "left",
   paddingLeft: "3px"
 }
 
 const StatContainer = styled.div`
   textAlign: center;
+  justifyContent: center;
   ${(props) => props.displayFlex === true ? displayFlex : null}
 `;
 
@@ -63,7 +62,7 @@ export class SuperStat extends Component {
     fetch(constantes.serverUrl + '/teampulse/data')
       .then(response => response.json())
       .then((body) => {
-        this.setState({ powerValue: parseFloatToFixed(body.avgPower, 1, 10) || "-", rateValue: parseFloatToFixed(body.avgCadence, 1, 10) || "-", speedValue: parseFloatToFixed(body.avgSpeed, 1, 10) || "-", tempValue: parseFloatToFixed(body.temperature, 1, 10) || "-", altValue: parseInt(body.altitude, 10) || "-", rawOffset: parseInt(body.rawOffset, 10) || "-", dstOffset: parseInt(body.dstOffset, 10) || "-" });
+        this.setState({ powerValue: parseFloatToFixed(body.avgPower, 0, 10) || "-", rateValue: parseFloatToFixed(body.avgCadence, 1, 10) || "-", speedValue: parseFloatToFixed(body.avgSpeed, 1, 10) || "-", tempValue: parseFloatToFixed(body.temperature, 1, 10) || "-", altValue: parseInt(body.altitude, 10) || "-", rawOffset: parseInt(body.rawOffset, 10) || 0, dstOffset: parseInt(body.dstOffset, 10) || 0 });
       });
     this.timerID = setInterval(
       () => this.updateTime(),
@@ -76,7 +75,7 @@ export class SuperStat extends Component {
   }
 
   onMessage(message) {
-    this.setState({ powerValue: parseFloatToFixed(message.avgPower, 1, 10) || "-", rateValue: parseFloatToFixed(message.avgCadence, 1, 10) || "-", speedValue: parseFloatToFixed(message.avgSpeed, 1, 10) || "-", tempValue: parseFloatToFixed(message.temperature, 1, 10) || "-", altValue: parseInt(message.altitude, 10) || "-", rawOffset: parseInt(message.rawOffset, 10) || "-", dstOffset: parseInt(message.dstOffset, 10) || "-" });
+    this.setState({ powerValue: parseFloatToFixed(message.avgPower, 0, 10) || "-", rateValue: parseFloatToFixed(message.avgCadence, 1, 10) || "-", speedValue: parseFloatToFixed(message.avgSpeed, 1, 10) || "-", tempValue: parseFloatToFixed(message.temperature, 1, 10) || "-", altValue: parseInt(message.altitude, 10) || "-", rawOffset: parseInt(message.rawOffset, 10) || 0, dstOffset: parseInt(message.dstOffset, 10) || 0 });
   }
 
   calcLocalTime(offset) {
@@ -111,12 +110,12 @@ export class SuperStat extends Component {
       statValue = <StatNum className="stats-value" displayFlex={this.props.displayFlex}>{this.state.altValue}</StatNum>
     }
     if (this.props.type === 'time') {
-      statValue = <StatNum className="stats-value stats-value4" displayFlex={this.props.displayFlex}>{this.state.localTime}</StatNum>
+      statValue = <StatNum className="stats-value" displayFlex={this.props.displayFlex}>{this.state.localTime}</StatNum>
     }
     return (
       <StatContainer displayFlex={this.props.displayFlex} className={this.props.className}>
         {statValue}
-        <StatDescr className="stats-desc" displayFlex={this.props.displayFlex}>{this.props.descr}&nbsp;<StatUnit className="stats-unit">({this.props.unit})<a className="stats-info hidden-md-up" href="#popup1"><img src="icon_info.svg" alt="Information sur les statistiques" /></a></StatUnit></StatDescr>
+        <StatDescr className="stats-desc" displayFlex={this.props.displayFlex}>{this.props.descr}&nbsp;<StatUnit className="stats-unit">({this.props.unit})<a className="stats-info hidden-lg-up" href="#popup1"><img src="icon_info.svg" alt="Information sur les statistiques" /></a></StatUnit></StatDescr>
         <Event event='teampulse' handler={this.onMessage} />
       </StatContainer>
     )

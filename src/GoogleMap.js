@@ -137,11 +137,11 @@ class GoogleMap extends Component {
           yesIWantToUseGoogleMapApiInternals
           >
 			    	<CycloMarker lat={this.state.cycloLat} lng={this.state.cycloLng} radius={15} />
-            {
+            {/*{
               cyclistChange.map(function (data, index) {
                 return <GMM key={index} lat={data.latitude} lng={data.longitude} name={data.contestant} time={data.localTime} radius={10} closePopup={map.state.closePopup} />
               })
-            }
+            }*/}
 			   </GoogleMapReact>
          <Event event='teampulse' handler={this.onMessage} />
 			</MapContainer>

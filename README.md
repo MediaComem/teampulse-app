@@ -13,9 +13,15 @@ One section of the dashboard can be customised with either:
 * A Youtube playlist
 * A (live) Facebook video
 
-## 2 Design: TV & Scroll
+## 2 design: TV & Scroll
 
-The system can be used on a Full HD TV with [https://teampulse.netlify.com/tv](https://teampulse.netlify.com/tv) or on desktop/mobile: [https://teampulse.netlify.com/](https://teampulse.netlify.com/)
+The system can be used on 
+* Full HD TV with [https://teampulse.netlify.com/tv](https://teampulse.netlify.com/tv) with autoplay feature
+* Desktop/mobile [https://teampulse.netlify.com/](https://teampulse.netlify.com/)
+
+## Server
+
+To standardize informations from the social medias and metrics provided by the sensors (which are developped at [Heig-vd](https://heig-vd.ch), the system uses a nodejs server: https://github.com/MediaComem/teampulse-server
 
 ## Enhancement
 
